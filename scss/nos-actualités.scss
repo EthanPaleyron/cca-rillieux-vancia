@@ -1,0 +1,67 @@
+main {
+  margin: 5rem 0;
+  .nos_actualites {
+    margin: 0 auto;
+    @include flex(center, center);
+    flex-direction: column;
+    gap: 1.5rem;
+    .actualites {
+      width: 85%;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-areas: "a";
+      gap: 2.5rem 1.2rem;
+      article {
+        width: 20rem;
+        background-color: $primary;
+        border-radius: 0.3rem;
+        .content_article {
+          position: relative;
+          img {
+            width: 100%;
+            height: 12rem;
+            background-color: $secondary;
+            border-radius: 0.2rem;
+            border: solid 1px;
+          }
+          .title_time {
+            position: absolute;
+            bottom: 0.2rem;
+            color: $w;
+            font-size: 0.7rem;
+            width: 100%;
+            background: linear-gradient(0deg, $b 0%, rgba(0, 0, 0, 0) 100%);
+            padding: 0.8rem;
+            border-bottom-left-radius: 0.2rem;
+            border-bottom-right-radius: 0.2rem;
+            @include flex(end, end);
+            flex-direction: column;
+            gap: 0.3rem;
+          }
+        }
+        p {
+          padding: 1rem;
+          width: 100%;
+          height: 35vh;
+          overflow: hidden auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main .nos_actualites .actualites {
+    grid-template-areas: "a a";
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  main {
+    margin: 6rem 0;
+    .nos_actualites .actualites {
+      grid-template-areas: "a a a";
+    }
+  }
+}
