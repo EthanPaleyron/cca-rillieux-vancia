@@ -20,13 +20,12 @@ header {
   }
 }
 
-main {
-  margin: 1.5rem 0 4rem;
+.accueil {
+  margin-bottom: 4rem;
   .actualite {
     margin: 0 auto;
     @include flex(center, center);
     flex-direction: column;
-    gap: 1.5rem;
     article {
       width: 90%;
       background-color: $primary;
@@ -63,6 +62,7 @@ main {
       }
     }
     a {
+      margin-top: 1.5rem;
       text-decoration: underline;
     }
   }
@@ -71,12 +71,11 @@ main {
     margin: 3rem 0 4rem;
     width: 100%;
     background-color: $primary;
-    padding: 1rem 2rem;
+    padding: 0 2rem 1rem;
     @include flex(start, center);
     flex-direction: column;
     article {
       z-index: 0;
-      margin: 1rem 0;
       text-align: center;
       @include flex(space-around, start);
       flex-direction: column;
@@ -133,7 +132,7 @@ main {
 }
 
 @media screen and (min-width: 768px) {
-  main {
+  .accueil {
     .actualite {
       width: 85%;
       article {
@@ -175,7 +174,7 @@ main {
       font-size: 1.5rem;
     }
   }
-  main {
+  .accueil {
     .actualite {
       width: 75%;
       article .content_article {

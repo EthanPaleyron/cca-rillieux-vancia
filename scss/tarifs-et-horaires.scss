@@ -1,0 +1,181 @@
+.tarifs_horaires_map {
+  margin: 6rem 0 5rem;
+  .tarifs_horaires {
+    @include flex(center, center);
+    flex-direction: column;
+    .tarifs {
+      .tarifs_p {
+        margin: 0 auto;
+        text-align: center;
+        width: 90%;
+      }
+      table {
+        margin: 1.5rem auto 3rem;
+        thead tr th {
+          background-color: $primary;
+          padding: 0.7rem 0;
+        }
+        tbody tr td {
+          padding: 0.5rem;
+        }
+      }
+    }
+    .horaires {
+      margin: 0 auto;
+      width: 21rem;
+      background-color: $primary;
+      padding: 1rem 1.5rem;
+      @include flex(center, center);
+      flex-direction: column;
+      h3 {
+        margin-top: 0.7rem;
+        text-align: center;
+        font-size: 2rem;
+        text-transform: uppercase;
+      }
+      ul {
+        margin: 0.5rem 0 1rem;
+        li {
+          h4 {
+            margin: 1rem 0;
+            font-size: 1.3rem;
+            text-align: center;
+            text-decoration: underline;
+          }
+          p {
+            margin: 0.8rem 0;
+            line-height: 1.4rem;
+            span {
+              text-transform: uppercase;
+              font-weight: bold;
+            }
+            i {
+              font-size: 1.5rem;
+              margin: 0 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .map {
+    @include flex(center, center);
+    flex-direction: column;
+    div {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      @include flex(center, center);
+      label {
+        margin-right: 0.5rem;
+      }
+      a {
+        background-color: $primary;
+        padding: 0.5rem 1rem;
+        border-radius: 0.2rem;
+      }
+    }
+    iframe {
+      border: 0;
+      width: 20rem;
+      height: 20rem;
+    }
+  }
+  .contactez_nous {
+    margin: 2rem 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+    a {
+      @include flex(center, center);
+      font-size: 1.2rem;
+      span {
+        @include flex(center, center);
+        width: fit-content;
+        margin-left: 0.5rem;
+        border-radius: 0.3rem;
+        padding: 0.7rem 1rem;
+        background-color: $tel;
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    p {
+      margin: 1.5rem 0;
+      font-size: 2.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tarifs_horaires_map {
+    .tarifs_horaires {
+      margin: 6rem 0 2rem;
+      @include flex(space-around, center);
+      flex-direction: row;
+      .tarifs {
+        .tarifs_p {
+          margin: 2rem auto;
+        }
+        // table {
+        //   thead tr th {
+        //   }
+        //   tbody tr td {
+        //   }
+        // }
+      }
+      .horaires {
+        margin: 0;
+      }
+    }
+    .map {
+      div {
+        font-size: 1.5rem;
+      }
+      iframe {
+        width: 70%;
+        height: 37vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  .tarifs_horaires_map {
+    .tarifs_horaires {
+      margin: 6rem 0 2rem;
+      @include flex(space-around, center);
+      flex-direction: row;
+      .tarifs {
+        table {
+          thead tr th {
+            font-size: 1.7rem;
+          }
+          // tbody tr td {
+          // }
+        }
+      }
+      .horaires {
+        width: 30rem;
+        padding: 1.5rem 2.5rem;
+        h3 {
+          font-size: 2.5rem;
+        }
+        ul li {
+          h4 {
+            margin: 1.3rem 0;
+            font-size: 1.7rem;
+          }
+          p {
+            margin: 1.2rem 0;
+          }
+        }
+      }
+    }
+    .map div {
+      margin-top: 2rem;
+    }
+  }
+}

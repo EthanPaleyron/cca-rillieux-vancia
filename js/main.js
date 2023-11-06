@@ -14,6 +14,9 @@ function handleMediaQueryChange(mediaQuery) {
   if (mediaQuery.matches) {
     lists.style.display = "flex";
     menu.classList.add("opened");
+  } else {
+    lists.style.display = "none";
+    menu.classList.remove("opened");
   }
 }
 handleMediaQueryChange(mediaQuery);

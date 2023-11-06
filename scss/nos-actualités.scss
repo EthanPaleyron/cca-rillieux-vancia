@@ -1,6 +1,6 @@
-main {
-  margin: 5rem 0;
-  .nos_actualites {
+.nos_actualites {
+  margin: 3rem 0 5rem;
+  section {
     margin: 0 auto;
     @include flex(center, center);
     flex-direction: column;
@@ -52,15 +52,15 @@ main {
 }
 
 @media screen and (min-width: 768px) {
-  main .nos_actualites .actualites {
+  .nos_actualites section .actualites {
     grid-template-areas: "a a";
   }
 }
 
 @media screen and (min-width: 1040px) {
-  main {
-    margin: 6rem 0;
-    .nos_actualites .actualites {
+  .nos_actualites {
+    margin: 5rem 0;
+    section .actualites {
       grid-template-areas: "a a a";
     }
   }

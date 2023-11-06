@@ -29,3 +29,12 @@ img {
   object-fit: cover;
   max-width: 100%;
 }
+
+table,
+thead,
+tr,
+th,
+td {
+  border: solid;
+  border-collapse: collapse;
+}
