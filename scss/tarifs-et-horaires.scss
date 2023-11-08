@@ -81,19 +81,19 @@
     }
   }
   .contactez_nous {
-    margin: 2rem 0.5rem;
+    margin: 3rem 0.5rem;
     text-align: center;
     font-weight: bold;
     h2 {
       margin-bottom: 1.5rem;
     }
-    a {
+    div {
       @include flex(center, center);
-      font-size: 1.2rem;
-      span {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      a {
         @include flex(center, center);
         width: fit-content;
-        margin-left: 0.5rem;
         border-radius: 0.3rem;
         padding: 0.7rem 1rem;
         background-color: $tel;
@@ -101,9 +101,15 @@
           margin-right: 0.5rem;
         }
       }
+      &:first-child a {
+        background-color: $tel;
+      }
+      &:last-child a {
+        background-color: $mail;
+      }
     }
-    p {
-      margin: 1.5rem 0;
+    .ou {
+      margin: 1.2rem 0;
       font-size: 2.2rem;
     }
   }
@@ -176,6 +182,14 @@
     }
     .map div {
       margin-top: 2rem;
+    }
+  }
+  .contactez_nous {
+    div {
+      font-size: 1.5rem;
+    }
+    .ou {
+      font-size: 2.5rem;
     }
   }
 }
