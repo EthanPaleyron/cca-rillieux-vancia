@@ -70,28 +70,33 @@ nav {
         height: 100%;
       }
     }
-    li .contact {
-      display: flex;
-      gap: 3.5rem;
-      li a {
-        width: 3.2rem;
-        height: 3.2rem;
-        border-radius: 50%;
-        @include flex(center, center);
-      }
-      li:first-child a {
-        background-color: $mail;
-      }
-      li:last-child a {
-        background-color: $tel;
-      }
-    }
     .selected {
       width: 100%;
       background-color: $primary;
       font-weight: bold;
     }
   }
+}
+
+.contact {
+  display: flex;
+  gap: 3.5rem;
+  li a {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    @include flex(center, center);
+  }
+  li:first-child a {
+    background-color: $mail;
+  }
+  li:last-child a {
+    background-color: $tel;
+  }
+}
+
+aside {
+  display: none;
 }
 
 .title {
@@ -214,6 +219,48 @@ footer {
       }
     }
   }
+
+  aside {
+    @include flex(start, center);
+    flex-direction: column;
+    z-index: 1;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 15rem;
+    height: 13.5rem;
+    background-color: $secondary;
+    padding: 0.8rem 1rem;
+    border-top-left-radius: 0.3rem;
+    transform: translateX(15rem);
+    transition: 700ms ease-out;
+    #openAside {
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      transform: translateX(-2.4rem);
+      background-color: $info;
+      padding: 0.7rem;
+      border-top-left-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+      @include flex(center, center);
+      i {
+        font-size: 1rem;
+      }
+    }
+    div {
+      width: 100%;
+      @include flex(space-between, center);
+      i {
+        font-size: 1.5rem;
+      }
+    }
+    p {
+      font-weight: bold;
+      margin: 1.2rem 0.7rem;
+      text-align: center;
+    }
+  }
 }
 
 @media screen and (min-width: 1040px) {
@@ -231,9 +278,37 @@ footer {
       }
     }
   }
+  aside {
+    width: 19rem;
+    height: 17.5rem;
+    padding: 1rem 1.2rem;
+    #openAside {
+      transform: translateX(-2.6rem);
+      i {
+        font-size: 1.2rem;
+      }
+    }
+    div {
+      font-size: 1.5rem;
+      i {
+        font-size: 1.8rem;
+      }
+    }
+    p {
+      margin: 1.5rem 0.7rem 1.7rem;
+      font-size: 1.2rem;
+    }
+  }
   .title {
     margin: 1.7rem 0;
     font-size: 2.5rem;
+  }
+  .contact {
+    gap: 3.5rem;
+    li a {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
   }
   footer {
     font-size: 1.3rem;
