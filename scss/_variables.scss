@@ -5,11 +5,15 @@ body {
 }
 
 // 🔴colors
-$primary: #d9d9d9;
-$secondary: #aaa;
+$primary: #eae7dd;
+$secondary: #d2b48c;
+$tertiary: radial-gradient(
+  circle,
+  rgba(251, 163, 157, 1) 0%,
+  rgba(251, 137, 134, 1) 100%
+);
 $tel: #01ff70;
 $mail: #2d95f9;
-$info: #f6c31c;
 $w: #fff;
 $dw: #dedede;
 $s: #ddd;
@@ -33,7 +37,7 @@ $fuchsia: #f012be;
 $maroon: #85144b;
 
 // 🔴Box Shadow
-$bs: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+$bs: 1px 0px 13px 1px $g, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 
 // 🔴Mixin
 @mixin flex($jc, $ai) {

@@ -12,10 +12,11 @@
       table {
         margin: 1.5rem auto 3rem;
         thead tr th {
-          background-color: $primary;
+          background-color: $secondary;
           padding: 0.7rem 0;
         }
         tbody tr td {
+          background-color: $primary;
           padding: 0.5rem;
         }
       }
@@ -69,7 +70,7 @@
         margin-right: 0.5rem;
       }
       a {
-        background-color: $primary;
+        background: $tertiary;
         padding: 0.5rem 1rem;
         border-radius: 0.2rem;
       }

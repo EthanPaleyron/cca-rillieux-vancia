@@ -11,30 +11,25 @@ menu.addEventListener("click", () => {
 });
 const aside = document.querySelector("aside");
 let moveSizeAside;
-let itClosed = false;
 function mediaQueryAside() {
   if (window.matchMedia("(min-width: 1040px)").matches) {
     moveSizeAside = 19;
-  } else {
+  } else if (window.matchMedia("(max-width: 1040px)").matches) {
     moveSizeAside = 15;
   }
 }
+mediaQueryAside();
 document.querySelector("#closeAside").addEventListener("click", () => {
-  mediaQueryAside();
-  itClosed = true;
   aside.style.transform = `translateX(${moveSizeAside}rem)`;
 });
 document.querySelector("#openAside").addEventListener("click", () => {
-  mediaQueryAside();
-  if (itClosed) {
+  if (aside.style.transform === `translateX(${moveSizeAside}rem)`) {
     aside.style.transform = "translateX(0)";
-    itClosed = false;
   } else {
     aside.style.transform = `translateX(${moveSizeAside}rem)`;
-    itClosed = true;
   }
 });
-const mediaQuery = addEventListener("resize", () => {
+addEventListener("resize", () => {
   if (window.matchMedia("(min-width: 768px)").matches) {
     lists.style.display = "flex";
     menu.classList.add("opened");
@@ -42,13 +37,12 @@ const mediaQuery = addEventListener("resize", () => {
     lists.style.display = "none";
     menu.classList.remove("opened");
   }
-  if (window.matchMedia("(min-width: 1040px)").matches && itClosed == true) {
-    aside.style.transform = `translateX(19rem)`;
-  } else if (
-    !window.matchMedia("(min-width: 1040px)").matches &&
-    itClosed == true
-  ) {
-    aside.style.transform = `translateX(15rem)`;
+  if (window.matchMedia("(min-width: 1040px)").matches) {
+    moveSizeAside = 19;
+    aside.style.transform = `translateX(${moveSizeAside}rem)`;
+  } else if (window.matchMedia("(max-width: 1040px)").matches) {
+    moveSizeAside = 15;
+    aside.style.transform = `translateX(${moveSizeAside}rem)`;
   }
 });
 let i = parseInt(localStorage.getItem("newPerson"));
@@ -56,7 +50,5 @@ if (!i) {
   localStorage.setItem("newPerson", 1);
   aside.style.transform = "translateX(0)";
 } else {
-  mediaQueryAside();
   aside.style.transform = `translateX(${moveSizeAside}rem)`;
 }
-console.log(localStorage.getItem("newPerson"));
