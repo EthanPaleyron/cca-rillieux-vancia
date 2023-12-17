@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-  <link rel="stylesheet" href="/scss/_link-acceuil.scss">
+  <link rel="stylesheet" href="/scss/main.scss">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="mots-clés, club de chien, activités canines">
@@ -29,9 +29,9 @@
       </button>
       <ul class="lists">
         <li class="other_page selected"><a href="index.html">Accueil</a></li>
-        <li class="other_page no_selected"><a href="tarifs-et-horaires.html">Tarifs & Horaires</a></li>
-        <li class="other_page no_selected"><a href="histoire-du-club.html">Histoire du club</a></li>
-        <li class="other_page no_selected"><a href="equipe.html">L'équipe</a></li>
+        <li class="other_page no_selected"><a href="#" id="tarifsHoraires">Tarifs & Horaires</a></li>
+        <li class="other_page no_selected"><a href="#" id="HistoireClub">Histoire du club</a></li>
+        <li class="other_page no_selected"><a href="#" id="equipe">L'équipe</a></li>
         <li>
           <ul class="contact">
             <li><a href="mailto:name@exemple.fr"><i class="fa-solid fa-envelope"></i></a></li>
@@ -41,13 +41,13 @@
       </ul>
     </nav>
 
-    <div>
+    <div class="header">
       <h1>Le club de chien d'accompagnement</h1>
       <q>Une citation</q>
     </div>
   </header>
 
-  <aside>
+  <aside class="asideAccueil">
     <button id="openAside"><i class="fa-solid fa-circle-info"></i></button>
     <div>
       <h2>Salut toi!</h2>
@@ -60,69 +60,76 @@
     </ul>
   </aside>
 
-  <main class="accueil">
-    <section class="actualite">
-      <h2 class="title">Actualités</h2>
-      <article>
-        <div class="content_article">
-          <img src="public/image-attractive.jpg" alt="Actualité">
-          <div class="title_time">
-            <!-- pas plus de 20 caractere -->
-            <h2>MMMMMMMMMMMMMMMMMMMM</h2>
-            <time datetime="2018-07-30">2018-07-30</time>
+  <main id="mainContent">
+    <div class="accueil">
+      <section class="actualite">
+        <h2 class="title">Actualités</h2>
+        <article>
+          <div class="content_article">
+            <img src="public/image-attractive.jpg" alt="Actualité">
+            <div class="title_time">
+              <!-- pas plus de 20 caractere -->
+              <h2>MMMMMMMMMMMMMMMMMMMM</h2>
+              <time datetime="2018-07-30">2018-07-30</time>
+            </div>
           </div>
-        </div>
-        <!-- pas plus de 850 caractere -->
-        <!-- <p>
-          MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-        </p> -->
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos unde facere nesciunt laborum similique ipsa
-          delectus ad doloribus, harum corporis fuga, quaerat praesentium dolores quo veniam officiis nobis mollitia?
-          Et!
-          Culpa facilis ad molestias esse velit maxime distinctio doloribus sunt, inventore fugiat libero consequuntur
-          facere similique mollitia. Ea, explicabo. Libero neque pariatur ratione incidunt vitae accusamus, corporis
-          velit est delectus.
-          Dignissimos, quo enim. Nihil eius sequi tenetur ex suscipit quos doloribus exercitationem expedita vel facere
-          harum minima, molestiae reprehenderit vero accusamus, atque ducimus veniam sapiente itaque maxime excepturi
-          dolores corrupti.
-          Consequuntur asperiores assumenda et ut itaque non laboriosam! Ad facere, excepturi velit autem adipisci
-          sapiente nesciunt dignissimos qui quo cum libero, mollitia at voluptatibus odio veritatis voluptates dolorum
-          repudiandae magnam?
-          Corporis sit animi, laborum blanditiis cum nobis maiores ea optio repellat odio! Deleniti consectetur ratione
-          minima praesentium ut nesciunt nemo debitis, iusto aperiam mollitia molestiae, iure harum sint exercitationem
-          dolor?
-          Mollitia atque architecto soluta dolores earum, ea fuga molestiae et neque tempore ab ipsa provident quae
-          dolorum, porro cupiditate nulla blanditiis! Facere natus labore aliquid magni temporibus distinctio neque
-          dolorem?
-          Fugit, quam! Reiciendis vero molestiae quibusdam expedita quisquam, beatae ratione eveniet esse modi magni
-          est, placeat atque et delectus molestias! Recusandae hic, nulla reprehenderit expedita eos dolore. Corrupti,
-          esse autem!
-          Non molestias ad itaque quod magnam. Provident illum beatae impedit animi, aliquam, earum similique autem sint
-          consequatur odio perspiciatis? Dolore magnam necessitatibus alias error eius a laborum in odit accusamus.</p>
-      </article>
-      <a href="nos-actualites.html">Voir les anciennes actualités</a>
-    </section>
+          <!-- pas plus de 850 caractere -->
+          <!-- <p>
+            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+          </p> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos unde facere nesciunt laborum similique ipsa
+            delectus ad doloribus, harum corporis fuga, quaerat praesentium dolores quo veniam officiis nobis mollitia?
+            Et!
+            Culpa facilis ad molestias esse velit maxime distinctio doloribus sunt, inventore fugiat libero consequuntur
+            facere similique mollitia. Ea, explicabo. Libero neque pariatur ratione incidunt vitae accusamus, corporis
+            velit est delectus.
+            Dignissimos, quo enim. Nihil eius sequi tenetur ex suscipit quos doloribus exercitationem expedita vel
+            facere
+            harum minima, molestiae reprehenderit vero accusamus, atque ducimus veniam sapiente itaque maxime excepturi
+            dolores corrupti.
+            Consequuntur asperiores assumenda et ut itaque non laboriosam! Ad facere, excepturi velit autem adipisci
+            sapiente nesciunt dignissimos qui quo cum libero, mollitia at voluptatibus odio veritatis voluptates dolorum
+            repudiandae magnam?
+            Corporis sit animi, laborum blanditiis cum nobis maiores ea optio repellat odio! Deleniti consectetur
+            ratione
+            minima praesentium ut nesciunt nemo debitis, iusto aperiam mollitia molestiae, iure harum sint
+            exercitationem
+            dolor?
+            Mollitia atque architecto soluta dolores earum, ea fuga molestiae et neque tempore ab ipsa provident quae
+            dolorum, porro cupiditate nulla blanditiis! Facere natus labore aliquid magni temporibus distinctio neque
+            dolorem?
+            Fugit, quam! Reiciendis vero molestiae quibusdam expedita quisquam, beatae ratione eveniet esse modi magni
+            est, placeat atque et delectus molestias! Recusandae hic, nulla reprehenderit expedita eos dolore. Corrupti,
+            esse autem!
+            Non molestias ad itaque quod magnam. Provident illum beatae impedit animi, aliquam, earum similique autem
+            sint
+            consequatur odio perspiciatis? Dolore magnam necessitatibus alias error eius a laborum in odit accusamus.
+          </p>
+        </article>
+        <a href="#" id="anciennesActualites">Voir les anciennes actualités</a>
+      </section>
 
-    <section class="activiter">
-      <h2 class="title">Nos Activités</h2>
-      <article>
-        <div class="content_carrousel">
-          <img id="carrousel" src="public/tree.jpg" alt="Activiter">
-          <div class="arrows">
-            <button id="arrowLeft"><i class="fa-solid fa-chevron-left"></i></button>
-            <button id="arrowRight"><i class="fa-solid fa-chevron-right"></i></button>
+      <section class="activiter">
+        <h2 class="title">Nos Activités</h2>
+        <article>
+          <div class="content_carrousel">
+            <img id="carrousel" src="public/tree.jpg" alt="Activiter">
+            <div class="arrows">
+              <button id="arrowLeft"><i class="fa-solid fa-chevron-left"></i></button>
+              <button id="arrowRight"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
           </div>
-        </div>
-        <div class="content_title_description">
-          <h2 id="titleCarrousel">Activité 1</h2>
-          <p id="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, deleniti animi, quidem
-            suscipit tempora sequi dicta excepturi, alias neque inventore doloremque enim voluptate at modi aliquid
-            molestias odio consequuntur? Recusandae?</p>
-        </div>
-      </article>
-    </section>
-    <div class="more_info">
-      <a href="tarifs-et-horaires.html">Obtenir plus d'infos ?</a>
+          <div class="content_title_description">
+            <h2 id="titleCarrousel">Activité 1</h2>
+            <p id="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, deleniti animi, quidem
+              suscipit tempora sequi dicta excepturi, alias neque inventore doloremque enim voluptate at modi aliquid
+              molestias odio consequuntur? Recusandae?</p>
+          </div>
+        </article>
+      </section>
+      <div class="more_info">
+        <a href="#" id="moreInfo">Obtenir plus d'infos ?</a>
+      </div>
     </div>
   </main>
 
@@ -147,7 +154,9 @@
     </div>
   </footer>
 
-  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/monopage.js"></script>
+  <script type="module" src="/js/nav.js"></script>
+  <script type="module" src="/js/aside.js"></script>
   <script type="module" src="/js/carrousel.js"></script>
 </body>
 

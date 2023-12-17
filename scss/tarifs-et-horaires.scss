@@ -118,6 +118,7 @@
 
 @media screen and (min-width: 768px) {
   .tarifs_horaires_map {
+    margin: 7rem 0 5rem;
     .tarifs_horaires {
       margin: 6rem 0 2rem;
       @include flex(space-around, center);
@@ -151,6 +152,7 @@
 
 @media screen and (min-width: 1040px) {
   .tarifs_horaires_map {
+    margin: 8rem 0 5rem;
     .tarifs_horaires {
       margin: 6rem 0 2rem;
       @include flex(space-around, center);
