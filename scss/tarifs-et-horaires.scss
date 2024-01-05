@@ -1,23 +1,30 @@
 .tarifs_horaires_map {
-  margin: 6rem 0 5rem;
+  margin: 2rem 0 4rem;
   .tarifs_horaires {
     @include flex(center, center);
     flex-direction: column;
+    .suffixes {
+      vertical-align: super;
+      font-size: smaller;
+    }
     .tarifs {
       .tarifs_p {
-        margin: 0 auto;
+        margin: 0 auto 0;
         text-align: center;
         width: 90%;
+        &:last-child {
+          margin-bottom: 2rem;
+        }
       }
       table {
-        margin: 1.5rem auto 3rem;
+        margin: 1.5rem auto;
         thead tr th {
           background-color: $secondary;
-          padding: 0.7rem 0;
+          padding: 0.5rem 0;
         }
         tbody tr td {
           background-color: $primary;
-          padding: 0.5rem;
+          padding: 0.3rem;
         }
       }
     }
@@ -46,7 +53,7 @@
           p {
             margin: 0.8rem 0;
             line-height: 1.4rem;
-            span {
+            .heures {
               text-transform: uppercase;
               font-weight: bold;
             }
@@ -118,21 +125,15 @@
 
 @media screen and (min-width: 768px) {
   .tarifs_horaires_map {
-    margin: 7rem 0 5rem;
+    margin: 1rem 0 5rem;
     .tarifs_horaires {
-      margin: 6rem 0 2rem;
+      margin: 3rem 0 2rem;
       @include flex(space-around, center);
       flex-direction: row;
       .tarifs {
         .tarifs_p {
           margin: 2rem auto;
         }
-        // table {
-        //   thead tr th {
-        //   }
-        //   tbody tr td {
-        //   }
-        // }
       }
       .horaires {
         margin: 0;
@@ -145,6 +146,7 @@
       iframe {
         width: 70%;
         height: 37vw;
+        border-radius: 0.5rem;
       }
     }
   }
@@ -152,9 +154,9 @@
 
 @media screen and (min-width: 1040px) {
   .tarifs_horaires_map {
-    margin: 8rem 0 5rem;
+    margin: 2rem 0 4rem;
     .tarifs_horaires {
-      margin: 6rem 0 2rem;
+      margin: 5rem 0 2rem;
       @include flex(space-around, center);
       flex-direction: row;
       .tarifs {
@@ -162,8 +164,9 @@
           thead tr th {
             font-size: 1.7rem;
           }
-          // tbody tr td {
-          // }
+          tbody tr td {
+            font-size: 1.2rem;
+          }
         }
       }
       .horaires {

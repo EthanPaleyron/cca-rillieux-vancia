@@ -4,7 +4,7 @@ header {
     text-align: center;
     height: 55vw;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url("../public/digital_camera.jpg") no-repeat;
+      url("../public/images/header.jpg") no-repeat;
     background-size: cover;
     background-clip: border-box;
     @include flex(center, center);
@@ -41,6 +41,9 @@ header {
         .title_time {
           position: absolute;
           bottom: 0.2rem;
+          white-space: nowrap;
+          overflow: auto;
+          text-overflow: ellipsis;
           color: $w;
           font-size: 0.7rem;
           width: 100%;
@@ -54,9 +57,10 @@ header {
         }
       }
       p {
-        padding: 1rem;
+        white-space: pre-line;
         width: 100%;
         height: 35vh;
+        padding: 1rem;
         overflow: hidden auto;
       }
     }
@@ -111,8 +115,23 @@ header {
         }
       }
       .content_title_description {
-        h2 {
-          margin-bottom: 1rem;
+        #contenues {
+          overflow: auto;
+          height: 17rem;
+          h2 {
+            margin-bottom: 1rem;
+          }
+          b {
+            font-weight: bold;
+          }
+          h3 {
+            text-transform: uppercase;
+            margin: 1rem 0 0.4rem;
+            i {
+              font-size: 1.5rem;
+              margin: 0 0.5rem;
+            }
+          }
         }
       }
     }
@@ -165,7 +184,7 @@ header {
 
 @media screen and (min-width: 1040px) {
   header div {
-    height: 90vh;
+    height: 115vh;
     h1 {
       font-size: 3.5rem;
     }
@@ -207,7 +226,6 @@ header {
         font-size: 2rem;
       }
       p {
-        margin-top: 2rem;
         font-size: 1.2rem;
       }
     }

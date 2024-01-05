@@ -2,7 +2,13 @@
 @import "variables";
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin-top: 4.5rem;
+}
+main {
+  flex: 1;
 }
 ::-webkit-scrollbar {
   width: 12px;
@@ -12,6 +18,15 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background: $secondary;
+}
+
+.logo {
+  width: 3.5rem;
+}
+.logo_white {
+  width: 5.4rem;
+  filter: brightness(0) saturate(100%) invert(95%) sepia(97%) saturate(14%)
+    hue-rotate(213deg) brightness(104%) contrast(104%);
 }
 
 nav {
@@ -63,7 +78,7 @@ nav {
   .lists {
     position: absolute;
     right: 0.3rem;
-    top: 4.3rem;
+    top: 5rem;
     width: fit-content;
     background-color: $secondary;
     padding: 0.8rem;
@@ -121,17 +136,19 @@ aside {
 @import "accueil";
 @import "tarifs-et-horaires";
 @import "nos-actualites";
+@import "histoire-du-club";
+@import "equipe";
 
 footer {
   user-select: none;
   color: $dw;
   background-color: $lb;
   padding: 1.5rem 1.5rem 3rem;
-  img {
-    margin-bottom: 1.5rem;
-  }
+  @include flex(space-evenly, center);
+  flex-direction: column;
   div {
-    @include flex(space-evenly, center);
+    margin-top: 2rem;
+    @include flex(start, center);
     flex-wrap: wrap;
     gap: 3rem;
     section {
@@ -280,9 +297,21 @@ footer {
       text-align: center;
     }
   }
+  footer {
+    flex-direction: row;
+    img {
+      margin-right: 6rem;
+    }
+  }
 }
 
 @media screen and (min-width: 1040px) {
+  .logo {
+    width: 4.5rem;
+  }
+  .logo_white {
+    width: 7rem;
+  }
   nav {
     height: 5rem;
     img {
