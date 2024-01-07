@@ -18,7 +18,9 @@
       }
       table {
         margin: 1.5rem auto;
+        font-size: 0.8rem;
         thead tr th {
+          font-size: 1.2rem;
           background-color: $secondary;
           padding: 0.5rem 0;
         }
@@ -73,12 +75,11 @@
       margin-top: 1.5rem;
       font-weight: bold;
       @include flex(center, center);
-      label {
-        margin-right: 0.5rem;
-      }
+      flex-direction: column;
+      gap: 0.5rem;
       a {
         background: $tertiary;
-        padding: 0.5rem 1rem;
+        padding: 0.3rem 0.5rem;
         border-radius: 0.2rem;
       }
     }
@@ -127,12 +128,21 @@
   .tarifs_horaires_map {
     margin: 1rem 0 5rem;
     .tarifs_horaires {
-      margin: 3rem 0 2rem;
-      @include flex(space-around, center);
-      flex-direction: row;
       .tarifs {
         .tarifs_p {
           margin: 2rem auto;
+        }
+        table {
+          font-size: 1rem;
+          thead tr th {
+            font-size: 1.2rem;
+            background-color: $secondary;
+            padding: 0.5rem 0;
+          }
+          tbody tr td {
+            background-color: $primary;
+            padding: 0.3rem;
+          }
         }
       }
       .horaires {
@@ -142,6 +152,7 @@
     .map {
       div {
         font-size: 1.5rem;
+        flex-direction: row;
       }
       iframe {
         width: 70%;
@@ -159,16 +170,6 @@
       margin: 5rem 0 2rem;
       @include flex(space-around, center);
       flex-direction: row;
-      .tarifs {
-        table {
-          thead tr th {
-            font-size: 1.7rem;
-          }
-          tbody tr td {
-            font-size: 1.2rem;
-          }
-        }
-      }
       .horaires {
         width: 30rem;
         padding: 1.5rem 2.5rem;
