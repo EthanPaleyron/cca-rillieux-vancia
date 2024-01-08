@@ -9,10 +9,17 @@
     }
     .tarifs {
       .tarifs_p {
-        margin: 0 auto 0;
-        text-align: center;
+        white-space: pre-line;
         width: 90%;
-        &:last-child {
+      }
+      .content_detail {
+        margin: 0 auto;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .list_document {
+          list-style: disc;
           margin-bottom: 2rem;
         }
       }
@@ -129,8 +136,7 @@
     margin: 1rem 0 5rem;
     .tarifs_horaires {
       .tarifs {
-        .tarifs_p {
-          margin: 2rem auto;
+        .list_document {
         }
         table {
           font-size: 1rem;
