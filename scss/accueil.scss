@@ -151,6 +151,11 @@ header {
 }
 
 @media screen and (min-width: 768px) {
+  .header {
+    p {
+      font-size: 1.2rem;
+    }
+  }
   .accueil {
     .actualite {
       width: 85%;
