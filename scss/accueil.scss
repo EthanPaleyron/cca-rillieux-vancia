@@ -114,8 +114,10 @@ header {
       }
       .content_title_description {
         #contenues {
-          overflow: auto;
+          margin-top: 1rem;
           height: 17rem;
+          padding-right: 1rem;
+          overflow: auto;
           h2 {
             margin-bottom: 1rem;
           }

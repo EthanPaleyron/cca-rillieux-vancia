@@ -8,6 +8,10 @@
       font-size: smaller;
     }
     .tarifs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       .tarifs_p {
         text-align: center;
         white-space: pre-line;
