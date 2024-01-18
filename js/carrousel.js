@@ -38,7 +38,7 @@ const infosCarrousel = [
 contenues;
 
 let index = 0;
-carrousel.src = "public/images/activites/" + infosCarrousel[index].img;
+carrousel.src = "/images/activites/" + infosCarrousel[index].img;
 titleCarrousel.textContent = infosCarrousel[index].titre;
 contenues.innerHTML = infosCarrousel[index].contenues;
 document.querySelector("#arrowLeft").addEventListener("click", () => {
@@ -46,7 +46,7 @@ document.querySelector("#arrowLeft").addEventListener("click", () => {
   if (index < 0) {
     index = infosCarrousel.length - 1;
   }
-  carrousel.src = "public/images/activites/" + infosCarrousel[index].img;
+  carrousel.src = "/images/activites/" + infosCarrousel[index].img;
   titleCarrousel.textContent = infosCarrousel[index].titre;
   contenues.innerHTML = infosCarrousel[index].contenues;
 });
@@ -55,7 +55,7 @@ document.querySelector("#arrowRight").addEventListener("click", () => {
   if (index > infosCarrousel.length - 1) {
     index = 0;
   }
-  carrousel.src = "public/images/activites/" + infosCarrousel[index].img;
+  carrousel.src = "/images/activites/" + infosCarrousel[index].img;
   titleCarrousel.textContent = infosCarrousel[index].titre;
   contenues.innerHTML = infosCarrousel[index].contenues;
 });
