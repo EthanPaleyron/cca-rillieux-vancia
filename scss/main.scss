@@ -17,7 +17,7 @@ main {
   background: $primary;
 }
 ::-webkit-scrollbar-thumb {
-  background: $secondary;
+  background: darken-color($secondary, 8%);
 }
 
 .logo {

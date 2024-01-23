@@ -22,31 +22,16 @@ $b: #000;
 $lb: #101010;
 $wa: rgba(255, 255, 255, 0.5);
 $ba: rgba(0, 0, 0, 0.5);
-$r: #ff4136;
-$orange: #ff851b;
-$yellow: #ffdc00;
-$olive: #3d9970;
-$green: #2ecc40;
-$lime: #01ff70;
-$aqua: #7fdbff;
-$tela: #39cccc;
-$blue: #0074d9;
-$navy: #001f3f;
-$purple: #b10dc9;
-$fuchsia: #f012be;
-$maroon: #85144b;
 
 // 🔴Box Shadow
 $bs: 1px 0px 13px 1px $g, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 
-// 🔴Mixin
+// 🔴Mixin Function
 @mixin flex($jc, $ai) {
   display: flex;
   justify-content: $jc;
   align-items: $ai;
 }
-@mixin centerAbsolute() {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@function darken-color($color, $amount) {
+  @return darken($color, $amount);
 }

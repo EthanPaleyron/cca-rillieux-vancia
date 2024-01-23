@@ -31,11 +31,11 @@ liElements.forEach((li) => {
     this.classList.add("selected");
   });
 });
-document.querySelector("#anciennesActualites").addEventListener("click", () => {
-  const selectedElement = document.querySelector(".other_page.selected");
-  selectedElement.classList.remove("selected");
-  selectedElement.classList.add("no_selected");
-});
+// document.querySelector("#anciennesActualites").addEventListener("click", () => {
+//   const selectedElement = document.querySelector(".other_page.selected");
+//   selectedElement.classList.remove("selected");
+//   selectedElement.classList.add("no_selected");
+// });
 document.querySelector("#moreInfo").addEventListener("click", () => {
   const selectedElementMoreInfo = document.querySelector(
     ".other_page.selected"
@@ -44,4 +44,5 @@ document.querySelector("#moreInfo").addEventListener("click", () => {
   selectedElementMoreInfo.classList.add("no_selected");
   liElements[0].classList.remove("no_selected");
   liElements[0].classList.add("selected");
+  console.log(liElements);
 });
