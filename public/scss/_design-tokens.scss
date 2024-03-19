@@ -1,0 +1,39 @@
+// 🔴font-family
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+// 🔴colors
+$primary: #eae7dd;
+$secondary: #d2b48c;
+$tertiary: radial-gradient(
+  circle,
+  rgba(251, 163, 157, 1) 0%,
+  rgba(251, 137, 134, 1) 100%
+);
+$link: #0074d9;
+$tel: #01ff70;
+$mail: #2d95f9;
+$error: #ff4136;
+$w: #fff;
+$dw: #dedede;
+$s: #ddd;
+$g: #aaa;
+$b: #000;
+$lb: #101010;
+$wa: rgba(255, 255, 255, 0.5);
+$ba: rgba(0, 0, 0, 0.5);
+
+// 🔴Box Shadow
+$bs: 1px 0px 13px 1px $g, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+// 🔴Mixin Function
+@mixin flex($jc, $ai) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+@function darken-color($color, $amount) {
+  @return darken($color, $amount);
+}

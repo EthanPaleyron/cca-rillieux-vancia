@@ -1,0 +1,370 @@
+@import "base";
+@import "design-tokens";
+@import "layout";
+@import "404";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 4.5rem;
+}
+main {
+  flex: 1;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: $primary;
+}
+::-webkit-scrollbar-thumb {
+  background: darken-color($secondary, 8%);
+}
+
+.logo {
+  width: 3.5rem;
+}
+.logo_white {
+  width: 5.4rem;
+  filter: brightness(0) saturate(100%) invert(95%) sepia(97%) saturate(14%)
+    hue-rotate(213deg) brightness(104%) contrast(104%);
+}
+
+nav {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  user-select: none;
+  width: 100%;
+  height: 4.5rem;
+  background-color: $secondary;
+  box-shadow: $bs;
+  padding: 0 0.8rem;
+  @include flex(space-between, center);
+  #menu {
+    display: flex;
+  }
+  .line {
+    fill: none;
+    stroke: black;
+    transition: stroke-dasharray 200ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    stroke-width: 6;
+    &:nth-child(1) {
+      stroke-dasharray: 60 207;
+    }
+    &:nth-child(2) {
+      stroke-dasharray: 60 60;
+    }
+    &:nth-child(3) {
+      stroke-dasharray: 60 207;
+    }
+  }
+  .opened {
+    .line {
+      &:nth-child(1) {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+      }
+      &:nth-child(2) {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+      }
+      &:nth-child(3) {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+      }
+    }
+  }
+  .lists {
+    position: absolute;
+    right: 0.3rem;
+    top: 5rem;
+    width: fit-content;
+    background-color: $secondary;
+    padding: 0.8rem;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    .other_page {
+      width: 17rem;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 0.2rem;
+      a {
+        @include flex(center, center);
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .selected {
+      width: 100%;
+      background-color: $primary;
+      font-weight: bold;
+    }
+  }
+}
+
+.contact {
+  display: flex;
+  gap: 3.5rem;
+  li a {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    @include flex(center, center);
+  }
+  li:first-child a {
+    background-color: $mail;
+  }
+  li:last-child a {
+    background-color: $tel;
+  }
+}
+
+aside {
+  display: none;
+}
+
+.title {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+@import "accueil";
+@import "tarifs-et-horaires";
+@import "nos-actualites";
+@import "histoire-du-club";
+@import "equipe";
+
+footer {
+  user-select: none;
+  color: $dw;
+  background-color: $lb;
+  padding: 1.5rem 1.5rem 3rem;
+  @include flex(space-evenly, center);
+  flex-direction: column;
+  div {
+    margin-top: 2rem;
+    @include flex(start, center);
+    flex-wrap: wrap;
+    gap: 3rem;
+    section {
+      ul {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        li a {
+          margin-left: 1rem;
+          padding: 0.5rem;
+          text-decoration: underline;
+          font-weight: bold;
+          i {
+            margin-right: 0.7rem;
+          }
+        }
+      }
+    }
+    .contacts {
+      ul {
+        li:first-child a:hover,
+        li:first-child a:active {
+          color: $tel;
+          text-decoration: none;
+        }
+        li:last-child a:hover,
+        li:last-child a:active {
+          color: $mail;
+          text-decoration: none;
+        }
+      }
+    }
+    .networks {
+      ul {
+        li:first-child a:hover,
+        li:first-child a:active {
+          color: #2675ed;
+          text-decoration: none;
+        }
+        li:last-child a:hover,
+        li:last-child a:active {
+          background: -webkit-linear-gradient(
+            to right,
+            #121fcf 0%,
+            #cf1512 100%
+          );
+          background: -moz-linear-gradient(to right, #121fcf 0%, #cf1512 100%);
+          background: linear-gradient(
+            45deg,
+            #405de6,
+            #5851db,
+            #833ab4,
+            #c13584,
+            #e1306c,
+            #fd1d1d
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    padding: 0 1.5rem;
+    img {
+      margin-right: 2rem;
+    }
+    #menu {
+      display: none;
+    }
+    .lists {
+      top: 0;
+      right: 5rem;
+      left: -5rem;
+      transform: translate(20%, 0);
+      margin: 0 auto;
+      font-size: 0.9rem;
+      background-color: transparent;
+      padding: 0;
+      @include flex(center, center);
+      flex-direction: row;
+      gap: 0.5rem;
+      .other_page {
+        width: 9.5rem;
+        height: 4.5rem;
+        background-color: transparent;
+        border-radius: 0;
+      }
+      .selected {
+        background-color: $primary;
+      }
+      .no_selected:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      li .contact {
+        display: none;
+      }
+    }
+  }
+
+  aside {
+    @include flex(start, center);
+    flex-direction: column;
+    z-index: 1;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 15rem;
+    height: 13.5rem;
+    background-color: $secondary;
+    padding: 0.8rem 1rem;
+    border-top-left-radius: 0.3rem;
+    transform: translateX(15rem);
+    transition: 700ms ease-out;
+    #openAside {
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      transform: translateX(-2.4rem);
+      background-color: $primary;
+      padding: 0.7rem;
+      border-right: none;
+      border-top-left-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+      box-shadow: $bs;
+      @include flex(center, center);
+      i {
+        font-size: 1rem;
+      }
+    }
+    div {
+      width: 100%;
+      @include flex(space-between, center);
+      i {
+        font-size: 1.5rem;
+      }
+    }
+    p {
+      font-weight: bold;
+      margin: 1.2rem 0.7rem;
+      text-align: center;
+    }
+  }
+  footer {
+    flex-direction: row;
+    img {
+      margin-right: 6rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  .logo {
+    width: 4.5rem;
+  }
+  .logo_white {
+    width: 7rem;
+  }
+  nav {
+    height: 5rem;
+    img {
+      margin-right: 3rem;
+    }
+    .lists {
+      font-size: 1.1rem;
+      gap: 2rem;
+      .other_page {
+        width: 12rem;
+        height: 5rem;
+      }
+    }
+  }
+  aside {
+    width: 19rem;
+    height: 17.5rem;
+    padding: 1rem 1.2rem;
+    transform: translateX(19rem);
+    #openAside {
+      transform: translateX(-2.6rem);
+      i {
+        font-size: 1.2rem;
+      }
+    }
+    div {
+      font-size: 1.5rem;
+      i {
+        font-size: 1.8rem;
+      }
+    }
+    p {
+      margin: 1.5rem 0.7rem 1.7rem;
+      font-size: 1.2rem;
+    }
+  }
+  .title {
+    margin: 1.7rem 0;
+    font-size: 2.5rem;
+  }
+  .contact {
+    gap: 3.5rem;
+    li a {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+  footer {
+    font-size: 1.3rem;
+    div section ul li a {
+      margin-left: 2rem;
+    }
+  }
+}
