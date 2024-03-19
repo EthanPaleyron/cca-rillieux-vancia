@@ -110,10 +110,10 @@
         </div>
     </footer>
 
-    <script type="module" src="/js/monopage.js"></script>
     <script type="module" src="/js/nav.js"></script>
     <script type="module" src="/js/aside.js"></script>
     <script type="module" src="/js/carrousel.js"></script>
+    <script type="module" src="/js/password.js"></script>
 </body>
 
 </html>

@@ -7,17 +7,16 @@ class AdminController extends Controller
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord
         if (isset ($_SESSION["admin"]["nom"])) {
-            header("Location: /adminDashboard");
+            header("Location: /admin/dashboard/");
             die();
         }
-        $categories = $this->categorieManager->showCategories();
-        require VIEWS . 'Admin/authAdmin.php';
+        require VIEWS . 'Admin/login.php';
     }
     public function login(): void
     {
         $this->validator->validate([
             "nom" => ["required", "alphaSpace"],
-            "mdp" => ["required", "min:8", "alphaNum"]
+            "mdp" => ["required", "min:8"]
         ]);
         $_SESSION['old'] = $_POST;
         if (!$this->validator->errors()) { // Si il y a pas d'erreur dans le validateur
@@ -28,20 +27,20 @@ class AdminController extends Controller
                     "id" => $result->getid_admin(),
                     "nom" => $result->getnom_admin(),
                 ];
-                header("Location: /adminDashboard/");
+                header("Location: /admin/dashboard/");
             } else { // Sinon on affiche un message d'erreur
                 $_SESSION["error"]['message'] = "Une erreur sur l'identifiants";
-                header("Location: /authAdmin/");
+                header("Location: /admin/login/");
             }
         } else {
-            header("Location: /authAdmin/");
+            header("Location: /admin/login/");
         }
     }
     public function logout(): void
     {
         // Si l'utilisateur n'est pas connecter on le redirige au login
         if (!isset ($_SESSION["admin"]["nom"])) {
-            header("Location: /authAdmin/");
+            header("Location: /admin/login/");
             die();
         }
         // Sinon on efface sa session et redirige au login
@@ -51,39 +50,38 @@ class AdminController extends Controller
     }
     public function dashboard(): void
     {
-        // Si l'utilisateur n'est pas connecter on le redirige au login
+        // Si l'admin est connecter on le redirige sur le tableau de bord
         if (!isset ($_SESSION["admin"]["nom"])) {
-            header("Location: /authAdmin/");
+            header("Location: /admin/login/");
             die();
         }
-        // Affiche touts les voyage
-        $voyages = $this->voyageManager->getVoyages();
-        // Affiche touts les categories
-        $categories = $this->categorieManager->showCategories();
-        require VIEWS . 'Admin/adminDashboard.php';
+        require VIEWS . 'Admin/dashboard.php';
     }
-    public function showAddVoyage(): void
+    public function showActualitesManager(): void
     {
-        // Si le client n'est pas connecter on le redirige sur la page de connexion
-        if (!isset ($_SESSION["admin"]["id"])) {
-            header("Location: /login/");
+        // Si l'admin est connecter on le redirige sur le tableau de bord
+        if (!isset ($_SESSION["admin"]["nom"])) {
+            header("Location: /admin/login/");
             die();
         }
-        // Affiche touts les categories
-        $categories = $this->categorieManager->showCategories();
-        require VIEWS . 'Admin/insertVoyage.php';
+        require VIEWS . 'Admin/actualites-manager.php';
     }
-    public function showUpdateVoyage(int $id_voyage): void
+    public function showTarifsManager(): void
     {
-        // Si le client n'est pas connecter on le redirige sur la page de connexion
-        if (!isset ($_SESSION["admin"]["id"])) {
-            header("Location: /login/");
+        // Si l'admin est connecter on le redirige sur le tableau de bord
+        if (!isset ($_SESSION["admin"]["nom"])) {
+            header("Location: /admin/login/");
             die();
         }
-        // Réccupere les ifo du voyage selectionner
-        $voyage = $this->voyageManager->getVoyage($id_voyage);
-        // Affiche touts les categories
-        $categories = $this->categorieManager->showCategories();
-        require VIEWS . 'Admin/updateVoyage.php';
+        require VIEWS . 'Admin/tarifs-manager.php';
+    }
+    public function showEquipeManager(): void
+    {
+        // Si l'admin est connecter on le redirige sur le tableau de bord
+        if (!isset ($_SESSION["admin"]["nom"])) {
+            header("Location: /admin/login/");
+            die();
+        }
+        require VIEWS . 'Admin/equipe-manager.php';
     }
 }
