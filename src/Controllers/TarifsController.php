@@ -1,9 +1,9 @@
 <?php
 namespace Project\Controllers;
 
-class TarifHorraireController extends Controller
+class TarifsController extends Controller
 {
-    public function showTarifHorraire()
+    public function showTarifHoraire()
     {
         $page = "Tarifs & Horaires";
         require VIEWS . "App/tarifs-et-horaires.php";

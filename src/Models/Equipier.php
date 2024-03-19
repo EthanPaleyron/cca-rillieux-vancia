@@ -35,7 +35,7 @@ class Equipier extends Manager
     {
         $this->photo_equipier = $photo_equipier;
     }
-    public function getphoto_equipier(): int
+    public function getphoto_equipier(): string
     {
         return $this->photo_equipier;
     }

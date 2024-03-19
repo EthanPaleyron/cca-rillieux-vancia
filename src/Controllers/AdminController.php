@@ -66,6 +66,15 @@ class AdminController extends Controller
         }
         require VIEWS . 'Admin/actualites-manager.php';
     }
+    public function showInsertionActualite(): void
+    {
+        // Si l'admin est connecter on le redirige sur le tableau de bord
+        if (!isset ($_SESSION["admin"]["nom"])) {
+            header("Location: /admin/login/");
+            die();
+        }
+        require VIEWS . 'Admin/insertion-actualite.php';
+    }
     public function showTarifsManager(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord
@@ -75,6 +84,15 @@ class AdminController extends Controller
         }
         require VIEWS . 'Admin/tarifs-manager.php';
     }
+    public function showInsertionTarif(): void
+    {
+        // Si l'admin est connecter on le redirige sur le tableau de bord
+        if (!isset ($_SESSION["admin"]["nom"])) {
+            header("Location: /admin/login/");
+            die();
+        }
+        require VIEWS . 'Admin/insertion-tarif.php';
+    }
     public function showEquipeManager(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord
@@ -83,5 +101,14 @@ class AdminController extends Controller
             die();
         }
         require VIEWS . 'Admin/equipe-manager.php';
+    }
+    public function showInsertionEquipier(): void
+    {
+        // Si l'admin est connecter on le redirige sur le tableau de bord
+        if (!isset ($_SESSION["admin"]["nom"])) {
+            header("Location: /admin/login/");
+            die();
+        }
+        require VIEWS . 'Admin/insertion-equipier.php';
     }
 }

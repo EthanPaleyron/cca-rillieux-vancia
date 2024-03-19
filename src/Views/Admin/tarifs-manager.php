@@ -4,7 +4,7 @@ ob_start();
 
 <div class="tarifsManager">
     <h2>Gestion des tarifs</h2>
-    <a href="/">Nouveau tarif</a>
+    <a href="/admin/tarifs/nouveau_tarif">Nouveau tarif</a>
 </div>
 
 <?php

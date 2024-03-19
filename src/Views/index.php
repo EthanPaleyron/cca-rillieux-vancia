@@ -55,7 +55,7 @@ ob_start();
             </article>
         </section>
         <div class="more_info">
-            <!-- <a href="/tarifs_horaires">Obtenir plus d'infos ?</a> -->
+            <a href="/tarifs_horaires/">Obtenir plus d'infos ?</a>
         </div>
     </div>
 </main>

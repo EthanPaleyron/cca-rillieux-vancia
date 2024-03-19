@@ -4,7 +4,7 @@ ob_start();
 
 <div class="actualitesManager">
     <h2>Gestion des actualités</h2>
-    <a href="/">Nouvelle actualités</a>
+    <a href="/admin/actualites/nouvelle_actualite">Nouvelle actualités</a>
 </div>
 
 <?php

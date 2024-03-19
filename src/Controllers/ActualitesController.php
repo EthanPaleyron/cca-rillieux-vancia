@@ -1,7 +1,7 @@
 <?php
 namespace Project\Controllers;
 
-class ActualiteController extends Controller
+class ActualitesController extends Controller
 {
     public function showHomepage()
     {
