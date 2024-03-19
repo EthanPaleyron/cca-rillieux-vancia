@@ -4,7 +4,7 @@ ob_start();
 
 <div class="insert">
     <h2>Creation d'un nouvelle équipier</h2>
-    <form action="newActualite" method="post" enctype="multipart/form-data">
+    <form action="newEquipier" method="post" enctype="multipart/form-data">
         <input type="text" name="nom" id="nom" placeholder="Nom de la personne" value="<?= old("nom") ?>">
         <label for="nom">
             <?= error("nom") ?>

@@ -4,7 +4,7 @@ ob_start();
 
 <div class="insert">
     <h2>Creation d'un nouveau tarif</h2>
-    <form action="newActualite" method="post" enctype="multipart/form-data">
+    <form action="newTarif" method="post" enctype="multipart/form-data">
         <input type="text" name="nom" id="nom" placeholder="nom de l'actualité" value="<?= old("nom") ?>">
         <label for="nom">
             <?= error("nom") ?>
