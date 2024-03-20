@@ -13,14 +13,16 @@ $router->get('/admin/login/', "AdminController@showLogin");
 $router->post('/adminLogin/', "AdminController@login");
 $router->get('/admin/dashboard/', "AdminController@dashboard");
 $router->get('/admin/actualites/', "AdminController@showActualitesManager");
-$router->get('/admin/actualites/nouvelle_actualite', "AdminController@showInsertionActualite");
+$router->get('/admin/actualites/nouvelle_actualite/', "AdminController@showInsertionActualite");
 $router->get('/admin/tarifs/', "AdminController@showTarifsManager");
-$router->get('/admin/tarifs/nouveau_tarif', "AdminController@showInsertionTarif");
+$router->get('/admin/tarifs/nouveau_tarif/', "AdminController@showInsertionTarif");
 $router->get('/admin/equipe/', "AdminController@showEquipeManager");
-$router->get('/admin/equipe/nouvelle_equipier', "AdminController@showInsertionEquipier");
+$router->get('/admin/equipe/nouvelle_equipier/', "AdminController@showInsertionEquipier");
+$router->get('/admin/logout/', "AdminController@logout");
 
 // ACTUALITES
 $router->get('/', "ActualitesController@showHomepage");
+$router->post('/newActualite/', "ActualitesController@newActualite");
 
 // TARIFS (HORAIRES)
 $router->get('/tarifs_horaires/', "TarifsController@showTarifHoraire");

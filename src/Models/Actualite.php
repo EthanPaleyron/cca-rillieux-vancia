@@ -7,6 +7,7 @@ class Actualite extends Manager
     private string $nom_actualite;
     private string $description_actualite;
     private string $date_actualite;
+    private string $image_actualite;
     public function setid_actualite($id_actualite): void
     {
         $this->id_actualite = $id_actualite;
@@ -38,5 +39,13 @@ class Actualite extends Manager
     public function getdate_actualite(): string
     {
         return $this->date_actualite;
+    }
+    public function setimage_actualite($image_actualite): void
+    {
+        $this->image_actualite = $image_actualite;
+    }
+    public function getimage_actualite(): string
+    {
+        return $this->image_actualite;
     }
 }

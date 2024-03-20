@@ -64,6 +64,7 @@ class AdminController extends Controller
             header("Location: /admin/login/");
             die();
         }
+        $actualites = $this->actualitesManager->getActualites();
         require VIEWS . 'Admin/actualites-manager.php';
     }
     public function showInsertionActualite(): void
