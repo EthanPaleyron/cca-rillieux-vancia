@@ -2,16 +2,15 @@
 ob_start();
 ?>
 
-<div class="insert">
+<div class="insertion">
     <h2>Creation d'un nouvelle actualité</h2>
     <form action="/newActualite/" method="post" enctype="multipart/form-data">
-        <input type="text" name="nom_actualite" id="nom_actualite" placeholder="Nom de l'actualité"
-            value="<?= old("nom_actualite") ?>">
+        <input type="text" name="nom_actualite" id="nom_actualite" placeholder="Nom de l'actualité">
         <label for="nom_actualite">
             <?= error("nom_actualite") ?>
         </label>
-        <textarea name="description_actualite" id="description_actualite" cols="30" rows="10"
-            placeholder="Description de l'actualité"><?= old("description_actualite") ?></textarea>
+        <textarea name="description_actualite" id="description_actualite"
+            placeholder="Description de l'actualité"></textarea>
         <label for="description_actualite">
             <?= error("description_actualite") ?>
         </label>

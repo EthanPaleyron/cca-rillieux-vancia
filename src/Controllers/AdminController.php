@@ -76,6 +76,16 @@ class AdminController extends Controller
         }
         require VIEWS . 'Admin/insertion-actualite.php';
     }
+    public function showUpdatedActualite(int $id_actualite): void
+    {
+        // Si l'admin n'est pas connecter on le redirige sur la page de connexion
+        if (!isset ($_SESSION["admin"]["id"])) {
+            header("Location: /login/");
+            die();
+        }
+        $actualite = $this->actualitesManager->getActualite($id_actualite);
+        require VIEWS . 'Admin/updated-actualite.php';
+    }
     public function showTarifsManager(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord

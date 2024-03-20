@@ -21,21 +21,23 @@ ob_start();
             <h2 class="title">Actualités</h2>
             <article>
                 <div class="content_article">
-                    <img src="../assets/images/equipe.jpg" alt="Actualité">
+                    <img src="../assets/images/actualites/<?= escape($actualite->getimage_actualite()) ?>"
+                        alt="<?= escape($actualite->getimage_actualite()) ?>">
                     <div class="title_time">
-                        <!-- pas plus de 20 caractere -->
-                        <h2>Voici la nouvelle équipe du comité</h2>
-                        <time datetime="2018-07-30">09/01/2024</time>
+                        <h2>
+                            <?= escape($actualite->getnom_actualite()) ?>
+                        </h2>
+                        <?php $date = new DateTime($actualite->getdate_actualite()) ?>
+                        <time datetime="<?= escape($date->format("d/m/Y")) ?>">
+                            <?= escape($date->format("d/m/Y")) ?>
+                        </time>
                     </div>
                 </div>
-                <!-- pas plus de 850 caractere -->
-                <p>Voici notre nouvelle équipe de comité ! De gauche à droite : Fabrice, Noëlle, Annabel,
-                    Jean-Jacques,
-                    Marie-Ange, André, Cyrille, Antonio et notre regretté barman Guy (absente de la photo notre
-                    lointaine Ilana)
+                <p>
+                    <?= escape($actualite->getdescription_actualite()) ?>
                 </p>
             </article>
-            <!-- <a href="#" id="anciennesActualites">Voir les anciennes actualités</a> -->
+            <a href="/actualites/">Voir les anciennes actualités</a>
         </section>
 
         <section class="activiter">

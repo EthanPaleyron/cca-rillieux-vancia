@@ -7,17 +7,20 @@ ob_start();
     <a href="/admin/actualites/nouvelle_actualite">Nouvelle actualités</a>
     <table>
         <tbody>
-            <?php foreach ($actualites as $actualite) { ?>
+            <?php foreach ($actualites as $actualite) {
+                $date = new DateTime($actualite->getdate_actualite()) ?>
                 <tr>
                     <td>
                         <?= escape($actualite->getnom_actualite()) ?>
                     </td>
                     <td>
-                        <?= escape($actualite->getdate_actualite()) ?>
+                        <?= escape($date->format("d/m/Y")) ?>
                     </td>
                     <td>
-                        <a href="/admin/actualites/show"></a>
-                        <a href="/admin/actualites/delete"></a>
+                        <a href="/admin/actualites/update/<?= escape($actualite->getid_actualite()) ?>/">Modifier</a>
+                    </td>
+                    <td>
+                        <a href="/admin/actualites/delete/<?= escape($actualite->getid_actualite()) ?>/">Supprimer</a>
                     </td>
                 </tr>
             <?php } ?>
