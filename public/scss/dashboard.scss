@@ -1,0 +1,24 @@
+.dashboard {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  h2 {
+    text-align: center;
+  }
+  ul {
+    display: flex;
+    gap: 2rem;
+    a {
+      background-color: $secondary;
+      padding: 1rem 1.5rem;
+      border: solid;
+    }
+  }
+  .logout {
+    color: $delete;
+    text-decoration: underline;
+  }
+}

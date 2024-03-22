@@ -5,22 +5,22 @@ class ActualitesController extends Controller
 {
     public function showHomepage(): void
     {
-        $page = "Accueil";
         $actualite = $this->actualitesManager->getLastActualite();
+        $page = "Accueil";
         require VIEWS . "index.php";
     }
     public function showActualites(): void
     {
         $actualites = $this->actualitesManager->getActualites();
+        $page = "Ancienne actualites";
         require VIEWS . "App/ancienne-actualites.php";
     }
     public function newActualite(): void
     {
         $this->validator->validate([
-            "nom_actualite" => ["required", "max:20"],
+            "nom_actualite" => ["required", "max:40"],
             "description_actualite" => ["required", "max:850"],
         ]);
-        $_SESSION['old'] = $_POST;
         if (!$this->validator->errors()) {
             // Ajoute la date d'aujourd'hui
             $datetime = date("Y-m-d h:i:s");
@@ -53,10 +53,9 @@ class ActualitesController extends Controller
     public function updateActualite(): void
     {
         $this->validator->validate([
-            "nom_actualite" => ["required", "max:20"],
+            "nom_actualite" => ["required", "max:40"],
             "description_actualite" => ["required", "max:850"],
         ]);
-        $_SESSION['old'] = $_POST;
         if (!$this->validator->errors()) {
             // Ajoute la date d'aujourd'hui
             $datetime = date("Y-m-d h:i:s");

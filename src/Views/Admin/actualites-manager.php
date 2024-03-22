@@ -2,30 +2,45 @@
 ob_start();
 ?>
 
-<div class="actualitesManager">
-    <h2>Gestion des actualités</h2>
-    <a href="/admin/actualites/nouvelle_actualite">Nouvelle actualités</a>
-    <table>
-        <tbody>
-            <?php foreach ($actualites as $actualite) {
-                $date = new DateTime($actualite->getdate_actualite()) ?>
+<div class="manager">
+    <a class="return" href="/admin/dashboard/"><i class="fa-solid fa-arrow-left"></i></a>
+    <div class="content">
+        <table>
+            <thead>
                 <tr>
-                    <td>
-                        <?= escape($actualite->getnom_actualite()) ?>
-                    </td>
-                    <td>
-                        <?= escape($date->format("d/m/Y")) ?>
-                    </td>
-                    <td>
-                        <a href="/admin/actualites/update/<?= escape($actualite->getid_actualite()) ?>/">Modifier</a>
-                    </td>
-                    <td>
-                        <a href="/admin/actualites/delete/<?= escape($actualite->getid_actualite()) ?>/">Supprimer</a>
-                    </td>
+                    <th colspan="4">
+                        <p>Gestion des actualités</p>
+                    </th>
                 </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($actualites as $actualite) {
+                    $date = new DateTime($actualite->getdate_actualite()) ?>
+                    <tr>
+                        <td>
+                            <p>
+                                <?= escape($actualite->getnom_actualite()) ?>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <?= escape($date->format("d/m/Y")) ?>
+                            </p>
+                        </td>
+                        <td>
+                            <a class="update"
+                                href="/admin/actualites/update/<?= escape($actualite->getid_actualite()) ?>/">Modifier</a>
+                        </td>
+                        <td>
+                            <a class="delete"
+                                href="/admin/actualites/delete/<?= escape($actualite->getid_actualite()) ?>/">Supprimer</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+            <a class="create" href="/admin/actualites/nouvelle_actualite"><i class="fa-solid fa-plus"></i></a>
+        </table>
+    </div>
 </div>
 
 <?php

@@ -16,7 +16,7 @@ main {
   width: 12px;
 }
 ::-webkit-scrollbar-track {
-  background: $primary;
+  background: darken-color($primary, 10%);
 }
 ::-webkit-scrollbar-thumb {
   background: darken-color($secondary, 8%);
@@ -140,6 +140,10 @@ aside {
 @import "nos-actualites";
 @import "histoire-du-club";
 @import "equipe";
+@import "login";
+@import "dashboard";
+@import "manager";
+@import "form";
 
 footer {
   user-select: none;

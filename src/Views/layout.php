@@ -88,27 +88,29 @@
         <?php echo $content; ?>
     </main>
 
-    <footer>
-        <img class="logo logo_white" src="/assets/logo.svg" alt="Logo">
-        <div>
-            <!-- <section class="networks">
-        <h2>Suivez nous!</h2>
-        <ul>
-          <li><a href=""><i class="fa-brands fa-facebook"></i>Notre Facebook</a></li>
-          <li><a href=""><i class="fa-brands fa-instagram"></i>Notre Instagram</a></li>
-        </ul>
-      </section> -->
-            <section class="contacts">
-                <h2>Contactez nous!</h2>
+    <?php if (isset ($page)) { ?>
+        <footer>
+            <img class="logo logo_white" src="/assets/logo.svg" alt="Logo">
+            <div>
+                <!-- <section class="networks">
+                <h2>Suivez nous!</h2>
                 <ul>
-                    <li><a href="tel:0611130352"><i class="fa-solid fa-phone"></i>06 11 13 03 52</a></li>
-                    <li><a href="mailto:cca.vancia.secretariat@gmail.com"><i
-                                class="fa-solid fa-envelope"></i>cca.vancia.secretariat@gmail.com</a>
-                    </li>
+                    <li><a href=""><i class="fa-brands fa-facebook"></i>Notre Facebook</a></li>
+                    <li><a href=""><i class="fa-brands fa-instagram"></i>Notre Instagram</a></li>
                 </ul>
-            </section>
-        </div>
-    </footer>
+            </section> -->
+                <section class="contacts">
+                    <h2>Contactez nous!</h2>
+                    <ul>
+                        <li><a href="tel:0611130352"><i class="fa-solid fa-phone"></i>06 11 13 03 52</a></li>
+                        <li><a href="mailto:cca.vancia.secretariat@gmail.com"><i
+                                    class="fa-solid fa-envelope"></i>cca.vancia.secretariat@gmail.com</a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </footer>
+    <?php } ?>
 
     <script type="module" src="/js/nav.js"></script>
     <script type="module" src="/js/aside.js"></script>

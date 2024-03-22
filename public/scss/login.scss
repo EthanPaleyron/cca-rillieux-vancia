@@ -1,0 +1,40 @@
+.login {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 0.5rem;
+    div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      #lookThePassword {
+        margin-left: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+    input {
+      width: 100%;
+      padding: 0.5rem;
+    }
+    label {
+      color: $error;
+      font-weight: bold;
+    }
+    .submit {
+      width: fit-content;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background-color: $secondary;
+      padding: 0.5rem 1rem;
+      border: solid;
+    }
+  }
+}

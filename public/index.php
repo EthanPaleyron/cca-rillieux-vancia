@@ -26,6 +26,7 @@ $router->get('/admin/tarifs/nouveau_tarif/', "AdminController@showInsertionTarif
 // EQUIPE MANAGER
 $router->get('/admin/equipe/', "AdminController@showEquipeManager");
 $router->get('/admin/equipe/nouvelle_equipier/', "AdminController@showInsertionEquipier");
+$router->get('/admin/equipier/update/:id_equipier/', "AdminController@showUpdatedEquipier");
 
 // ACTUALITES
 $router->get('/', "ActualitesController@showHomepage");
@@ -39,6 +40,9 @@ $router->get('/tarifs_horaires/', "TarifsController@showTarifHoraire");
 
 // EQUIPE
 $router->get('/equipe/', "EquipeController@showEquipe");
+$router->post('/newEquipier/', "EquipeController@newEquipier");
+$router->get('/admin/equipier/delete/:id_equipier/', "EquipeController@deleteEquipier");
+$router->post('/updateEquipier/', "EquipeController@updateEquipier");
 
 // HISTOIRE DU CLUB
 $router->get('/histoire_du_club/', "HistoireController@showHistoire");

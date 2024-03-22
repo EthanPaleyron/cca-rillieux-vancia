@@ -1,0 +1,47 @@
+.manager {
+  position: relative;
+  margin: 2rem 0 2rem;
+  .return {
+    margin-left: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .content {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    table {
+      p,
+      a {
+        padding: 1rem 1.5rem;
+      }
+      a {
+        font-weight: bold;
+      }
+      .update {
+        background-color: $update;
+      }
+      .delete {
+        background-color: $delete;
+      }
+    }
+    .create {
+      position: fixed;
+      bottom: 2rem;
+      right: 3rem;
+      margin: 1.5rem auto;
+      color: $w;
+      background-color: $create;
+      font-weight: bold;
+      padding: 1.3rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

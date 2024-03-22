@@ -111,6 +111,7 @@ class AdminController extends Controller
             header("Location: /admin/login/");
             die();
         }
+        $equipe = $this->equipeManager->getEquipe();
         require VIEWS . 'Admin/equipe-manager.php';
     }
     public function showInsertionEquipier(): void
@@ -121,5 +122,15 @@ class AdminController extends Controller
             die();
         }
         require VIEWS . 'Admin/insertion-equipier.php';
+    }
+    public function showUpdatedEquipier(int $id_equipier): void
+    {
+        // Si l'admin n'est pas connecter on le redirige sur la page de connexion
+        if (!isset ($_SESSION["admin"]["id"])) {
+            header("Location: /login/");
+            die();
+        }
+        $equipier = $this->equipeManager->getEquipier($id_equipier);
+        require VIEWS . 'Admin/updated-equipier.php';
     }
 }
