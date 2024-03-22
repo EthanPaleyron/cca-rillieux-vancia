@@ -17,7 +17,12 @@
       align-items: center;
       #lookThePassword {
         margin-left: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
         font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
     input {

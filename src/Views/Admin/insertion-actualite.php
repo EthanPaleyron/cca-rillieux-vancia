@@ -18,7 +18,8 @@ ob_start();
             <label for="description_actualite">
                 <?= error("description_actualite") ?>
             </label>
-            <input type="file" name="image_actualite" id="image_actualite">
+            <label for="file"></label>
+            <input type="file" name="image_actualite" id="file">
             <button>Ajouter l'actualité</button>
         </form>
     </div>

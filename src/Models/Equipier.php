@@ -7,6 +7,7 @@ class Equipier extends Manager
     private string $nom_equipier;
     private string $description_equipier;
     private string $photo_equipier;
+    private int $ordre_equipier;
     public function setid_equipier($id_equipier): void
     {
         $this->id_equipier = $id_equipier;
@@ -38,5 +39,13 @@ class Equipier extends Manager
     public function getphoto_equipier(): string
     {
         return $this->photo_equipier;
+    }
+    public function setordre_equipier($ordre_equipier): void
+    {
+        $this->ordre_equipier = $ordre_equipier;
+    }
+    public function getordre_equipier(): int
+    {
+        return $this->ordre_equipier;
     }
 }

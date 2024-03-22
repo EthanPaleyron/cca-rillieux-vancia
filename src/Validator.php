@@ -44,19 +44,19 @@ class Validator
         "confirm" => "Ce champs n'est pas conforme au confirm!"
     ];
     private $rules = [
-        "required" => "#^.+$#",
-        "min" => "#^.{ù,}$#",
-        "max" => "#^.{0,ù}$#",
-        "length" => "#^.{ù}$#",
+        "required" => "#^.+$#m",
+        "min" => "#^.{ù,}$#m",
+        "max" => "#^.{0,ù}$#m",
+        "length" => "#^.{ù}$#m",
         "regex" => "ù",
         "url" => FILTER_VALIDATE_URL,
         "email" => FILTER_VALIDATE_EMAIL,
         "date" => "#^(\d{4})(\/|-)(0[0-9]|1[0-2])(\/|-)([0-2][0-9]|3[0-1])$#",
-        "alpha" => "#^[A-z]+$#",
-        "alphaNum" => "#^[A-z0-9]+$#",
-        "alphaNumDash" => "#^[A-z0-9-\|]+$#",
-        "alphaSpace" => "#^[A-z À-ú]+$#",
-        "alphaSpaceLinefeed" => "#^[A-z À-ú\n]+$#",
+        "alpha" => "#^[A-z]+$#m",
+        "alphaNum" => "#^[A-z0-9]+$#m",
+        "alphaNumDash" => "#^[A-z0-9-\|]+$#m",
+        "alphaSpace" => "#^[A-z À-ú]+$#m",
+        "alphaSpaceLinefeed" => "#^[A-z À-ú\n]+$#m",
         "numeric" => "#^[0-9]+$#",
         "confirm" => ""
     ];
