@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 22 mars 2024 à 00:51
+-- Généré le : lun. 25 mars 2024 à 23:03
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -35,14 +35,15 @@ CREATE TABLE IF NOT EXISTS `actualites` (
   `date_actualite` datetime DEFAULT NULL,
   `image_actualite` varchar(200) NOT NULL,
   PRIMARY KEY (`id_actualite`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `actualites`
 --
 
 INSERT INTO `actualites` (`id_actualite`, `nom_actualite`, `description_actualite`, `date_actualite`, `image_actualite`) VALUES
-(27, 'Voici la nouvelle équipe du comité', 'Voici notre nouvelle équipe de comité ! De gauche à droite : Fabrice, Noëlle, Annabel, Jean-Jacques, Marie-Ange, André, Cyrille, Antonio et notre regretté barman Guy (absente de la photo notre lointaine Ilana)', '2024-01-09 00:47:58', '2687171090equipe.jpg');
+(29, 'MMMMMMMMMMMMMMMMMMMM', 'MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM', '2024-03-16 00:00:00', '2948223614flat,750x1000,075,f.jpg'),
+(27, 'Voici la nouvelle équipe du comité', 'Voici notre nouvelle équipe de comité !\r\nDe gauche à droite : Fabrice, Noëlle, Annabel, Jean-Jacques, Marie-Ange, André, Cyrille, Antonio et notre regretté barman Guy (absente de la photo notre lointaine Ilana)', '2024-01-09 11:58:36', '2687171090equipe.jpg');
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `equipe` (
   `photo_equipier` varchar(255) DEFAULT NULL,
   `ordre_equipier` int NOT NULL,
   PRIMARY KEY (`id_equipier`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 

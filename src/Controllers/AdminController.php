@@ -121,6 +121,7 @@ class AdminController extends Controller
             header("Location: /admin/login/");
             die();
         }
+        $equipe = $this->equipeManager->getEquipe();
         require VIEWS . 'Admin/insertion-equipier.php';
     }
     public function showUpdatedEquipier(int $id_equipier): void

@@ -14,8 +14,19 @@ class EquipeController extends Controller
         $this->validator->validate([
             "nom_equipier" => ["required", "max:40"],
             "description_equipier" => ["required", "max:250"],
+            "ordre" => ["required", "numeric"],
         ]);
         if (!$this->validator->errors()) {
+            $result = $this->equipeManager->getEquipe();
+            echo $_POST["ordre"] . "<br>";
+            if (!empty ($result)) { // Si il existe des equipier
+                $orderMax = $this->equipeManager->orderMax();
+                $max = $orderMax[0];
+                $lastId = $orderMax[1];
+                for ($i = $_POST["ordre"]; $i <= $max; $i++) { // De ordre donnee a la taille de l'equipier on boucle dessus pour modifier touts ce qui sont apres la position choisi
+                    $this->equipeManager->orderEquipe($i, $lastId);
+                }
+            }
             // Rajoute un chiffre randome a l'image
             $file = rand(0, 10000000000) . $_FILES["photo_equipier"]["name"];
             // Deplace l'image dans le fichier d'image avec le nouveau nom

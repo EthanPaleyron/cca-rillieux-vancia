@@ -283,7 +283,7 @@ header div p {
 }
 .accueil .actualite article .content_article img {
   width: 100%;
-  height: 55vw;
+  height: 85vw;
   border-radius: 0.2rem;
   border: solid 1px;
 }
@@ -309,7 +309,7 @@ header div p {
 .accueil .actualite article p {
   white-space: pre-line;
   width: 100%;
-  padding: 1rem;
+  padding: 0 1rem 1rem;
   overflow: hidden auto;
   word-wrap: break-word;
 }
@@ -343,7 +343,6 @@ header div p {
 }
 .accueil .activiter article .content_carrousel img {
   width: 100vh;
-  height: 45vw;
   border: solid 1px;
   border-radius: 0.3rem;
 }
@@ -417,9 +416,6 @@ header div p {
   .accueil .actualite {
     width: 85%;
   }
-  .accueil .actualite article .content_article img {
-    height: 25rem;
-  }
   .accueil .actualite article .content_article .title_time {
     font-size: 1rem;
   }
@@ -451,7 +447,7 @@ header div p {
     width: 75%;
   }
   .accueil .actualite article .content_article img {
-    height: 33rem;
+    height: 80vh;
   }
   .accueil .actualite article .content_article .title_time {
     padding: 1.2rem;
@@ -726,7 +722,7 @@ header div p {
 }
 .nos_actualites section .actualites article .content_article img {
   width: 100%;
-  height: 12rem;
+  height: 17rem;
   background-color: #d2b48c;
   border-radius: 0.2rem;
   border: solid 1px;
@@ -750,7 +746,7 @@ header div p {
 .nos_actualites section .actualites article p {
   padding: 1rem;
   width: 100%;
-  height: 25vh;
+  height: 17vh;
   overflow: hidden auto;
   word-wrap: break-word;
 }
@@ -914,6 +910,8 @@ header div p {
 }
 .dashboard ul {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 .dashboard ul a {
@@ -994,15 +992,24 @@ header div p {
   align-items: end;
   gap: 0.5rem;
 }
+.form .content form div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
 .form .content form input,
 .form .content form textarea {
   width: 100%;
   padding: 0.5rem;
 }
+.form .content form option {
+  border-radius: 0.2rem;
+}
 .form .content form textarea {
   height: 7rem;
 }
-.form .content form label {
+.form .content form .error {
   color: #ff4136;
   font-weight: bold;
 }

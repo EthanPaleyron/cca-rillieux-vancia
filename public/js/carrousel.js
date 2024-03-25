@@ -46,16 +46,19 @@ document.querySelector("#arrowLeft").addEventListener("click", () => {
   if (index < 0) {
     index = infosCarrousel.length - 1;
   }
-  carrousel.src = "../assets/images/activites/" + infosCarrousel[index].img;
-  titleCarrousel.textContent = infosCarrousel[index].titre;
-  contenues.innerHTML = infosCarrousel[index].contenues;
+  contentactivite();
 });
 document.querySelector("#arrowRight").addEventListener("click", () => {
   index++;
   if (index > infosCarrousel.length - 1) {
     index = 0;
   }
+  contentactivite();
+});
+
+function contentactivite() {
   carrousel.src = "../assets/images/activites/" + infosCarrousel[index].img;
   titleCarrousel.textContent = infosCarrousel[index].titre;
   contenues.innerHTML = infosCarrousel[index].contenues;
-});
+  contenues.scrollTo(0, 0);
+}

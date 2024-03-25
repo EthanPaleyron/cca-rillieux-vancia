@@ -9,13 +9,13 @@ ob_start();
         <form action="/updateEquipier/" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id_equipier" value="<?= $equipier->getid_equipier() ?>">
             <input type="text" name="nom_equipier" id="nom_equipier" placeholder="Nom de l'equipier"
-                value="<?= $equipier->getnom_equipier() ?>">
-            <label for="nom_equipier">
+                value="<?= $equipier->getnom_equipier() ?>" autocomplete="off">
+            <label for="nom_equipier" class="error">
                 <?= error("nom_equipier") ?>
             </label>
             <textarea name="description_equipier" id="description_equipier" cols="30" rows="10"
                 placeholder="Description de l'equipier"><?= $equipier->getdescription_equipier() ?></textarea>
-            <label for="description_equipier">
+            <label for="description_equipier" class="error">
                 <?= error("description_equipier") ?>
             </label>
             <input type="file" name="photo_equipier" id="photo_equipier">

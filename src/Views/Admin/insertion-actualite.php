@@ -9,13 +9,14 @@ ob_start();
         <small>(L'ancienne actualité sera remplacée par la nouvelle et elle sera toujours visible dans les anciennes
             actualités)</small>
         <form action="/newActualite/" method="post" enctype="multipart/form-data">
-            <input type="text" name="nom_actualite" id="nom_actualite" placeholder="Nom de l'actualité">
-            <label for="nom_actualite">
+            <input type="text" name="nom_actualite" id="nom_actualite" placeholder="Nom de l'actualité"
+                autocomplete="off">
+            <label for="nom_actualite" class="error">
                 <?= error("nom_actualite") ?>
             </label>
             <textarea name="description_actualite" id="description_actualite"
                 placeholder="Description de l'actualité"></textarea>
-            <label for="description_actualite">
+            <label for="description_actualite" class="error">
                 <?= error("description_actualite") ?>
             </label>
             <label for="file"></label>

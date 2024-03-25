@@ -57,8 +57,6 @@ class ActualitesController extends Controller
             "description_actualite" => ["required", "max:850"],
         ]);
         if (!$this->validator->errors()) {
-            // Ajoute la date d'aujourd'hui
-            $datetime = date("Y-m-d h:i:s");
             // On reccupere l'image enregistrer en bdd
             $actualite = $this->actualitesManager->getactualite($_POST["id_actualite"]);
             $currentFile = $actualite->getimage_actualite();
@@ -75,7 +73,7 @@ class ActualitesController extends Controller
                 $file = $currentFile;
             }
             // Créer une nouvelle actualité
-            $this->actualitesManager->updateActualite($datetime, $file);
+            $this->actualitesManager->updateActualite($file);
             header("Location: /admin/actualites/");
         } else {
             header("Location: /admin/actualites/update/" . $_POST["id_actualite"] . "/");

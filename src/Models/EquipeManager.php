@@ -8,7 +8,7 @@ class EquipeManager extends Manager
     // Reccupere tout l'equipe
     public function getEquipe(): array
     {
-        $stmt = $this->bdd->prepare("SELECT * FROM equipe");
+        $stmt = $this->bdd->prepare("SELECT * FROM equipe ORDER BY ordre_equipier");
         $stmt->execute(
             array(
             )
@@ -30,12 +30,36 @@ class EquipeManager extends Manager
     // Créer un nouvelle equiper
     public function insertEquipier(string $file): void
     {
-        $stmt = $this->bdd->prepare("INSERT INTO equipe (nom_equipier, description_equipier, photo_equipier) VALUES (?, ?, ?)");
+        $stmt = $this->bdd->prepare("INSERT INTO equipe (nom_equipier, description_equipier, photo_equipier, ordre_equipier) VALUES (?, ?, ?, ?)");
         $stmt->execute(
             array(
                 $_POST["nom_equipier"],
                 $_POST["description_equipier"],
-                $file
+                $file,
+                $_POST["ordre"]
+            )
+        );
+    }
+    public function orderMax(): array
+    {
+        $stmt = $this->bdd->prepare("SELECT MAX(ordre_equipier), id_equipier FROM equipe");
+        $stmt->execute(
+            array(
+            )
+        );
+        $result = $stmt->fetch();
+        $maxValue = $result[0]; // Recuperer la valeur maximale
+        $idEquipier = $result[1]; // Recuperer l'id de l'équipier
+        return [$maxValue, $idEquipier];
+    }
+    public function orderEquipe(int $i, int $lastId): void
+    {
+        $stmt = $this->bdd->prepare("UPDATE equipe SET ordre_equipier = ? WHERE ordre_equipier = ? AND id_equipier <> ?");
+        $stmt->execute(
+            array(
+                $i + 1,
+                $i,
+                $lastId,
             )
         );
     }
