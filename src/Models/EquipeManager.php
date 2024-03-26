@@ -16,7 +16,7 @@ class EquipeManager extends Manager
         return $stmt->fetchAll(\PDO::FETCH_CLASS, "Project\Models\Equipier");
     }
     // Reccupere l'equipier choisi
-    public function getEquipier(int $id_equipier): Equipier
+    public function getEquipier(int $id_equipier): Equipier|bool
     {
         $stmt = $this->bdd->prepare("SELECT * FROM equipe WHERE id_equipier = ?");
         $stmt->execute(
@@ -59,13 +59,13 @@ class EquipeManager extends Manager
         );
         return $stmt->fetchColumn();
     }
-    public function orderEquipe(int $i, int $nextId): void
+    public function orderEquipe($position, int $id): void
     {
         $stmt = $this->bdd->prepare("UPDATE equipe SET ordre_equipier = ? WHERE id_equipier = ?");
         $stmt->execute(
             array(
-                $i + 1,
-                $nextId,
+                $position,
+                $id,
             )
         );
     }

@@ -17,14 +17,14 @@ class EquipeController extends Controller
             "ordre" => ["required", "numeric"],
         ]);
         if (!$this->validator->errors()) {
+            // Va reccuperer touts l'equipe
             $result = $this->equipeManager->getEquipe();
-            echo $_POST["ordre"] . "<br>";
             if (!empty ($result)) { // Si il existe des equipier
-                $orderMax = $this->equipeManager->orderMax();
-                $nextId = $this->equipeManager->findOrderID($_POST["ordre"]);
+                $orderMax = $this->equipeManager->orderMax(); // Je reccupere l'ordre le plus grand
+                $nextId = $this->equipeManager->findOrderID($_POST["ordre"]); // Je reccupere l'id qui est egale la position donnee
                 for ($i = $_POST["ordre"]; $i <= $orderMax; $i++) { // De ordre donnee a la taille de l'equipier on boucle dessus pour modifier touts ce qui sont apres la position choisi
-                    $nextId = $this->equipeManager->findOrderID($i);
-                    $this->equipeManager->orderEquipe($i, $nextId);
+                    $nextId = $this->equipeManager->findOrderID($i); // Je reccupere l'id qui est egale la position donnee
+                    $this->equipeManager->orderEquipe($i + 1, $nextId); // Je rajoute un + 1 sur l'ordre de l'equipier
                 }
             }
             // Rajoute un chiffre randome a l'image
@@ -60,9 +60,22 @@ class EquipeController extends Controller
             "description_equipier" => ["required", "max:250"],
         ]);
         if (!$this->validator->errors()) {
+            // Va reccuperer touts l'equipe
+            $result = $this->equipeManager->getEquipe();
+            // on reccupere l'equipier q'un modifie
+            $equipierModifier = $this->equipeManager->getEquipier($_POST["id_equipier"]);
+            if (!empty ($result)) { // Si il existe des equipier
+                // Je reccupere l'id qui est egale la position selectionner
+                $idEquipierSelected = $this->equipeManager->findOrderID($_POST["ordre"]);
+                // Je reccupere l'equipier qui est egale a id selectionner
+                $equipierSelected = $this->equipeManager->getEquipier($idEquipierSelected);
+                // Je change la position de l'equipier selectionner
+                $this->equipeManager->orderEquipe($equipierModifier->getordre_equipier(), $idEquipierSelected);
+                // Je change la position de l'equipier actuel
+                $this->equipeManager->orderEquipe($equipierSelected, $equipierModifier->getid_equipier());
+            }
             // On reccupere l'image enregistrer en bdd
-            $equipier = $this->equipeManager->getEquipier($_POST["id_equipier"]);
-            $currentFile = $equipier->getphoto_equipier();
+            $currentFile = $equipierModifier->getphoto_equipier();
             if ($_FILES["photo_equipier"]["name"] != "") { // Si l'image a été changer on l'ajoute et on supprime l'ancienne
                 // Ajoute un chiffre aleatoire a l'image pour eviter les doublons
                 $file = rand(0, 10000000000) . $_FILES["photo_equipier"]["name"];

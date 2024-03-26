@@ -23,16 +23,16 @@ ob_start();
                 <select name="ordre" id="ordre">
                     <option value="0">En premier</option>
                     <?php foreach ($equipe as $key => $equipier) {
-                        if ($equipier->getordre_equipier() + 1 === $equipierSelectionner->getordre_equipier()) { ?>
-                            <option selected value="<?= $equipier->getordre_equipier() + 1 ?>">
-                                Après
-                                <?= $equipier->getnom_equipier() ?>
-                            </option>
-                        <?php } else { ?>
+                        if ($equipier->getordre_equipier() !== $equipierSelectionner->getordre_equipier()) { // Si il est egale a l'equipier qui se trouve avant ce lui qu'on veut modifier on le select    ?>
                             <option value="<?= $equipier->getordre_equipier() + 1 ?>">
                                 Après
                                 <?= $equipier->getnom_equipier() ?>
                             </option>
+                        <?php } else if ($equipier->getordre_equipier() + 1 === $equipierSelectionner->getordre_equipier()) { // Si il n'est pas egale a l'equipier qu'on modifie on l'affiche  ?>
+                                <option selected value="<?= $equipier->getordre_equipier() + 1 ?>">
+                                    Après
+                                <?= $equipier->getnom_equipier() ?>
+                                </option>
                         <?php }
                     } ?>
                 </select>

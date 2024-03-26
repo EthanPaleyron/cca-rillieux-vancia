@@ -22,7 +22,7 @@ ob_start();
                 <select name="ordre" id="ordre">
                     <option value="0">En premier</option>
                     <?php foreach ($equipe as $key => $equipier) {
-                        if ($equipier->getordre_equipier() + 1 === sizeof($equipe)) { ?>
+                        if ($equipier->getordre_equipier() + 1 === sizeof($equipe)) { // Si c'est le dernier de la liste on le select  ?>
                             <option selected value="<?= $equipier->getordre_equipier() + 1 ?>">
                                 Après
                                 <?= $equipier->getnom_equipier() ?>
