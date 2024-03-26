@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 25 mars 2024 à 23:03
+-- Généré le : mar. 26 mars 2024 à 06:32
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -80,7 +80,18 @@ CREATE TABLE IF NOT EXISTS `equipe` (
   `photo_equipier` varchar(255) DEFAULT NULL,
   `ordre_equipier` int NOT NULL,
   PRIMARY KEY (`id_equipier`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `equipe`
+--
+
+INSERT INTO `equipe` (`id_equipier`, `nom_equipier`, `description_equipier`, `photo_equipier`, `ordre_equipier`) VALUES
+(36, 'ghjkhghjhghjg', 'ftfgtg', '62909848315.webp', 0),
+(37, 'bnjhghgfvbhgb', 'fghgfvbvcvcv', '4396619866animaux-selfie-01.jpg', 2),
+(33, 'ertyuiuytr', 'tyuiuytrerty', '7731289687v7yj8.jpg', 4),
+(34, 'fghjhgfd', 'ghjhgfghjkjhgf', '1245880037', 3),
+(35, 'fghgfghjhghjhg', 'fgfghgfgfdfg', '185825217368747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79344f41513236545458523461773d3d2d3236363531373734372e313435376162356638313437383363322.jpg', 1);
 
 -- --------------------------------------------------------
 

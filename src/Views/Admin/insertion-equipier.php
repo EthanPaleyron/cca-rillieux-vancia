@@ -21,12 +21,19 @@ ob_start();
                 <label for="ordre">Position de l'equipier : </label>
                 <select name="ordre" id="ordre">
                     <option value="0">En premier</option>
-                    <?php foreach ($equipe as $key => $equipier) { ?>
-                        <option value="<?= $equipier->getordre_equipier() + 1 ?>">
-                            Après
-                            <?= $equipier->getnom_equipier() ?>
-                        </option>
-                    <?php } ?>
+                    <?php foreach ($equipe as $key => $equipier) {
+                        if ($equipier->getordre_equipier() + 1 === sizeof($equipe)) { ?>
+                            <option selected value="<?= $equipier->getordre_equipier() + 1 ?>">
+                                Après
+                                <?= $equipier->getnom_equipier() ?>
+                            </option>
+                        <?php } else { ?>
+                            <option value="<?= $equipier->getordre_equipier() + 1 ?>">
+                                Après
+                                <?= $equipier->getnom_equipier() ?>
+                            </option>
+                        <?php }
+                    } ?>
                 </select>
             </div>
             <input type="file" name="photo_equipier" id="photo">

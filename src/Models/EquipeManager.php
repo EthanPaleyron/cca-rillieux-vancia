@@ -40,26 +40,32 @@ class EquipeManager extends Manager
             )
         );
     }
-    public function orderMax(): array
+    public function orderMax(): int
     {
         $stmt = $this->bdd->prepare("SELECT MAX(ordre_equipier), id_equipier FROM equipe");
         $stmt->execute(
             array(
             )
         );
-        $result = $stmt->fetch();
-        $maxValue = $result[0]; // Recuperer la valeur maximale
-        $idEquipier = $result[1]; // Recuperer l'id de l'équipier
-        return [$maxValue, $idEquipier];
+        return $stmt->fetchColumn();
     }
-    public function orderEquipe(int $i, int $lastId): void
+    public function findOrderID(int $order): int
     {
-        $stmt = $this->bdd->prepare("UPDATE equipe SET ordre_equipier = ? WHERE ordre_equipier = ? AND id_equipier <> ?");
+        $stmt = $this->bdd->prepare("SELECT id_equipier FROM equipe WHERE ordre_equipier = ?");
+        $stmt->execute(
+            array(
+                $order,
+            )
+        );
+        return $stmt->fetchColumn();
+    }
+    public function orderEquipe(int $i, int $nextId): void
+    {
+        $stmt = $this->bdd->prepare("UPDATE equipe SET ordre_equipier = ? WHERE id_equipier = ?");
         $stmt->execute(
             array(
                 $i + 1,
-                $i,
-                $lastId,
+                $nextId,
             )
         );
     }

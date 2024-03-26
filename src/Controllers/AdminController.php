@@ -131,7 +131,8 @@ class AdminController extends Controller
             header("Location: /login/");
             die();
         }
-        $equipier = $this->equipeManager->getEquipier($id_equipier);
+        $equipierSelectionner = $this->equipeManager->getEquipier($id_equipier);
+        $equipe = $this->equipeManager->getEquipe();
         require VIEWS . 'Admin/updated-equipier.php';
     }
 }

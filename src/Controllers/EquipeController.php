@@ -21,10 +21,10 @@ class EquipeController extends Controller
             echo $_POST["ordre"] . "<br>";
             if (!empty ($result)) { // Si il existe des equipier
                 $orderMax = $this->equipeManager->orderMax();
-                $max = $orderMax[0];
-                $lastId = $orderMax[1];
-                for ($i = $_POST["ordre"]; $i <= $max; $i++) { // De ordre donnee a la taille de l'equipier on boucle dessus pour modifier touts ce qui sont apres la position choisi
-                    $this->equipeManager->orderEquipe($i, $lastId);
+                $nextId = $this->equipeManager->findOrderID($_POST["ordre"]);
+                for ($i = $_POST["ordre"]; $i <= $orderMax; $i++) { // De ordre donnee a la taille de l'equipier on boucle dessus pour modifier touts ce qui sont apres la position choisi
+                    $nextId = $this->equipeManager->findOrderID($i);
+                    $this->equipeManager->orderEquipe($i, $nextId);
                 }
             }
             // Rajoute un chiffre randome a l'image
