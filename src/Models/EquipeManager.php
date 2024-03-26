@@ -16,7 +16,7 @@ class EquipeManager extends Manager
         return $stmt->fetchAll(\PDO::FETCH_CLASS, "Project\Models\Equipier");
     }
     // Reccupere l'equipier choisi
-    public function getEquipier(int $id_equipier): Equipier|bool
+    public function getEquipier(int $id_equipier)
     {
         $stmt = $this->bdd->prepare("SELECT * FROM equipe WHERE id_equipier = ?");
         $stmt->execute(
@@ -36,13 +36,13 @@ class EquipeManager extends Manager
                 $_POST["nom_equipier"],
                 $_POST["description_equipier"],
                 $file,
-                $_POST["ordre"]
+                $_POST["ordre_equipier"]
             )
         );
     }
     public function orderMax(): int
     {
-        $stmt = $this->bdd->prepare("SELECT MAX(ordre_equipier), id_equipier FROM equipe");
+        $stmt = $this->bdd->prepare("SELECT MAX(ordre_equipier) FROM equipe");
         $stmt->execute(
             array(
             )

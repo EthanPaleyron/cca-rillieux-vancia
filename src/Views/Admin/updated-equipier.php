@@ -19,20 +19,19 @@ ob_start();
                 <?= error("description_equipier") ?>
             </label>
             <div>
-                <label for="ordre">Position de l'equipier : </label>
-                <select name="ordre" id="ordre">
+                <label for="ordre_equipier">Position de l'equipier : </label>
+                <select name="ordre_equipier" id="ordre_equipier">
                     <option value="0">En premier</option>
                     <?php foreach ($equipe as $key => $equipier) {
-                        if ($equipier->getordre_equipier() !== $equipierSelectionner->getordre_equipier()) { // Si il est egale a l'equipier qui se trouve avant ce lui qu'on veut modifier on le select    ?>
-                            <option value="<?= $equipier->getordre_equipier() + 1 ?>">
+                        if ($equipier->getordre_equipier() !== $equipierSelectionner->getordre_equipier()) { // Si il n'est pas egale a l'equipier qu'on modifie on l'affiche
+                            if ($equipier->getordre_equipier() + 1 == $equipierSelectionner->getordre_equipier()) { ?>
+                                <option selected value="<?= $equipier->getordre_equipier() + 1 ?>">
+                                <?php } else { ?>
+                                <option value="<?= $equipier->getordre_equipier() + 1 ?>">
+                                <?php } ?>
                                 Après
                                 <?= $equipier->getnom_equipier() ?>
                             </option>
-                        <?php } else if ($equipier->getordre_equipier() + 1 === $equipierSelectionner->getordre_equipier()) { // Si il n'est pas egale a l'equipier qu'on modifie on l'affiche  ?>
-                                <option selected value="<?= $equipier->getordre_equipier() + 1 ?>">
-                                    Après
-                                <?= $equipier->getnom_equipier() ?>
-                                </option>
                         <?php }
                     } ?>
                 </select>
