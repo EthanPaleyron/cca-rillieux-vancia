@@ -94,7 +94,7 @@ class EquipeController extends Controller
                     }
                 } else { // Et si c'est l'inverse
                     echo $anciennePosition . "actuelle > nouveau " . $nouvellePosition . "<br>";
-                    for ($i = $nouvellePosition; $i < $anciennePosition; $i++) { // De la nouvelle position a l'ancienne possition
+                    for ($i = $nouvellePosition - 1; $i < $anciennePosition; $i++) { // De la nouvelle position a l'ancienne possition
                         $nextId = $this->equipeManager->findOrderID($i); // Je reccupere l'id qui est egale la position donnee
                         echo $i;
                         echo " sur l'id ";
@@ -105,7 +105,7 @@ class EquipeController extends Controller
                     }
                 }
                 echo "<br> nouvelle position actuel de l'id " . $idnouvellePosition . " est egale a = " . $nouvellePosition;
-                $this->equipeManager->orderEquipe($nouvellePosition, $idnouvellePosition);
+                $this->equipeManager->orderEquipe($_POST["ordre_equipier"], $idnouvellePosition);
             }
             // On reccupere l'image enregistrer en bdd
             $currentFile = $equipierModifier->getphoto_equipier();

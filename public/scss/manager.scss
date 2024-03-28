@@ -10,6 +10,14 @@
     display: flex;
     justify-content: center;
     table {
+      tr td {
+        &:nth-last-child(2) {
+          background-color: $update;
+        }
+        &:last-child {
+          background-color: $delete;
+        }
+      }
       p,
       a,
       button {
@@ -18,10 +26,6 @@
       a,
       button {
         font-size: 1rem;
-        font-weight: bold;
-      }
-      button {
-        font-size: 1.05rem;
         font-weight: bold;
       }
       .update {

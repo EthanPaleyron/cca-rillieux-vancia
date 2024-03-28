@@ -20,18 +20,22 @@ ob_start();
                         <td>2<span class="suffixes">ème</span> Chien</td>
                         <td>Licence par chien</td>
                     </tr>
-                    <tr>
-                        <td>Sociétaire 1<span class="suffixes">ère</span> année</td>
-                        <td>170€</td>
-                        <td>85€</td>
-                        <td>22€</td>
-                    </tr>
-                    <tr>
-                        <td>Renouvellement 2<span class="suffixes">ème</span> année</td>
-                        <td>130€</td>
-                        <td>65€</td>
-                        <td>22€</td>
-                    </tr>
+                    <?php foreach ($tarifs as $tarif) { ?>
+                        <tr>
+                            <td>
+                                <?= $tarif->getnom_tarif() ?>
+                            </td>
+                            <td>
+                                <?= $tarif->gettarif_premier_chien() ?> €
+                            </td>
+                            <td>
+                                <?= $tarif->gettarif_deuxieme_chien() ?> €
+                            </td>
+                            <td>
+                                <?= $tarif->gettarif_par_chien() ?> €
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
             <div class="content_detail">

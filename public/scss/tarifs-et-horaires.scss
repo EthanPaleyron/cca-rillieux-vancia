@@ -36,9 +36,13 @@
           background-color: $secondary;
           padding: 0.5rem 0;
         }
-        tbody tr td {
-          background-color: $primary;
-          padding: 0.3rem;
+        tbody tr {
+          td {
+            // white-space: pre-line;
+            min-width: 3rem;
+            background-color: $primary;
+            padding: 0.3rem;
+          }
         }
       }
     }

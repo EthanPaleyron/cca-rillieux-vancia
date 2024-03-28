@@ -6,7 +6,7 @@ class AdminController extends Controller
     public function showLogin(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord
-        if (isset ($_SESSION["admin"]["nom"])) {
+        if (isset($_SESSION["admin"]["nom"])) {
             header("Location: /admin/dashboard/");
             die();
         }
@@ -39,7 +39,7 @@ class AdminController extends Controller
     public function logout(): void
     {
         // Si l'utilisateur n'est pas connecter on le redirige au login
-        if (!isset ($_SESSION["admin"]["nom"])) {
+        if (!isset($_SESSION["admin"]["nom"])) {
             header("Location: /admin/login/");
             die();
         }
@@ -51,7 +51,7 @@ class AdminController extends Controller
     public function dashboard(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord
-        if (!isset ($_SESSION["admin"]["nom"])) {
+        if (!isset($_SESSION["admin"]["nom"])) {
             header("Location: /admin/login/");
             die();
         }
@@ -60,7 +60,7 @@ class AdminController extends Controller
     public function showActualitesManager(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord
-        if (!isset ($_SESSION["admin"]["nom"])) {
+        if (!isset($_SESSION["admin"]["nom"])) {
             header("Location: /admin/login/");
             die();
         }
@@ -70,7 +70,7 @@ class AdminController extends Controller
     public function showInsertionActualite(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord
-        if (!isset ($_SESSION["admin"]["nom"])) {
+        if (!isset($_SESSION["admin"]["nom"])) {
             header("Location: /admin/login/");
             die();
         }
@@ -79,7 +79,7 @@ class AdminController extends Controller
     public function showUpdatedActualite(int $id_actualite): void
     {
         // Si l'admin n'est pas connecter on le redirige sur la page de connexion
-        if (!isset ($_SESSION["admin"]["id"])) {
+        if (!isset($_SESSION["admin"]["id"])) {
             header("Location: /login/");
             die();
         }
@@ -89,25 +89,36 @@ class AdminController extends Controller
     public function showTarifsManager(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord
-        if (!isset ($_SESSION["admin"]["nom"])) {
+        if (!isset($_SESSION["admin"]["nom"])) {
             header("Location: /admin/login/");
             die();
         }
+        $tarifs = $this->tarifsManager->getTarifs();
         require VIEWS . 'Admin/tarifs-manager.php';
     }
     public function showInsertionTarif(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord
-        if (!isset ($_SESSION["admin"]["nom"])) {
+        if (!isset($_SESSION["admin"]["nom"])) {
             header("Location: /admin/login/");
             die();
         }
         require VIEWS . 'Admin/insertion-tarif.php';
     }
+    public function showUpdatedTarif(int $id_tarif): void
+    {
+        // Si l'admin n'est pas connecter on le redirige sur la page de connexion
+        if (!isset($_SESSION["admin"]["id"])) {
+            header("Location: /login/");
+            die();
+        }
+        $tarifSelectionner = $this->tarifsManager->getTarif($id_tarif);
+        require VIEWS . 'Admin/updated-tarif.php';
+    }
     public function showEquipeManager(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord
-        if (!isset ($_SESSION["admin"]["nom"])) {
+        if (!isset($_SESSION["admin"]["nom"])) {
             header("Location: /admin/login/");
             die();
         }
@@ -117,7 +128,7 @@ class AdminController extends Controller
     public function showInsertionEquipier(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord
-        if (!isset ($_SESSION["admin"]["nom"])) {
+        if (!isset($_SESSION["admin"]["nom"])) {
             header("Location: /admin/login/");
             die();
         }
@@ -127,7 +138,7 @@ class AdminController extends Controller
     public function showUpdatedEquipier(int $id_equipier): void
     {
         // Si l'admin n'est pas connecter on le redirige sur la page de connexion
-        if (!isset ($_SESSION["admin"]["id"])) {
+        if (!isset($_SESSION["admin"]["id"])) {
             header("Location: /login/");
             die();
         }

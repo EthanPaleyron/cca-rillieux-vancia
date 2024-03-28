@@ -6,7 +6,7 @@ ob_start();
     <a class="return" href="/admin/tarifs/"><i class="fa-solid fa-arrow-left"></i></a>
     <div class="content">
         <h2>Creation d'un nouveau tarif</h2>
-        <form action="newTarif" method="post" enctype="multipart/form-data">
+        <form action="/newTarif/" method="post" enctype="multipart/form-data">
             <input type="text" name="nom_tarif" id="nom_tarif" placeholder="Nom du tarif" autocomplete="off">
             <label for="nom_tarif" class="error">
                 <?= error("nom_tarif") ?>
@@ -15,7 +15,7 @@ ob_start();
             <label for="premier_chien" class="error">
                 <?= error("premier_chien") ?>
             </label>
-            <input type="number" name="deuxieme_chien" id="deuxieme_chien" placeholder="Tarif du peuxieme chien">
+            <input type="number" name="deuxieme_chien" id="deuxieme_chien" placeholder="Tarif du deuxieme chien">
             <label for="deuxieme_chien" class="error">
                 <?= error("deuxieme_chien") ?>
             </label>

@@ -29,12 +29,12 @@ ob_start();
                         </td>
                         <td>
                             <a class="update"
-                                href="/admin/actualites/update/<?= escape($actualite->getid_actualite()) ?>/">Modifier</a>
+                                href="/admin/actualite/update/<?= escape($actualite->getid_actualite()) ?>/">Modifier</a>
                         </td>
                         <td>
                             <button class="buttonsDelete delete" data-id="<?= escape($actualite->getid_actualite()) ?>"
                                 data-nom="<?= escape($actualite->getnom_actualite()) ?>"
-                                data-manager="actualites">Supprimer</button>
+                                data-manager="actualite">Supprimer</button>
                         </td>
                     </tr>
                 <?php } ?>
@@ -42,7 +42,7 @@ ob_start();
         </table>
     </div>
 </div>
-<a class="create" href="/admin/actualites/nouvelle_actualite"><i class="fa-solid fa-plus"></i></a>
+<a class="create" href="/admin/actualites/nouvelle_actualite/"><i class="fa-solid fa-plus"></i></a>
 <div class="confirmDeletion">
     <h2>Voulez-vous vraiment supprimer l'actualité "<span id="nom"></span>"</h2>
     <div>

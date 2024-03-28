@@ -522,6 +522,7 @@ header div p {
   padding: 0.5rem 0;
 }
 .tarifs_horaires_map .tarifs_horaires .tarifs table tbody tr td {
+  min-width: 3rem;
   background-color: #eae7dd;
   padding: 0.3rem;
 }
@@ -937,6 +938,12 @@ header div p {
   display: flex;
   justify-content: center;
 }
+.manager .content table tr td:nth-last-child(2) {
+  background-color: #ffcc2d;
+}
+.manager .content table tr td:last-child {
+  background-color: #ed625c;
+}
 .manager .content table p,
 .manager .content table a,
 .manager .content table button {
@@ -945,10 +952,6 @@ header div p {
 .manager .content table a,
 .manager .content table button {
   font-size: 1rem;
-  font-weight: bold;
-}
-.manager .content table button {
-  font-size: 1.05rem;
   font-weight: bold;
 }
 .manager .content table .update {

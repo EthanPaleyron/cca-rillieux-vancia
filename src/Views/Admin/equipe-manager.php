@@ -34,13 +34,13 @@ ob_start();
                 <?php } ?>
             </tbody>
         </table>
-        <a class="create" href="/admin/equipe/nouvelle_equipier"><i class="fa-solid fa-plus"></i></a>
     </div>
 </div>
+<a class="create" href="/admin/equipe/nouvelle_equipier/"><i class="fa-solid fa-plus"></i></a>
 <div class="confirmDeletion">
-    <h2>Voulez-vous vraiment supprimer l'équipier "<span id="nom"></span>"</h2>
+    <h2>Voulez-vous vraiment supprimer l'actualité "<span id="nom"></span>"</h2>
     <div>
-        <button id="annuler">Annuler</button>
+        <a href="/admin/equipe/" id="annuler">Annuler</a>
         <a id="confirme" class="delete">Confirmer</a>
     </div>
 </div>

@@ -8,51 +8,67 @@ ob_start();
         <table>
             <thead>
                 <tr>
-                    <th colspan="5">
+                    <th colspan="6">
                         <p>Nos Tarifs</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>Nom du tarif</p>
+                    </th>
+                    <th>
+                        <p>Premier Chien</p>
+                    </th>
+                    <th>
+                        <p>Deuxieme Chien</p>
+                    </th>
+                    <th>
+                        <p>Licence par chien</p>
+                    </th>
+                    <th colspan="2">
+                        <p>Modification et suppression</p>
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <p>Nom du tarif</p>
-                    </td>
-                    <td>
-                        <p>Premier Chien</p>
-                    </td>
-                    <td>
-                        <p>Deuxieme Chien</p>
-                    </td>
-                    <td>
-                        <p>Licence par chien</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>Sociétaire 1<span class="suffixes">ère</span> année</p>
-                    </td>
-                    <td>
-                        <p>170€
-                    </td>
-                    <td>
-                        <p>85€
-                    </td>
-                    <td>
-                        <p>22€
-                    </td>
-                    <td><button class="buttonsDelete delete" data-id="" data-nom=""
-                            data-manager="tarifs">Supprimer</button></td>
-                </tr>
+                <?php foreach ($tarifs as $tarif) { ?>
+                    <tr>
+                        <td>
+                            <p>
+                                <?= $tarif->getnom_tarif() ?>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <?= $tarif->gettarif_premier_chien() ?> €
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <?= $tarif->gettarif_deuxieme_chien() ?> €
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <?= $tarif->gettarif_par_chien() ?> €
+                            </p>
+                        </td>
+                        <td>
+                            <a class="update" href="/admin/tarif/update/<?= $tarif->getid_tarif() ?>/">Modifier</a>
+                        </td>
+                        <td><button class="buttonsDelete delete" data-id="<?= $tarif->getid_tarif() ?>"
+                                data-nom="<?= $tarif->getnom_tarif() ?>" data-manager="tarif">Supprimer</button></td>
+                    </tr>
+                <?php } ?>
             </tbody>
         </table>
-        <a class="create" href="/admin/tarifs/nouveau_tarif"><i class="fa-solid fa-plus"></i></a>
     </div>
 </div>
+<a class="create" href="/admin/tarifs/nouveau_tarif/"><i class="fa-solid fa-plus"></i></a>
 <div class="confirmDeletion">
-    <h2>Voulez-vous vraiment supprimer le tarif "<span id="nom"></span>"</h2>
+    <h2>Voulez-vous vraiment supprimer l'actualité "<span id="nom"></span>"</h2>
     <div>
-        <button id="annuler">Annuler</button>
+        <a href="/admin/tarifs/" id="annuler">Annuler</a>
         <a id="confirme" class="delete">Confirmer</a>
     </div>
 </div>
