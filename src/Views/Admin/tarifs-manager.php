@@ -41,11 +41,19 @@ ob_start();
                     <td>
                         <p>22€
                     </td>
-                    <td><a class="delete" href="">Supprimer</a></td>
+                    <td><button class="buttonsDelete delete" data-id="" data-nom=""
+                            data-manager="tarifs">Supprimer</button></td>
                 </tr>
             </tbody>
         </table>
         <a class="create" href="/admin/tarifs/nouveau_tarif"><i class="fa-solid fa-plus"></i></a>
+    </div>
+</div>
+<div class="confirmDeletion">
+    <h2>Voulez-vous vraiment supprimer le tarif "<span id="nom"></span>"</h2>
+    <div>
+        <button id="annuler">Annuler</button>
+        <a id="confirme" class="delete">Confirmer</a>
     </div>
 </div>
 

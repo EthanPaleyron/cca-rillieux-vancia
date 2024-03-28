@@ -26,14 +26,22 @@ ob_start();
                                 href="/admin/equipier/update/<?= escape($equipier->getid_equipier()) ?>/">Modifier</a>
                         </td>
                         <td>
-                            <a class="delete"
-                                href="/admin/equipier/delete/<?= escape($equipier->getid_equipier()) ?>/">Supprimer</a>
+                            <button class="buttonsDelete delete" data-id="<?= escape($equipier->getid_equipier()) ?>"
+                                data-nom="<?= escape($equipier->getnom_equipier()) ?>"
+                                data-manager="equipier">Supprimer</button>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
         <a class="create" href="/admin/equipe/nouvelle_equipier"><i class="fa-solid fa-plus"></i></a>
+    </div>
+</div>
+<div class="confirmDeletion">
+    <h2>Voulez-vous vraiment supprimer l'équipier "<span id="nom"></span>"</h2>
+    <div>
+        <button id="annuler">Annuler</button>
+        <a id="confirme" class="delete">Confirmer</a>
     </div>
 </div>
 

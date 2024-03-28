@@ -19,7 +19,10 @@ ob_start();
             <label for="description_actualite" class="error">
                 <?= error("description_actualite") ?>
             </label>
-            <label for="file"></label>
+            <label for="file" id="labelFile">
+                <div class="logoInsertFile"><i class="fa-solid fa-download"></i></div>
+                <div class="insertFile"></div>
+            </label>
             <input type="file" name="image_actualite" id="file">
             <button>Ajouter l'actualité</button>
         </form>

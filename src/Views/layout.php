@@ -47,7 +47,7 @@
                     new Link("Histoire du club", "/histoire_du_club/"),
                     new Link("L'equipe", "/equipe/"),
                 );
-                if (isset ($page)) {
+                if (isset($page)) {
                     foreach ($links as $link) {
                         if ($link->name === $page) { ?>
                             <li class="other_page selected"><a href="<?= $link->url ?>">
@@ -76,7 +76,7 @@
             </ul>
         </nav>
 
-        <?php if (isset ($page) && $page === "Accueil") { ?>
+        <?php if (isset($page) && $page === "Accueil") { ?>
             <div class="header">
                 <h1>Club du chien d'accompagnement</h1>
                 <p>Education Canine et Chiens de Sauvetage<br>Ecole du chiot</p>
@@ -88,7 +88,7 @@
         <?php echo $content; ?>
     </main>
 
-    <?php if (isset ($page)) { ?>
+    <?php if (isset($page)) { ?>
         <footer>
             <img class="logo logo_white" src="/assets/logo.svg" alt="Logo">
             <div>
@@ -116,6 +116,8 @@
     <script type="module" src="/js/aside.js"></script>
     <script type="module" src="/js/carrousel.js"></script>
     <script type="module" src="/js/password.js"></script>
+    <script type="module" src="/js/confirmDeletion.js"></script>
+    <script type="module" src="/js/previewImage.js"></script>
 </body>
 
 </html>

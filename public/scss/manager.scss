@@ -11,10 +11,17 @@
     justify-content: center;
     table {
       p,
-      a {
+      a,
+      button {
         padding: 1rem 1.5rem;
       }
-      a {
+      a,
+      button {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      button {
+        font-size: 1.05rem;
         font-weight: bold;
       }
       .update {
@@ -24,24 +31,63 @@
         background-color: $delete;
       }
     }
-    .create {
-      position: fixed;
-      bottom: 2rem;
-      right: 3rem;
-      margin: 1.5rem auto;
-      color: $w;
-      background-color: $create;
+  }
+}
+.create {
+  position: fixed;
+  bottom: 2rem;
+  right: 3rem;
+  margin: 1.5rem auto;
+  color: $w;
+  background-color: $create;
+  font-weight: bold;
+  padding: 1.3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+  }
+}
+.confirmDeletion {
+  display: none;
+  z-index: 2;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 30rem;
+  background-color: $primary;
+  padding: 2rem 2.5rem;
+  border-radius: 0.2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  h2 {
+    span {
+      white-space: pre-line;
+    }
+  }
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    a {
+      font-size: 1rem;
       font-weight: bold;
-      padding: 1.3rem;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      i {
-        width: 1.5rem;
-        height: 1.5rem;
-        font-size: 1.5rem;
-      }
+      padding: 1rem 1.5rem;
+      border: solid;
+    }
+    #annuler {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    #confirme {
+      background-color: $delete;
     }
   }
 }

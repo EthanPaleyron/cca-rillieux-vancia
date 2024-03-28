@@ -18,6 +18,12 @@ ob_start();
             <label for="description_equipier" class="error">
                 <?= error("description_equipier") ?>
             </label>
+            <label for="file" id="labelFile">
+                <div class="logoUpdateFile"><i class="fa-solid fa-download"></i></div>
+                <img src="/../assets/images/equipe/<?= $equipierSelectionner->getphoto_equipier() ?>"
+                    alt="<?= $equipierSelectionner->getphoto_equipier() ?>">
+            </label>
+            <input type="file" name="photo_equipier" id="file">
             <div>
                 <label for="ordre_equipier">Position de l'equipier : </label>
                 <select name="ordre_equipier" id="ordre_equipier">
@@ -36,9 +42,6 @@ ob_start();
                     } ?>
                 </select>
             </div>
-            <input type="file" name="photo_equipier" id="photo_equipier">
-            <img src="/../assets/images/equipe/<?= $equipierSelectionner->getphoto_equipier() ?>"
-                alt="<?= $equipierSelectionner->getphoto_equipier() ?>">
             <button>Modifier l'equipier</button>
         </form>
     </div>

@@ -61,9 +61,9 @@ class ActualitesManager extends Manager
             )
         );
     }
-    public function updateActualite(string $file): void
+    public function updateActualite($file): void
     {
-        $stmt = $this->bdd->prepare("UPDATE actualites SET nom_actualite = ?, description_actualite = ?, date_actua lite = ?,image_actualite = ? WHERE id_actualite = ?");
+        $stmt = $this->bdd->prepare("UPDATE actualites SET nom_actualite = ?, description_actualite = ?, date_actualite = ?,image_actualite = ? WHERE id_actualite = ?");
         $stmt->execute(
             array(
                 $_POST["nom_actualite"],
