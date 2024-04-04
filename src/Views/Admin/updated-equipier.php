@@ -24,7 +24,10 @@ ob_start();
                 <img src="/../assets/images/equipe/<?= $equipierSelectionner->getphoto_equipier() ?>"
                     alt="<?= $equipierSelectionner->getphoto_equipier() ?>">
             </label>
-            <input type="file" name="photo_equipier" id="file">
+            <input type="file" name="photo_equipier" id="file" require>
+            <label for="photo_equipier" class="error">
+                <?= error("file") ?>
+            </label>
             <div>
                 <label for="ordre_equipier">Position de l'equipier : </label>
                 <select name="ordre_equipier" id="ordre_equipier">

@@ -35,6 +35,13 @@ ob_start();
             </tbody>
         </table>
     </div>
+    <?php if (count($equipe) >= 50) { ?>
+        <p class="count error">
+        <?php } else { ?>
+        <p class="count">
+        <?php } ?>
+        <?= count($equipe) ?> sur 50
+    </p>
 </div>
 <a class="create" href="/admin/equipe/nouvelle_equipier/"><i class="fa-solid fa-plus"></i></a>
 <div class="confirmDeletion">

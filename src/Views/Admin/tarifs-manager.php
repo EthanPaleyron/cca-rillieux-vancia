@@ -49,6 +49,13 @@ ob_start();
             </tbody>
         </table>
     </div>
+    <?php if (count($tarifs) >= 10) { ?>
+        <p class="count error">
+        <?php } else { ?>
+        <p class="count">
+        <?php } ?>
+        <?= count($tarifs) ?> sur 10
+    </p>
 </div>
 <a class="create" href="/admin/tarifs/nouveau_tarif/"><i class="fa-solid fa-plus"></i></a>
 <div class="confirmDeletion">

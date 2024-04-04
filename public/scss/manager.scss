@@ -5,6 +5,13 @@
     margin-left: 1.5rem;
     font-size: 1.5rem;
   }
+  .count {
+    margin-top: 1.7rem;
+    text-align: center;
+    &.error {
+      color: $error;
+    }
+  }
   .content {
     margin-top: 2rem;
     display: flex;

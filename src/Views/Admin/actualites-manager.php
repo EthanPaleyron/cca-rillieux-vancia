@@ -41,6 +41,14 @@ ob_start();
             </tbody>
         </table>
     </div>
+    <p class="count">
+        <?= count($actualites) ?>
+        <?php if (count($actualites) === 1) { ?>
+            actualite
+        <?php } else { ?>
+            actualites
+        <?php } ?>
+    </p>
 </div>
 <a class="create" href="/admin/actualites/nouvelle_actualite/"><i class="fa-solid fa-plus"></i></a>
 <div class="confirmDeletion">

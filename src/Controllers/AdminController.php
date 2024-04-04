@@ -110,6 +110,10 @@ class AdminController extends Controller
             die();
         }
         $tarifs = $this->tarifsManager->getTarifs();
+        if (count($tarifs) >= 10) {
+            header("Location: /admin/tarifs/");
+            die();
+        }
         $page = "insertion";
         require VIEWS . 'Admin/insertion-tarif.php';
     }
@@ -144,6 +148,10 @@ class AdminController extends Controller
             die();
         }
         $equipe = $this->equipeManager->getEquipe();
+        if (count($equipe) >= 50) {
+            header("Location: /admin/equipe/");
+            die();
+        }
         $page = "insertion";
         require VIEWS . 'Admin/insertion-equipier.php';
     }

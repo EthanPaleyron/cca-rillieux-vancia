@@ -23,7 +23,10 @@ ob_start();
                 <div class="logoInsertFile"><i class="fa-solid fa-download"></i></div>
                 <div class="insertFile"></div>
             </label>
-            <input type="file" name="image_actualite" id="file">
+            <input type="file" name="image_actualite" id="file" require>
+            <label for="image_actualite" class="error">
+                <?= error("file") ?>
+            </label>
             <button>Ajouter l'actualité</button>
         </form>
     </div>

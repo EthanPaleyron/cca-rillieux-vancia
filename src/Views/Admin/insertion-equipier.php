@@ -21,13 +21,16 @@ ob_start();
                 <div class="logoInsertFile"><i class="fa-solid fa-download"></i></div>
                 <div class="insertFile"></div>
             </label>
-            <input type="file" name="photo_equipier" id="file">
+            <input type="file" name="photo_equipier" id="file" require>
+            <label for="photo_equipier" class="error">
+                <?= error("file") ?>
+            </label>
             <div>
                 <label for="ordre_equipier">Position de l'equipier : </label>
                 <select name="ordre_equipier" id="ordre_equipier">
                     <option value="0">En premier</option>
                     <?php foreach ($equipe as $key => $equipier) {
-                        if ($equipier->getordre_equipier() + 1 === sizeof($equipe)) { // Si c'est le dernier de la liste on le select       ?>
+                        if ($equipier->getordre_equipier() + 1 === sizeof($equipe)) { // Si c'est le dernier de la liste on le select         ?>
                             <option selected value="<?= $equipier->getordre_equipier() + 1 ?>">
                                 Après
                                 <?= $equipier->getnom_equipier() ?>

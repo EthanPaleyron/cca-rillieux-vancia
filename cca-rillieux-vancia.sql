@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 26 mars 2024 à 06:32
+-- Généré le : jeu. 04 avr. 2024 à 22:48
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -35,14 +35,13 @@ CREATE TABLE IF NOT EXISTS `actualites` (
   `date_actualite` datetime DEFAULT NULL,
   `image_actualite` varchar(200) NOT NULL,
   PRIMARY KEY (`id_actualite`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `actualites`
 --
 
 INSERT INTO `actualites` (`id_actualite`, `nom_actualite`, `description_actualite`, `date_actualite`, `image_actualite`) VALUES
-(29, 'MMMMMMMMMMMMMMMMMMMM', 'MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM', '2024-03-16 00:00:00', '2948223614flat,750x1000,075,f.jpg'),
 (27, 'Voici la nouvelle équipe du comité', 'Voici notre nouvelle équipe de comité !\r\nDe gauche à droite : Fabrice, Noëlle, Annabel, Jean-Jacques, Marie-Ange, André, Cyrille, Antonio et notre regretté barman Guy (absente de la photo notre lointaine Ilana)', '2024-01-09 11:58:36', '2687171090equipe.jpg');
 
 -- --------------------------------------------------------
@@ -80,18 +79,20 @@ CREATE TABLE IF NOT EXISTS `equipe` (
   `photo_equipier` varchar(255) DEFAULT NULL,
   `ordre_equipier` int NOT NULL,
   PRIMARY KEY (`id_equipier`)
-) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `equipe`
 --
 
 INSERT INTO `equipe` (`id_equipier`, `nom_equipier`, `description_equipier`, `photo_equipier`, `ordre_equipier`) VALUES
-(36, 'ghjkhghjhghjg', 'ftfgtg', '62909848315.webp', 0),
-(37, 'bnjhghgfvbhgb', 'fghgfvbvcvcv', '4396619866animaux-selfie-01.jpg', 2),
-(33, 'ertyuiuytr', 'tyuiuytrerty', '7731289687v7yj8.jpg', 4),
-(34, 'fghjhgfd', 'ghjhgfghjkjhgf', '1245880037', 3),
-(35, 'fghgfghjhghjhg', 'fgfghgfgfdfg', '185825217368747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79344f41513236545458523461773d3d2d3236363531373734372e313435376162356638313437383363322.jpg', 1);
+(68, 'Cyrille', 'Moniteur diplomé \"école du chiot\" et moniteur sauvetage en compétition\r\nLa douceur, le calme, c’est le chouchou de nos bébés poilus !', '8429331899cyrille.jpg', 3),
+(67, 'Annabel', 'Monitrice chiens adultes et chiens compliqués, responsable des moniteurs et de la section obéissance, et secrétaire.\r\nDétrompez vous ce n’est pas les chiens qu’elle va éduquer, mais leurs maîtres !', '8630681708annabel.jpg', 2),
+(66, 'André', 'Vice président\r\nUne connaissance du club sans pareil, c’est notre sage.', '4293387310andre.jpg', 1),
+(65, 'Jean-Jacques', 'Notre Président et responsable de la section Sauvetage\r\n                Présent depuis 2007 dans le club, il a créé la section sauvetage. Toujours à votre\r\n                écoute et de bons conseils !', '2447462495jean-jacques.jpg', 0),
+(69, 'Fabrice', 'Encadrant chiens adultes\r\nAvec lui c’est fou rire assuré pendant les cours !', '9449958571fabrice.jpg', 4),
+(70, 'Noëlle', 'Trésorière\r\nIl paraît que sa chienne est la première de la classe en cours ;)', '3370807258noelle.jpg', 5),
+(71, 'Antonio', 'Notre Mc Gyver\r\nC\'est notre homme de l\'ombre !\r\nUne réparation ? Du bricolage ? De l\'entretien ? Il sait tout faire !\r\nC\'est également un véritable homme de chien qui pourra être amené à remplacer au pied levé un moniteur\r\nSi nécessaire', '5233834815antonio.jpg', 6);
 
 -- --------------------------------------------------------
 
@@ -102,12 +103,21 @@ INSERT INTO `equipe` (`id_equipier`, `nom_equipier`, `description_equipier`, `ph
 DROP TABLE IF EXISTS `tarifs`;
 CREATE TABLE IF NOT EXISTS `tarifs` (
   `id_tarif` int NOT NULL AUTO_INCREMENT,
-  `nom_tarif` int DEFAULT NULL,
+  `nom_tarif` varchar(30) DEFAULT NULL,
   `tarif_premier_chien` float DEFAULT NULL,
   `tarif_deuxieme_chien` float DEFAULT NULL,
   `tarif_par_chien` float DEFAULT NULL,
+  `ordre_tarif` int NOT NULL,
   PRIMARY KEY (`id_tarif`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `tarifs`
+--
+
+INSERT INTO `tarifs` (`id_tarif`, `nom_tarif`, `tarif_premier_chien`, `tarif_deuxieme_chien`, `tarif_par_chien`, `ordre_tarif`) VALUES
+(1, 'Renouvellement 2ème année', 130, 65, 22, 0),
+(2, 'Sociétaire 1ère année', 170, 85, 22, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
