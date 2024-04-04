@@ -98,8 +98,8 @@ class AdminController extends Controller
             header("Location: /admin/login/");
             die();
         }
-        $page = "manager";
         $tarifs = $this->tarifsManager->getTarifs();
+        $page = "manager";
         require VIEWS . 'Admin/tarifs-manager.php';
     }
     public function showInsertionTarif(): void
@@ -109,6 +109,7 @@ class AdminController extends Controller
             header("Location: /admin/login/");
             die();
         }
+        $tarifs = $this->tarifsManager->getTarifs();
         $page = "insertion";
         require VIEWS . 'Admin/insertion-tarif.php';
     }
@@ -120,6 +121,7 @@ class AdminController extends Controller
             die();
         }
         $tarifSelectionner = $this->tarifsManager->getTarif($id_tarif);
+        $tarifs = $this->tarifsManager->getTarifs();
         $page = "updated";
         require VIEWS . 'Admin/updated-tarif.php';
     }

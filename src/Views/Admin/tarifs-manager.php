@@ -17,13 +17,7 @@ ob_start();
                         <p>Nom du tarif</p>
                     </th>
                     <th>
-                        <p>Premier Chien</p>
-                    </th>
-                    <th>
-                        <p>Deuxieme Chien</p>
-                    </th>
-                    <th>
-                        <p>Licence par chien</p>
+                        <p>Premier Chien / Deuxieme Chien / Licence par chien</p>
                     </th>
                     <th colspan="2">
                         <p>Modification et suppression</p>
@@ -40,16 +34,8 @@ ob_start();
                         </td>
                         <td>
                             <p>
-                                <?= $tarif->gettarif_premier_chien() ?> €
-                            </p>
-                        </td>
-                        <td>
-                            <p>
-                                <?= $tarif->gettarif_deuxieme_chien() ?> €
-                            </p>
-                        </td>
-                        <td>
-                            <p>
+                                <?= $tarif->gettarif_premier_chien() ?> € /
+                                <?= $tarif->gettarif_deuxieme_chien() ?> € /
                                 <?= $tarif->gettarif_par_chien() ?> €
                             </p>
                         </td>

@@ -8,6 +8,7 @@ class Tarif extends Manager
     private float $tarif_premier_chien;
     private float $tarif_deuxieme_chien;
     private float $tarif_par_chien;
+    private int $ordre_tarif;
     public function setid_tarif($id_tarif): void
     {
         $this->id_tarif = $id_tarif;
@@ -47,5 +48,13 @@ class Tarif extends Manager
     public function gettarif_par_chien(): float
     {
         return $this->tarif_par_chien;
+    }
+    public function setordre_tarif($ordre_tarif): void
+    {
+        $this->ordre_tarif = $ordre_tarif;
+    }
+    public function getordre_tarif(): int
+    {
+        return $this->ordre_tarif;
     }
 }

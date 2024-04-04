@@ -28,6 +28,24 @@ ob_start();
             <label for="par_chien" class="error">
                 <?= error("par_chien") ?>
             </label>
+            <div>
+                <label for="ordre_tarif">Position du tarif : </label>
+                <select name="ordre_tarif" id="ordre_tarif">
+                    <option value="0">En premier</option>
+                    <?php foreach ($tarifs as $key => $tarif) {
+                        if ($tarif->getordre_tarif() !== $tarifSelectionner->getordre_tarif()) { // Si il n'est pas egale au tarif qu'on modifie on l'affiche
+                            if ($tarif->getordre_tarif() + 1 == $tarifSelectionner->getordre_tarif()) { ?>
+                                <option selected value="<?= $tarif->getordre_tarif() + 1 ?>">
+                                <?php } else { ?>
+                                <option value="<?= $tarif->getordre_tarif() + 1 ?>">
+                                <?php } ?>
+                                Après
+                                <?= $tarif->getnom_tarif() ?>
+                            </option>
+                        <?php }
+                    } ?>
+                </select>
+            </div>
             <button>Créer</button>
         </form>
     </div>
