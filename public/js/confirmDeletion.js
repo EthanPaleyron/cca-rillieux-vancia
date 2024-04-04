@@ -22,8 +22,5 @@ buttonsDelete.forEach((buttonDelete) => {
         });
       }
     });
-    document.querySelectorAll("button").forEach((button) => {
-      button.removeEventListener();
-    });
   });
 });

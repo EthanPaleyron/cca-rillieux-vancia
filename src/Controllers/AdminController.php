@@ -10,6 +10,7 @@ class AdminController extends Controller
             header("Location: /admin/dashboard/");
             die();
         }
+        $page = "Login";
         require VIEWS . 'Admin/login.php';
     }
     public function login(): void
@@ -55,6 +56,7 @@ class AdminController extends Controller
             header("Location: /admin/login/");
             die();
         }
+        $page = "dashboard";
         require VIEWS . 'Admin/dashboard.php';
     }
     public function showActualitesManager(): void
@@ -65,6 +67,7 @@ class AdminController extends Controller
             die();
         }
         $actualites = $this->actualitesManager->getActualites();
+        $page = "manager";
         require VIEWS . 'Admin/actualites-manager.php';
     }
     public function showInsertionActualite(): void
@@ -74,6 +77,7 @@ class AdminController extends Controller
             header("Location: /admin/login/");
             die();
         }
+        $page = "insertion";
         require VIEWS . 'Admin/insertion-actualite.php';
     }
     public function showUpdatedActualite(int $id_actualite): void
@@ -84,6 +88,7 @@ class AdminController extends Controller
             die();
         }
         $actualite = $this->actualitesManager->getActualite($id_actualite);
+        $page = "updated";
         require VIEWS . 'Admin/updated-actualite.php';
     }
     public function showTarifsManager(): void
@@ -93,6 +98,7 @@ class AdminController extends Controller
             header("Location: /admin/login/");
             die();
         }
+        $page = "manager";
         $tarifs = $this->tarifsManager->getTarifs();
         require VIEWS . 'Admin/tarifs-manager.php';
     }
@@ -103,6 +109,7 @@ class AdminController extends Controller
             header("Location: /admin/login/");
             die();
         }
+        $page = "insertion";
         require VIEWS . 'Admin/insertion-tarif.php';
     }
     public function showUpdatedTarif(int $id_tarif): void
@@ -113,6 +120,7 @@ class AdminController extends Controller
             die();
         }
         $tarifSelectionner = $this->tarifsManager->getTarif($id_tarif);
+        $page = "updated";
         require VIEWS . 'Admin/updated-tarif.php';
     }
     public function showEquipeManager(): void
@@ -123,6 +131,7 @@ class AdminController extends Controller
             die();
         }
         $equipe = $this->equipeManager->getEquipe();
+        $page = "manager";
         require VIEWS . 'Admin/equipe-manager.php';
     }
     public function showInsertionEquipier(): void
@@ -133,6 +142,7 @@ class AdminController extends Controller
             die();
         }
         $equipe = $this->equipeManager->getEquipe();
+        $page = "insertion";
         require VIEWS . 'Admin/insertion-equipier.php';
     }
     public function showUpdatedEquipier(int $id_equipier): void
@@ -144,6 +154,7 @@ class AdminController extends Controller
         }
         $equipierSelectionner = $this->equipeManager->getEquipier($id_equipier);
         $equipe = $this->equipeManager->getEquipe();
+        $page = "updated";
         require VIEWS . 'Admin/updated-equipier.php';
     }
 }

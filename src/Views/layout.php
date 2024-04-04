@@ -88,7 +88,7 @@
         <?php echo $content; ?>
     </main>
 
-    <?php if (isset($page)) { ?>
+    <?php if ($page === "Accueil" || $page === "Tarifs & Horaires" || $page === "Histoire du club" || $page === "L'equipe") { ?>
         <footer>
             <img class="logo logo_white" src="/assets/logo.svg" alt="Logo">
             <div>
@@ -113,11 +113,19 @@
     <?php } ?>
 
     <script type="module" src="/js/nav.js"></script>
-    <script type="module" src="/js/aside.js"></script>
-    <script type="module" src="/js/carrousel.js"></script>
-    <script type="module" src="/js/password.js"></script>
-    <script type="module" src="/js/confirmDeletion.js"></script>
-    <script type="module" src="/js/previewImage.js"></script>
+    <?php if ($page === "Accueil") { ?>
+        <script type="module" src="/js/carrousel.js"></script>
+        <script type="module" src="/js/aside.js"></script>
+    <?php } ?>
+    <?php if ($page === "login") { ?>
+        <script type="module" src="/js/password.js"></script>
+    <?php } ?>
+    <?php if ($page === "manager") { ?>
+        <script type="module" src="/js/confirmDeletion.js"></script>
+    <?php } ?>
+    <?php if ($page === "insertion" || $page === "updated") { ?>
+        <script type="module" src="/js/previewImage.js"></script>
+    <?php } ?>
 </body>
 
 </html>

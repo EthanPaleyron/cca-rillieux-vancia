@@ -8,6 +8,7 @@ ob_start();
         <h2>Modification d'un equipier</h2>
         <form action="/updateEquipier/" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id_equipier" value="<?= $equipierSelectionner->getid_equipier() ?>">
+            <input type="hidden" name="position_equipier" value="<?= $equipierSelectionner->getordre_equipier() ?>">
             <input type="text" name="nom_equipier" id="nom_equipier" placeholder="Nom de l'equipier"
                 value="<?= $equipierSelectionner->getnom_equipier() ?>" autocomplete="off">
             <label for="nom_equipier" class="error">

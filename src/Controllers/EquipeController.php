@@ -71,41 +71,24 @@ class EquipeController extends Controller
         if (!$this->validator->errors()) {
             // Va reccuperer touts l'equipe
             $result = $this->equipeManager->getEquipe();
-            foreach ($result as $r) {
-                echo "id:" . $r->getid_equipier() . " ordre:" . $r->getordre_equipier() . " / ";
-            }
-            echo "<br>";
             // On reccupere l'equipier qu'un modifie
             $equipierModifier = $this->equipeManager->getEquipier($_POST["id_equipier"]);
             if (!empty($result)) { // Si il existe des equipie
                 $anciennePosition = $equipierModifier->getordre_equipier();
                 $nouvellePosition = $_POST["ordre_equipier"];
-                $idnouvellePosition = $this->equipeManager->findOrderID($nouvellePosition);
                 if ($anciennePosition < $nouvellePosition) { // Si l'ancienne position est plus petit que la nouvelle position
-                    echo $anciennePosition . " actuelle < nouveau" . $nouvellePosition . "<br>";
                     for ($i = $anciennePosition + 1; $i <= $nouvellePosition; $i++) { // De l'ancienne position a la nouvelle possition
                         $nextId = $this->equipeManager->findOrderID($i); // Je reccupere l'id qui est egale la position donnee
-                        echo $i;
-                        echo " sur l'id ";
-                        echo $nextId . " = ";
-                        echo $i - 1;
-                        echo "<br>";
                         $this->equipeManager->orderEquipe($i - 1, $nextId); // Je rajoute un + 1 sur l'ordre de l'equipier
                     }
+                    $this->equipeManager->orderEquipe($nouvellePosition - 1, $_POST["id_equipier"]);
                 } else { // Et si c'est l'inverse
-                    echo $anciennePosition . "actuelle > nouveau " . $nouvellePosition . "<br>";
-                    for ($i = $nouvellePosition - 1; $i < $anciennePosition; $i++) { // De la nouvelle position a l'ancienne possition
+                    for ($i = $nouvellePosition; $i < $anciennePosition; $i++) { // De la nouvelle position a l'ancienne possition
                         $nextId = $this->equipeManager->findOrderID($i); // Je reccupere l'id qui est egale la position donnee
-                        echo $i;
-                        echo " sur l'id ";
-                        echo $nextId . " = ";
-                        echo $i + 1;
-                        echo "<br>";
                         $this->equipeManager->orderEquipe($i + 1, $nextId); // On retire -1 sur l'ordre de l'equipier
                     }
+                    $this->equipeManager->orderEquipe($nouvellePosition, $_POST["id_equipier"]);
                 }
-                echo "<br> nouvelle position actuel de l'id " . $idnouvellePosition . " est egale a = " . $nouvellePosition;
-                $this->equipeManager->orderEquipe($_POST["ordre_equipier"], $idnouvellePosition);
             }
             // On reccupere l'image enregistrer en bdd
             $currentFile = $equipierModifier->getphoto_equipier();
