@@ -59,7 +59,7 @@ class EquipeManager extends Manager
         );
         return $stmt->fetchColumn();
     }
-    public function orderEquipe($position, int $id): void
+    public function orderEquipe(int $position, int $id): void
     {
         $stmt = $this->bdd->prepare("UPDATE equipe SET ordre_equipier = ? WHERE id_equipier = ?");
         $stmt->execute(

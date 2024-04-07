@@ -31,7 +31,7 @@ $router->get('/admin/equipier/update/:id_equipier/', "AdminController@showUpdate
 
 // ACTUALITES
 $router->get('/', "ActualitesController@showHomepage");
-$router->get('/actualites/', "ActualitesController@showActualites");
+$router->get('/actualites/page/:n_page/', "ActualitesController@showActualites");
 $router->post('/newActualite/', "ActualitesController@newActualite");
 $router->get('/admin/actualite/delete/:id_actualite/', "ActualitesController@deleteActualite");
 $router->post('/updateActualite/', "ActualitesController@updateActualite");

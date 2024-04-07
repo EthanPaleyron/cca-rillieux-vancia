@@ -68,9 +68,10 @@
                 } ?>
                 <li>
                     <ul class="contact">
-                        <li><a href="mailto:cca.vancia.secretariat@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                        <li><a href="mailto:cca.vancia.secretariat@gmail.com"
+                                title="cca.vancia.secretariat@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                         </li>
-                        <li><a href="tel:0611130352"><i class="fa-solid fa-phone"></i></a></li>
+                        <li><a href="tel:0611130352" title="06 11 13 03 52"><i class="fa-solid fa-phone"></i></a></li>
                     </ul>
                 </li>
             </ul>
@@ -102,7 +103,8 @@
                 <section class="contacts">
                     <h2>Contactez nous!</h2>
                     <ul>
-                        <li><a href="tel:0611130352"><i class="fa-solid fa-phone"></i>06 11 13 03 52</a></li>
+                        <li><a href="tel:0611130352"><i class="fa-solid fa-phone"></i>06 11 13 03
+                                52</a></li>
                         <li><a href="mailto:cca.vancia.secretariat@gmail.com"><i
                                     class="fa-solid fa-envelope"></i>cca.vancia.secretariat@gmail.com</a>
                         </li>
@@ -117,13 +119,13 @@
         <script type="module" src="/js/carrousel.js"></script>
         <script type="module" src="/js/aside.js"></script>
     <?php } ?>
-    <?php if ($page === "login") { ?>
+    <?php if ($page === "Login") { ?>
         <script type="module" src="/js/password.js"></script>
     <?php } ?>
-    <?php if ($page === "manager") { ?>
+    <?php if ($page === "Manager") { ?>
         <script type="module" src="/js/confirmDeletion.js"></script>
     <?php } ?>
-    <?php if ($page === "insertion" || $page === "updated") { ?>
+    <?php if ($page === "Insertion" || $page === "updated") { ?>
         <script type="module" src="/js/previewImage.js"></script>
     <?php } ?>
 </body>

@@ -9,9 +9,15 @@ class ActualitesController extends Controller
         $page = "Accueil";
         require VIEWS . "index.php";
     }
-    public function showActualites(): void
+    public function showActualites(int $n_page): void
     {
-        $actualites = $this->actualitesManager->getActualites();
+        // Afficher les liens de la pagination
+        $per_page = 6;
+        $total_actualites = $this->actualitesManager->getCountActualites();
+        $n_pages = ceil($total_actualites / $per_page);
+        // Affiche les actualites de la page x
+        $offset = ($n_page - 1) * $per_page;
+        $actualites = $this->actualitesManager->getActualitesPagines($per_page, $offset);
         $page = "Ancienne actualites";
         require VIEWS . "App/ancienne-actualites.php";
     }
@@ -61,32 +67,28 @@ class ActualitesController extends Controller
             "nom_actualite" => ["required", "max:40"],
             "description_actualite" => ["required", "max:850"],
         ]);
-        if (!empty($_FILES["image_actualite"]["error"] == UPLOAD_ERR_OK)) {
-            if (!$this->validator->errors()) {
-                // On reccupere l'image enregistrer en bdd
-                $actualite = $this->actualitesManager->getactualite($_POST["id_actualite"]);
-                $currentFile = $actualite->getimage_actualite();
-                if ($_FILES["image_actualite"]["name"] != "") { // Si l'image a été changer on l'ajoute et on supprime l'ancienne
-                    // Ajoute un chiffre aleatoire a l'image pour eviter les doublons
-                    $file = rand(0, 10000000000) . $_FILES["image_actualite"]["name"];
-                    // Deplace l'image dans le fichier d'image avec le nouveau nom
-                    move_uploaded_file($_FILES["image_actualite"]["tmp_name"], "../public/assets/images/actualites/" . $file);
-                    $fileDelete = "../public/assets/images/actualites/" . $currentFile;
-                    if (file_exists($fileDelete)) { // Si l'image existe on la supprime 
-                        unlink($fileDelete);
-                    }
-                } else { // Sinon on récupere l'actuelle
-                    $file = $currentFile;
+        if (!$this->validator->errors()) {
+            // On reccupere l'image enregistrer en bdd
+            $actualite = $this->actualitesManager->getactualite($_POST["id_actualite"]);
+            $datetime = $_POST["date_actualite"] . " " . date("h:i:s");
+            $currentFile = $actualite->getimage_actualite();
+            if ($_FILES["image_actualite"]["name"] != "") { // Si l'image a été changer on l'ajoute et on supprime l'ancienne
+                // Ajoute un chiffre aleatoire a l'image pour eviter les doublons
+                $file = rand(0, 10000000000) . $_FILES["image_actualite"]["name"];
+                // Deplace l'image dans le fichier d'image avec le nouveau nom
+                move_uploaded_file($_FILES["image_actualite"]["tmp_name"], "../public/assets/images/actualites/" . $file);
+                $fileDelete = "../public/assets/images/actualites/" . $currentFile;
+                if (file_exists($fileDelete)) { // Si l'image existe on la supprime 
+                    unlink($fileDelete);
                 }
-                // Créer une nouvelle actualité
-                $this->actualitesManager->updateActualite($file);
-                header("Location: /admin/actualites/");
-            } else {
-                header("Location: /admin/actualites/update/" . $_POST["id_actualite"] . "/");
+            } else { // Sinon on récupere l'actuelle
+                $file = $currentFile;
             }
+            // Créer une nouvelle actualité
+            $this->actualitesManager->updateActualite($file, $datetime);
+            header("Location: /admin/actualites/");
         } else {
-            $_SESSION["error"]['file'] = "Ce champs est requis!";
-            header("Location: /admin/actualites/nouvelle_actualite");
+            header("Location: /admin/actualite/update/" . $_POST["id_actualite"] . "/");
         }
     }
 }

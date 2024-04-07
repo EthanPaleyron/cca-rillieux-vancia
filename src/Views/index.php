@@ -10,8 +10,9 @@ ob_start();
     </div>
     <p>Viens chercher tes renseignements plus rapidement en passant directement par ici 😁</p>
     <ul class="contact">
-        <li><a href="mailto:cca.vancia.secretariat@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
-        <li><a href="tel:0611130352"><i class="fa-solid fa-phone"></i></a></li>
+        <li><a href="mailto:cca.vancia.secretariat@gmail.com" title="cca.vancia.secretariat@gmail.com"><i
+                    class="fa-solid fa-envelope"></i></a></li>
+        <li><a href="tel:0611130352" title="06 11 13 03 52"><i class="fa-solid fa-phone"></i></a></li>
     </ul>
 </aside>
 
@@ -37,7 +38,7 @@ ob_start();
                     <?= escape($actualite->getdescription_actualite()) ?>
                 </p>
             </article>
-            <a href="/actualites/">Voir les anciennes actualités</a>
+            <a href="/actualites/page/1/">Voir les anciennes actualités</a>
         </section>
 
         <section class="activiter">

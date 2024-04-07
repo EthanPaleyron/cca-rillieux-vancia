@@ -24,9 +24,6 @@ ob_start();
                     alt="<?= escape(strtotime($actualite->getimage_actualite())) ?>">
             </label>
             <input type="file" name="image_actualite" id="file" require>
-            <label for="image_actualite" class="error">
-                <?= error("file") ?>
-            </label>
             <?php $date = new DateTime($actualite->getdate_actualite()) ?>
             <input type="date" name="date_actualite" id="date_actualite" placeholder="Nom de l'actualité"
                 value="<?= escape($date->format("Y-m-d")) ?>">

@@ -44,7 +44,7 @@ class TarifsManager extends Manager
         );
         return $stmt->fetchColumn();
     }
-    public function orderTarifs($position, int $id): void
+    public function orderTarifs(int $position, int $id): void
     {
         $stmt = $this->bdd->prepare("UPDATE tarifs SET ordre_tarif = ? WHERE id_tarif = ?");
         $stmt->execute(

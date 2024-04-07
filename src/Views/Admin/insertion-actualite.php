@@ -6,8 +6,6 @@ ob_start();
     <a class="return" href="/admin/actualites/"><i class="fa-solid fa-arrow-left"></i></a>
     <div class="content">
         <h2>Creation d'une nouvelle actualité</h2>
-        <small>(L'ancienne actualité sera remplacée par la nouvelle et elle sera toujours visible dans les anciennes
-            actualités)</small>
         <form action="/newActualite/" method="post" enctype="multipart/form-data">
             <input type="text" name="nom_actualite" id="nom_actualite" placeholder="Nom de l'actualité"
                 autocomplete="off">
@@ -27,6 +25,8 @@ ob_start();
             <label for="image_actualite" class="error">
                 <?= error("file") ?>
             </label>
+            <small>(L'ancienne actualité sera remplacée par la nouvelle et elle sera toujours visible dans les anciennes
+                actualités)</small>
             <button>Ajouter l'actualité</button>
         </form>
     </div>
