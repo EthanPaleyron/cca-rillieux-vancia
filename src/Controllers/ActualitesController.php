@@ -27,6 +27,7 @@ class ActualitesController extends Controller
             "nom_actualite" => ["required", "max:40"],
             "description_actualite" => ["required", "max:850"],
         ]);
+        $_SESSION['old'] = $_POST;
         if (!empty($_FILES["image_actualite"]["error"] == UPLOAD_ERR_OK)) {
             if (!$this->validator->errors()) {
                 // Ajoute la date d'aujourd'hui

@@ -5,9 +5,10 @@
     <link rel="stylesheet" href="/scss/main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="mots-clés, club de chien, activités canines">
+    <meta name="keywords"
+        content="vancia, rillieux-la-pape, rillieux, sathonay, Rhône Alpes, 1180, 69140, 0611130352, cca.vancia.secretariat@gmail.com, 1959, association, club de chien, club, association, activités, activités canines, canines, activités sauvetage, sauvetage, obéicence, chien, chienne, chiens, chiots">
     <meta name="description" content="Description du club de chien">
-    <meta name="author" content="Votre nom">
+    <meta name="author" content="Paleyron Ethan">
     <meta name="robots" content="index, follow">
     <script src="https://kit.fontawesome.com/2621df78fc.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="/assets/logo.ico" type="image/x-icon">
@@ -34,7 +35,6 @@
                 {
                     public $name;
                     public $url;
-
                     function __construct($name, $url)
                     {
                         $this->name = $name;

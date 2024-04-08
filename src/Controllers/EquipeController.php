@@ -16,6 +16,7 @@ class EquipeController extends Controller
             "description_equipier" => ["required", "max:250"],
             "ordre_equipier" => ["required", "numeric"],
         ]);
+        $_SESSION['old'] = $_POST;
         if (!empty($_FILES["photo_equipier"]["error"] == UPLOAD_ERR_OK)) {
             if (!$this->validator->errors()) {
                 // Va reccuperer touts l'equipe

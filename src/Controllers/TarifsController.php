@@ -18,6 +18,7 @@ class TarifsController extends Controller
             "par_chien" => ["required", "min:1", "numeric"],
             "ordre_tarif" => ["required", "numeric"],
         ]);
+        $_SESSION['old'] = $_POST;
         if (!$this->validator->errors()) {
             // Va reccuperer touts l'tarifs
             $result = $this->tarifsManager->getTarifs();

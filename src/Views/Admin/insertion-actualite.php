@@ -8,12 +8,12 @@ ob_start();
         <h2>Creation d'une nouvelle actualité</h2>
         <form action="/newActualite/" method="post" enctype="multipart/form-data">
             <input type="text" name="nom_actualite" id="nom_actualite" placeholder="Nom de l'actualité"
-                autocomplete="off">
+                autocomplete="off" value="<?= old("nom_actualite") ?>">
             <label for="nom_actualite" class="error">
                 <?= error("nom_actualite") ?>
             </label>
             <textarea name="description_actualite" id="description_actualite"
-                placeholder="Description de l'actualité"></textarea>
+                placeholder="Description de l'actualité"><?= old("description_actualite") ?></textarea>
             <label for="description_actualite" class="error">
                 <?= error("description_actualite") ?>
             </label>
