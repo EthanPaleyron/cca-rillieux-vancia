@@ -148,8 +148,6 @@
     margin: 1rem 0 5rem;
     .tarifs_horaires {
       .tarifs {
-        .list_document {
-        }
         table {
           font-size: 1rem;
           thead tr th {
@@ -185,7 +183,7 @@
   .tarifs_horaires_map {
     margin: 2rem 0 4rem;
     .tarifs_horaires {
-      margin: 5rem 0 2rem;
+      margin: 5rem 0 0;
       @include flex(space-around, center);
       flex-direction: row;
       .horaires {

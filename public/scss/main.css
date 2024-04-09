@@ -238,7 +238,7 @@ aside {
 }
 
 .title {
-  margin: 1rem 0;
+  margin: 2rem 0;
   font-size: 1.5rem;
   text-align: center;
 }
@@ -283,7 +283,7 @@ header div p {
 }
 .accueil .actualite article .content_article img {
   width: 100%;
-  height: 75vw;
+  height: 55vw;
   border-radius: 0.2rem;
   border: solid 1px;
 }
@@ -414,9 +414,6 @@ header div p {
   .header p {
     font-size: 1.2rem;
   }
-  .accueil .actualite {
-    width: 65%;
-  }
   .accueil .actualite article .content_article img {
     height: 50vw;
   }
@@ -448,10 +445,10 @@ header div p {
     font-size: 1.5rem;
   }
   .accueil .actualite {
-    width: 75%;
+    width: 70rem;
   }
   .accueil .actualite article .content_article img {
-    height: 80vh;
+    height: 35rem;
   }
   .accueil .actualite article .content_article .title_time {
     padding: 1.2rem;
@@ -668,7 +665,7 @@ header div p {
     margin: 2rem 0 4rem;
   }
   .tarifs_horaires_map .tarifs_horaires {
-    margin: 5rem 0 2rem;
+    margin: 5rem 0 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -821,7 +818,6 @@ header div p {
 }
 .histoire_du_club div p {
   font-size: 1.1rem;
-  white-space: pre-line;
   width: 100%;
 }
 
@@ -878,7 +874,7 @@ header div p {
 }
 .equipe div article h2 {
   width: 100%;
-  margin: 1rem 0;
+  margin-top: 1rem;
   overflow: auto hidden;
   word-wrap: break-word;
 }
@@ -1361,7 +1357,7 @@ footer div .networks ul li:last-child a:active {
     font-size: 1.2rem;
   }
   .title {
-    margin: 1.7rem 0;
+    margin: 2.4rem 0;
     font-size: 2.5rem;
   }
   .contact {

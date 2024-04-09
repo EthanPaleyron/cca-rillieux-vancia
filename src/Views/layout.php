@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords"
-        content="vancia, rillieux-la-pape, rillieux, sathonay, Rhône Alpes, 1180, 69140, 0611130352, cca.vancia.secretariat@gmail.com, 1959, association, club de chien, club, association, activités, activités canines, canines, activités sauvetage, sauvetage, obéicence, chien, chienne, chiens, chiots">
-    <meta name="description" content="Description du club de chien">
+        content="vancia, rillieux-la-pape, rillieux, sathonay, Rhône Alpes, 1180, 69140, 0611130352, cca.vancia.secretariat@gmail.com, 1959, association, club de chien, club, association, activités, activités canines, canines, activités sauvetage, sauvetage, obéissance, chien, chienne, chiens, chiots, cca, education">
+    <meta name="description"
+        content="Bienvenue au Club du chien d'accompagnement de Rillieux la pape. Nous pratiquons l'éducation canine toutes races, notre club est labélisé Ecole du Chiot. Vous pourrez également pratiquer le sauvetage et l'obéissance en compétition.">
     <meta name="author" content="Paleyron Ethan">
     <meta name="robots" content="index, follow">
     <script src="https://kit.fontawesome.com/2621df78fc.js" crossorigin="anonymous"></script>
