@@ -126,7 +126,7 @@
     <?php if ($page === "Manager") { ?>
         <script type="module" src="/js/confirmDeletion.js"></script>
     <?php } ?>
-    <?php if ($page === "Insertion" || $page === "updated") { ?>
+    <?php if ($page === "Insertion" || $page === "Updated") { ?>
         <script type="module" src="/js/previewImage.js"></script>
     <?php } ?>
 </body>
