@@ -7,22 +7,23 @@ ob_start();
     <div class="content">
         <h2>Modification d'un equipier</h2>
         <form action="/updateEquipier/" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="id_equipier" value="<?= $equipierSelectionner->getid_equipier() ?>">
-            <input type="hidden" name="position_equipier" value="<?= $equipierSelectionner->getordre_equipier() ?>">
+            <input type="hidden" name="id_equipier" value="<?= escape($equipierSelectionner->getid_equipier()) ?>">
+            <input type="hidden" name="position_equipier"
+                value="<?= escape($equipierSelectionner->getordre_equipier()) ?>">
             <input type="text" name="nom_equipier" id="nom_equipier" placeholder="Nom de l'equipier"
-                value="<?= $equipierSelectionner->getnom_equipier() ?>" autocomplete="off">
+                value="<?= escape($equipierSelectionner->getnom_equipier()) ?>" autocomplete="off">
             <label for="nom_equipier" class="error">
                 <?= error("nom_equipier") ?>
             </label>
             <textarea name="description_equipier" id="description_equipier" cols="30" rows="10"
-                placeholder="Description de l'equipier"><?= $equipierSelectionner->getdescription_equipier() ?></textarea>
+                placeholder="Description de l'equipier"><?= escape($equipierSelectionner->getdescription_equipier()) ?></textarea>
             <label for="description_equipier" class="error">
                 <?= error("description_equipier") ?>
             </label>
             <label for="file" id="labelFile">
                 <div class="logoUpdateFile"><i class="fa-solid fa-download"></i></div>
-                <img src="/../assets/images/equipe/<?= $equipierSelectionner->getphoto_equipier() ?>"
-                    alt="<?= $equipierSelectionner->getphoto_equipier() ?>">
+                <img src="/../assets/images/equipe/<?= escape($equipierSelectionner->getphoto_equipier()) ?>"
+                    alt="<?= escape($equipierSelectionner->getphoto_equipier()) ?>">
             </label>
             <input type="file" name="photo_equipier" id="file" require>
             <div>
@@ -30,14 +31,14 @@ ob_start();
                 <select name="ordre_equipier" id="ordre_equipier">
                     <option value="0">En premier</option>
                     <?php foreach ($equipe as $key => $equipier) {
-                        if ($equipier->getordre_equipier() !== $equipierSelectionner->getordre_equipier()) { // Si il n'est pas egale a l'equipier qu'on modifie on l'affiche
-                            if ($equipier->getordre_equipier() + 1 == $equipierSelectionner->getordre_equipier()) { ?>
-                                <option selected value="<?= $equipier->getordre_equipier() + 1 ?>">
+                        if ($equipier->getordre_equipier() !== escape($equipierSelectionner->getordre_equipier())) { // Si il n'est pas egale a l'equipier qu'on modifie on l'affiche
+                            if ($equipier->getordre_equipier() + 1 == escape($equipierSelectionner->getordre_equipier())) { ?>
+                                <option selected value="<?= escape($equipier->getordre_equipier()) + 1 ?>">
                                 <?php } else { ?>
-                                <option value="<?= $equipier->getordre_equipier() + 1 ?>">
+                                <option value="<?= escape($equipier->getordre_equipier()) + 1 ?>">
                                 <?php } ?>
                                 Après
-                                <?= $equipier->getnom_equipier() ?>
+                                <?= escape($equipier->getnom_equipier()) ?>
                             </option>
                         <?php }
                     } ?>

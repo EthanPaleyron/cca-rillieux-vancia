@@ -487,10 +487,6 @@ header div p {
   align-items: center;
   flex-direction: column;
 }
-.tarifs_horaires_map .tarifs_horaires .suffixes {
-  vertical-align: super;
-  font-size: smaller;
-}
 .tarifs_horaires_map .tarifs_horaires .tarifs {
   display: flex;
   justify-content: center;
@@ -544,6 +540,7 @@ header div p {
   text-transform: uppercase;
 }
 .tarifs_horaires_map .tarifs_horaires .horaires ul {
+  width: 100%;
   margin: 0.5rem 0 1rem;
 }
 .tarifs_horaires_map .tarifs_horaires .horaires ul li h4 {

@@ -24,6 +24,11 @@ $router->get('/admin/tarifs/', "AdminController@showTarifsManager");
 $router->get('/admin/tarifs/nouveau_tarif/', "AdminController@showInsertionTarif");
 $router->get('/admin/tarif/update/:id_tarif/', "AdminController@showUpdatedTarif");
 
+// HORAIRES MANAGER
+$router->get('/admin/horaires/', "AdminController@showHorairesManager");
+$router->get('/admin/horaires/nouvelle_horaire/', "AdminController@showInsertionHoraire");
+$router->get('/admin/horaire/update/:id_horaire/', "AdminController@showUpdatedHoraire");
+
 // EQUIPE MANAGER
 $router->get('/admin/equipe/', "AdminController@showEquipeManager");
 $router->get('/admin/equipe/nouvelle_equipier/', "AdminController@showInsertionEquipier");
@@ -36,11 +41,16 @@ $router->post('/newActualite/', "ActualitesController@newActualite");
 $router->get('/admin/actualite/delete/:id_actualite/', "ActualitesController@deleteActualite");
 $router->post('/updateActualite/', "ActualitesController@updateActualite");
 
-// TARIFS (HORAIRES)
+// TARIFS & HORAIRES
 $router->get('/tarifs_horaires/', "TarifsController@showTarifHoraire");
+// TARIFS
 $router->post('/newTarif/', "TarifsController@newTarif");
 $router->get('/admin/tarif/delete/:id_tarif/', "TarifsController@deleteTarif");
 $router->post('/updateTarif/', "TarifsController@updateTarif");
+// HORAIRES
+$router->post('/newHoraire/', "HorairesController@newHoraire");
+$router->get('/admin/horaire/delete/:id_horaire/', "HorairesController@deleteHoraire");
+$router->post('/updateHoraire/', "HorairesController@updateHoraire");
 
 // EQUIPE
 $router->get('/equipe/', "EquipeController@showEquipe");

@@ -129,6 +129,43 @@ class AdminController extends Controller
         $page = "Updated";
         require VIEWS . 'Admin/updated-tarif.php';
     }
+    public function showHorairesManager(): void
+    {
+        // Si l'admin est connecter on le redirige sur le tableau de bord
+        if (!isset($_SESSION["admin"]["nom"])) {
+            header("Location: /admin/login/");
+            die();
+        }
+        $horaires = $this->horairesManager->getHoraires();
+        $page = "Manager";
+        require VIEWS . 'Admin/horaires-manager.php';
+    }
+    public function showInsertionHoraire(): void
+    {
+        // Si l'admin est connecter on le redirige sur le tableau de bord
+        if (!isset($_SESSION["admin"]["nom"])) {
+            header("Location: /admin/login/");
+            die();
+        }
+        $horaires = $this->horairesManager->getHoraires();
+        if (count($horaires) >= 10) {
+            header("Location: /admin/horaires/");
+            die();
+        }
+        $page = "Insertion";
+        require VIEWS . 'Admin/insertion-horaire.php';
+    }
+    public function showUpdatedHoraire(int $id_horaire): void
+    {
+        // Si l'admin est connecter on le redirige sur le tableau de bord
+        if (!isset($_SESSION["admin"]["nom"])) {
+            header("Location: /admin/login/");
+            die();
+        }
+        $horaireSelectionner = $this->horairesManager->getHoraire($id_horaire);
+        $page = "Updated";
+        require VIEWS . 'Admin/updated-horaire.php';
+    }
     public function showEquipeManager(): void
     {
         // Si l'admin est connecter on le redirige sur le tableau de bord

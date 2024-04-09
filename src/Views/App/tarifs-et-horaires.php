@@ -16,23 +16,23 @@ ob_start();
                 <tbody>
                     <tr>
                         <td></td>
-                        <td>1<span class="suffixes">er</span> Chien</td>
-                        <td>2<span class="suffixes">ème</span> Chien</td>
+                        <td>1er Chien</td>
+                        <td>2 ème Chien</td>
                         <td>Licence par chien</td>
                     </tr>
                     <?php foreach ($tarifs as $tarif) { ?>
                         <tr>
                             <td>
-                                <?= $tarif->getnom_tarif() ?>
+                                <?= escape($tarif->getnom_tarif()) ?>
                             </td>
                             <td>
-                                <?= $tarif->gettarif_premier_chien() ?> €
+                                <?= escape($tarif->gettarif_premier_chien()) ?> €
                             </td>
                             <td>
-                                <?= $tarif->gettarif_deuxieme_chien() ?> €
+                                <?= escape($tarif->gettarif_deuxieme_chien()) ?> €
                             </td>
                             <td>
-                                <?= $tarif->gettarif_par_chien() ?> €
+                                <?= escape($tarif->gettarif_par_chien()) ?> €
                             </td>
                         </tr>
                     <?php } ?>
@@ -52,10 +52,43 @@ ob_start();
             <h2 class="title">Nos Horaires</h2>
             <h3>Samedi</h3>
             <ul>
-                <li>
-                    <h4>Matin</h4>
-                </li>
-                <li>
+                <?php if (!empty($horairesMatin)) { ?>
+                    <li>
+                        <h4>Matin</h4>
+                    </li>
+                <?php } ?>
+                <?php foreach ($horairesMatin as $horaire) {
+                    $time = DateTime::createFromFormat("H:i:s", $horaire->getheure_horaire()); ?>
+                    <li>
+                        <p><i class="fa-solid fa-paw"></i><span class="heures"><?= $time->format("H \H i") ?></span>
+                            <?= $horaire->getnom_horaire() ?></p>
+                    </li>
+                <?php } ?>
+                <?php if (!empty($horairesApresMidi)) { ?>
+                    <li>
+                        <h4>Après Midi</h4>
+                    </li>
+                <?php } ?>
+                <?php foreach ($horairesApresMidi as $horaire) {
+                    $time = DateTime::createFromFormat("H:i:s", $horaire->getheure_horaire()); ?>
+                    <li>
+                        <p><i class="fa-solid fa-paw"></i><span class="heures"><?= $time->format("H \H i") ?></span>
+                            <?= $horaire->getnom_horaire() ?></p>
+                    </li>
+                <?php } ?>
+                <?php if (!empty($horairesSoir)) { ?>
+                    <li>
+                        <h4>Soir</h4>
+                    </li>
+                <?php } ?>
+                <?php foreach ($horairesSoir as $horaire) {
+                    $time = DateTime::createFromFormat("H:i:s", $horaire->getheure_horaire()); ?>
+                    <li>
+                        <p><i class="fa-solid fa-paw"></i><span class="heures"><?= $time->format("H \H i") ?></span>
+                            <?= $horaire->getnom_horaire() ?></p>
+                    </li>
+                <?php } ?>
+                <!-- <li>
                     <p><i class="fa-solid fa-paw"></i><span class="heures">09H30</span> SAUVETAGE (test préalable pour
                         intégrer la
                         section)</p>
@@ -64,9 +97,6 @@ ob_start();
                     <p><i class="fa-solid fa-paw"></i><span class="heures">09H30</span> OBEISSANCE (test préalable pour
                         intégrer la
                         section)</p>
-                </li>
-                <li>
-                    <h4>Après Midi</h4>
                 </li>
                 <li>
                     <p><i class="fa-solid fa-paw"></i><span class="heures">14H00</span> CHIOTS 1<span
@@ -83,7 +113,7 @@ ob_start();
                         à définir par
                         les moniteurs selon niveau et
                         attente)</p>
-                </li>
+                </li> -->
             </ul>
         </article>
     </div>

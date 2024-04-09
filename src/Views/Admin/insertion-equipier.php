@@ -7,8 +7,8 @@ ob_start();
     <div class="content">
         <h2>Creation d'un nouvelle équipier</h2>
         <form action="/newEquipier/" method="post" enctype="multipart/form-data">
-            <input type="text" name="nom_equipier" id="nom_equipier" placeholder="Nom equipier de l'equipier"
-                autocomplete="off" value="<?= old("nom_equipier") ?>">
+            <input type="text" name="nom_equipier" id="nom_equipier" placeholder="Nom de l'equipier" autocomplete="off"
+                value="<?= old("nom_equipier") ?>">
             <label for="nom_equipier" class="error">
                 <?= error("nom_equipier") ?>
             </label>
@@ -30,7 +30,7 @@ ob_start();
                 <select name="ordre_equipier" id="ordre_equipier">
                     <option value="0">En premier</option>
                     <?php foreach ($equipe as $key => $equipier) {
-                        if ($equipier->getordre_equipier() + 1 === sizeof($equipe)) { // Si c'est le dernier de la liste on le select          ?>
+                        if ($equipier->getordre_equipier() + 1 === sizeof($equipe)) { // Si c'est le dernier de la liste on le select           ?>
                             <option selected value="<?= $equipier->getordre_equipier() + 1 ?>">
                                 Après
                                 <?= $equipier->getnom_equipier() ?>

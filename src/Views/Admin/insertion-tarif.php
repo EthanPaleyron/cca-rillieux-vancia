@@ -28,11 +28,11 @@ ob_start();
                 <?= error("par_chien") ?>
             </label>
             <div>
-                <label for="ordre_tarif">Position de l'tarif : </label>
+                <label for="ordre_tarif">Position du l'tarif : </label>
                 <select name="ordre_tarif" id="ordre_tarif">
                     <option value="0">En premier</option>
                     <?php foreach ($tarifs as $key => $tarif) {
-                        if ($tarif->getordre_tarif() + 1 === sizeof($tarifs)) { // Si c'est le dernier de la liste on le select             ?>
+                        if ($tarif->getordre_tarif() + 1 === sizeof($tarifs)) { // Si c'est le dernier de la liste on le select              ?>
                             <option selected value="<?= $tarif->getordre_tarif() + 1 ?>">
                                 Après
                                 <?= $tarif->getnom_tarif() ?>

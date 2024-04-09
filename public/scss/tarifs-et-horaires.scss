@@ -3,10 +3,6 @@
   .tarifs_horaires {
     @include flex(center, center);
     flex-direction: column;
-    .suffixes {
-      vertical-align: super;
-      font-size: smaller;
-    }
     .tarifs {
       display: flex;
       justify-content: center;
@@ -60,6 +56,7 @@
         text-transform: uppercase;
       }
       ul {
+        width: 100%;
         margin: 0.5rem 0 1rem;
         li {
           h4 {

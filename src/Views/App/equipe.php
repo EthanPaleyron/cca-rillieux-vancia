@@ -7,13 +7,13 @@ ob_start();
     <div>
         <?php foreach ($equipe as $equipier) { ?>
             <article>
-                <img src="../assets/images/equipe/<?= $equipier->getphoto_equipier() ?>"
-                    alt="<?= $equipier->getphoto_equipier() ?>">
+                <img src="../assets/images/equipe/<?= escape($equipier->getphoto_equipier()) ?>"
+                    alt="<?= escape($equipier->getphoto_equipier()) ?>">
                 <h2>
-                    <?= $equipier->getnom_equipier() ?>
+                    <?= escape($equipier->getnom_equipier()) ?>
                 </h2>
                 <p>
-                    <?= $equipier->getdescription_equipier() ?>
+                    <?= escape($equipier->getdescription_equipier()) ?>
                 </p>
             </article>
         <?php } ?>

@@ -7,6 +7,7 @@ ob_start();
     <ul>
         <li><a href="/admin/actualites/">Gestion des actualités</a></li>
         <li><a href="/admin/tarifs/">Gestion des tarifs</a></li>
+        <li><a href="/admin/horaires/">Gestion des horaires</a></li>
         <li><a href="/admin/equipe/">Gestion de l'équipe</a></li>
     </ul>
     <a class="logout" href="/admin/logout/">Déconnexion</a>

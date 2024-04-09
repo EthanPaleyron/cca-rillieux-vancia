@@ -18,6 +18,7 @@ class Validator
         "url" => "Ce champ doit correspondre à une url!",
         "email" => "Ce champ doit correspondre à une email: exemple@gmail.com!",
         "date" => "Ce champ doit être une date!",
+        "time" => "Ce champ doit être une du temps en heures, minutes et secondes!",
         "alpha" => "Ce champ peut contenir que des lettres minuscules et majuscules!",
         "alphaNum" => "Ce champ peut contenir que des lettres minuscules, majuscules et des chiffres!",
         "alphaNumDash" => "Ce champ peut contenir que des lettres minuscules, majuscules, des chiffres, des slashs et des tirets!",
