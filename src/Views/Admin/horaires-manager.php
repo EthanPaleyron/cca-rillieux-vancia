@@ -40,13 +40,12 @@ ob_start();
             </tbody>
         </table>
     </div>
-    <p class="count">
-        <?= count($horaires) ?>
-        <?php if (count($horaires) === 1) { ?>
-            horaire
+    <?php if (count($horaires) >= 10) { ?>
+        <p class="count error">
         <?php } else { ?>
-            horaires
+        <p class="count">
         <?php } ?>
+        <?= count($horaires) ?> sur 10
     </p>
 </div>
 <a class="create" href="/admin/horaires/nouvelle_horaire/"><i class="fa-solid fa-plus"></i></a>

@@ -6,7 +6,7 @@ class EquipeController extends Controller
     public function showEquipe(): void
     {
         $equipe = $this->equipeManager->getEquipe();
-        $page = "L'equipe";
+        $page = "L'équipe";
         require VIEWS . "App/equipe.php";
     }
     public function newEquipier(): void

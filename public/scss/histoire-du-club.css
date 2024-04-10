@@ -1,0 +1,45 @@
+.histoire_du_club {
+  margin: 2rem 10% 4rem;
+}
+.histoire_du_club div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.histoire_du_club div img {
+  margin: 0 2rem 2rem 0;
+  width: 30rem;
+  border-radius: 0.5rem;
+}
+.histoire_du_club div p {
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .histoire_du_club {
+    margin: 2rem 2% 4rem;
+  }
+  .histoire_du_club div {
+    flex-direction: row;
+  }
+  .histoire_du_club div img {
+    width: 20rem;
+    margin: 0 1rem 1rem 0;
+  }
+}
+@media screen and (min-width: 1040px) {
+  .histoire_du_club {
+    margin: 2rem 10% 4rem;
+  }
+  .histoire_du_club div {
+    flex-direction: row;
+  }
+  .histoire_du_club div img {
+    width: 30rem;
+    margin: 0 1rem 1rem 0;
+  }
+  .histoire_du_club div p {
+    font-size: 1.3rem;
+  }
+}/*# sourceMappingURL=histoire-du-club.css.map */

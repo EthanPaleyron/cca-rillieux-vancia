@@ -7,7 +7,7 @@ class HorairesManager extends Manager
 {
     public function getHoraires(): array
     {
-        $stmt = $this->bdd->prepare("SELECT * FROM horaires ORDER BY heure_horaire");
+        $stmt = $this->bdd->prepare("SELECT * FROM horaires ORDER BY CAST(heure_horaire AS TIME)");
         $stmt->execute(
             array(
             )
@@ -16,25 +16,16 @@ class HorairesManager extends Manager
     }
     public function getHorairesMatin(): array
     {
-        $stmt = $this->bdd->prepare("SELECT * FROM horaires WHERE TIME(heure_horaire) BETWEEN '06:00:00' AND '11:59:59' ORDER BY heure_horaire");
+        $stmt = $this->bdd->prepare("SELECT * FROM horaires WHERE temps_horaire = 'Matin' ORDER BY CAST(heure_horaire AS TIME)");
         $stmt->execute(
             array(
             )
         );
         return $stmt->fetchAll(\PDO::FETCH_CLASS, "Project\Models\Horaire");
     }
-    public function getHorairesApresMidi(): array
+    public function getHorairesApresmidi(): array
     {
-        $stmt = $this->bdd->prepare("SELECT * FROM horaires WHERE TIME(heure_horaire) BETWEEN '12:00:00' AND '17:59:59' ORDER BY heure_horaire");
-        $stmt->execute(
-            array(
-            )
-        );
-        return $stmt->fetchAll(\PDO::FETCH_CLASS, "Project\Models\Horaire");
-    }
-    public function getHorairesSoir(): array
-    {
-        $stmt = $this->bdd->prepare("SELECT * FROM horaires WHERE TIME(heure_horaire) BETWEEN '17:00:00' AND '00:00:00' ORDER BY heure_horaire");
+        $stmt = $this->bdd->prepare("SELECT * FROM horaires WHERE temps_horaire = 'Après Midi' ORDER BY CAST(heure_horaire AS TIME)");
         $stmt->execute(
             array(
             )
@@ -52,13 +43,14 @@ class HorairesManager extends Manager
         $stmt->setFetchMode(\PDO::FETCH_CLASS, "Project\Models\Horaire");
         return $stmt->fetch();
     }
-    public function storeHoraire()
+    public function storeHoraire(string $temps, string $heure)
     {
-        $stmt = $this->bdd->prepare("INSERT INTO horaires (nom_horaire, heure_horaire) VALUES (?, ?)");
+        $stmt = $this->bdd->prepare("INSERT INTO horaires (temps_horaire, nom_horaire, heure_horaire) VALUES (?, ?, ?)");
         $stmt->execute(
             array(
+                $temps,
                 $_POST["nom_horaire"],
-                $_POST["heure_horaire"],
+                $heure,
             )
         );
         return $stmt->fetchAll(\PDO::FETCH_CLASS, "Project\Models\Horaire");
@@ -73,12 +65,13 @@ class HorairesManager extends Manager
         );
         return $stmt->fetchAll(\PDO::FETCH_CLASS, "Project\Models\Horaire");
     }
-    public function updateHoraire()
+    public function updateHoraire(string $temps, string $heure)
     {
-        $stmt = $this->bdd->prepare("UPDATE horaires SET heure_horaire = ?, nom_horaire = ? WHERE id_horaire = ?");
+        $stmt = $this->bdd->prepare("UPDATE horaires SET temps_horaire = ?, heure_horaire = ?, nom_horaire = ? WHERE id_horaire = ?");
         $stmt->execute(
             array(
-                $_POST["heure_horaire"],
+                $temps,
+                $heure,
                 $_POST["nom_horaire"],
                 $_POST["id_horaire"],
             )

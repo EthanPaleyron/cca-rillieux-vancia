@@ -8,7 +8,6 @@ class TarifsController extends Controller
         $tarifs = $this->tarifsManager->getTarifs();
         $horairesMatin = $this->horairesManager->getHorairesMatin();
         $horairesApresMidi = $this->horairesManager->getHorairesApresMidi();
-        $horairesSoir = $this->horairesManager->getHorairesSoir();
         $page = "Tarifs & Horaires";
         require VIEWS . "App/tarifs-et-horaires.php";
     }

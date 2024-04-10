@@ -46,7 +46,7 @@
                     new Link("Accueil", "/"),
                     new Link("Tarifs & Horaires", "/tarifs_horaires/"),
                     new Link("Histoire du club", "/histoire_du_club/"),
-                    new Link("L'equipe", "/equipe/"),
+                    new Link("L'équipe", "/equipe/"),
                 );
                 if (isset($page)) {
                     foreach ($links as $link) {

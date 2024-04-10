@@ -46,7 +46,7 @@ ob_start();
                     } ?>
                 </select>
             </div>
-            <button>Créer</button>
+            <button>Modifier le tarif</button>
         </form>
     </div>
 </div>

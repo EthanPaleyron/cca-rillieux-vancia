@@ -5,15 +5,15 @@ ob_start();
 <div class="form">
     <a class="return" href="/admin/equipe/"><i class="fa-solid fa-arrow-left"></i></a>
     <div class="content">
-        <h2>Creation d'un nouvelle équipier</h2>
+        <h2>Création d'un nouvelle équipié</h2>
         <form action="/newEquipier/" method="post" enctype="multipart/form-data">
-            <input type="text" name="nom_equipier" id="nom_equipier" placeholder="Nom de l'equipier" autocomplete="off"
+            <input type="text" name="nom_equipier" id="nom_equipier" placeholder="Nom de l'équipié" autocomplete="off"
                 value="<?= old("nom_equipier") ?>">
             <label for="nom_equipier" class="error">
                 <?= error("nom_equipier") ?>
             </label>
             <textarea name="description_equipier" id="description_equipier" cols="30" rows="10"
-                placeholder="Description de l'equipier"><?= old("description_equipier") ?></textarea>
+                placeholder="Description de l'équipié"><?= old("description_equipier") ?></textarea>
             <label for="description_equipier" class="error">
                 <?= error("description_equipier") ?>
             </label>
@@ -26,7 +26,7 @@ ob_start();
                 <?= error("file") ?>
             </label>
             <div>
-                <label for="ordre_equipier">Position de l'equipier : </label>
+                <label for="ordre_equipier">Position de l'équipié : </label>
                 <select name="ordre_equipier" id="ordre_equipier">
                     <option value="0">En premier</option>
                     <?php foreach ($equipe as $key => $equipier) {
@@ -44,7 +44,7 @@ ob_start();
                     } ?>
                 </select>
             </div>
-            <button>Ajouter</button>
+            <button>Créer l'équipié</button>
         </form>
     </div>
 </div>

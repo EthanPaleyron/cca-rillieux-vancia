@@ -57,10 +57,9 @@ ob_start();
                         <h4>Matin</h4>
                     </li>
                 <?php } ?>
-                <?php foreach ($horairesMatin as $horaire) {
-                    $time = DateTime::createFromFormat("H:i:s", $horaire->getheure_horaire()); ?>
+                <?php foreach ($horairesMatin as $horaire) { ?>
                     <li>
-                        <p><i class="fa-solid fa-paw"></i><span class="heures"><?= $time->format("H \H i") ?></span>
+                        <p><i class="fa-solid fa-paw"></i><span class="heures"><?= $horaire->getheure_horaire() ?></span>
                             <?= $horaire->getnom_horaire() ?></p>
                     </li>
                 <?php } ?>
@@ -69,22 +68,9 @@ ob_start();
                         <h4>Après Midi</h4>
                     </li>
                 <?php } ?>
-                <?php foreach ($horairesApresMidi as $horaire) {
-                    $time = DateTime::createFromFormat("H:i:s", $horaire->getheure_horaire()); ?>
+                <?php foreach ($horairesApresMidi as $horaire) { ?>
                     <li>
-                        <p><i class="fa-solid fa-paw"></i><span class="heures"><?= $time->format("H \H i") ?></span>
-                            <?= $horaire->getnom_horaire() ?></p>
-                    </li>
-                <?php } ?>
-                <?php if (!empty($horairesSoir)) { ?>
-                    <li>
-                        <h4>Soir</h4>
-                    </li>
-                <?php } ?>
-                <?php foreach ($horairesSoir as $horaire) {
-                    $time = DateTime::createFromFormat("H:i:s", $horaire->getheure_horaire()); ?>
-                    <li>
-                        <p><i class="fa-solid fa-paw"></i><span class="heures"><?= $time->format("H \H i") ?></span>
+                        <p><i class="fa-solid fa-paw"></i><span class="heures"><?= $horaire->getheure_horaire() ?></span>
                             <?= $horaire->getnom_horaire() ?></p>
                     </li>
                 <?php } ?>

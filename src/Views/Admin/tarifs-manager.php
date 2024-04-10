@@ -17,7 +17,7 @@ ob_start();
                         <p>Nom du tarif</p>
                     </th>
                     <th>
-                        <p>Premier Chien / Deuxieme Chien / Licence par chien</p>
+                        <p>Premier Chien / Deuxième Chien / Licence par chien</p>
                     </th>
                     <th colspan="2">
                         <p>Modification et suppression</p>

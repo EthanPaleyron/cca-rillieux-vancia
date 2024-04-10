@@ -5,7 +5,7 @@ ob_start();
 <div class="form">
     <a class="return" href="/admin/tarifs/"><i class="fa-solid fa-arrow-left"></i></a>
     <div class="content">
-        <h2>Creation d'un nouveau tarif</h2>
+        <h2>Création d'un nouveau tarif</h2>
         <form action="/newTarif/" method="post" enctype="multipart/form-data">
             <input type="text" name="nom_tarif" id="nom_tarif" placeholder="Nom du tarif" autocomplete="off"
                 value="<?= old("nom_tarif") ?>">
@@ -28,7 +28,7 @@ ob_start();
                 <?= error("par_chien") ?>
             </label>
             <div>
-                <label for="ordre_tarif">Position du l'tarif : </label>
+                <label for="ordre_tarif">Position du tarif : </label>
                 <select name="ordre_tarif" id="ordre_tarif">
                     <option value="0">En premier</option>
                     <?php foreach ($tarifs as $key => $tarif) {
@@ -46,7 +46,7 @@ ob_start();
                     } ?>
                 </select>
             </div>
-            <button>Créer</button>
+            <button>Créer le tarif</button>
         </form>
     </div>
 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 09 avr. 2024 à 23:06
+-- Généré le : mer. 10 avr. 2024 à 23:05
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `actualites` (
   `date_actualite` datetime DEFAULT NULL,
   `image_actualite` varchar(200) NOT NULL,
   PRIMARY KEY (`id_actualite`)
-) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `actualites`
@@ -103,19 +103,22 @@ INSERT INTO `equipe` (`id_equipier`, `nom_equipier`, `description_equipier`, `ph
 DROP TABLE IF EXISTS `horaires`;
 CREATE TABLE IF NOT EXISTS `horaires` (
   `id_horaire` int NOT NULL AUTO_INCREMENT,
-  `heure_horaire` time NOT NULL,
-  `nom_horaire` varchar(20) NOT NULL,
+  `temps_horaire` varchar(15) NOT NULL,
+  `heure_horaire` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nom_horaire` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id_horaire`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `horaires`
 --
 
-INSERT INTO `horaires` (`id_horaire`, `heure_horaire`, `nom_horaire`) VALUES
-(1, '16:00:00', 'hey'),
-(3, '14:00:00', 'jfhflzae'),
-(4, '10:23:00', 'hahhaha');
+INSERT INTO `horaires` (`id_horaire`, `temps_horaire`, `heure_horaire`, `nom_horaire`) VALUES
+(34, 'Matin', '09 H 30', 'SAUVETAGE (test préalable pour intégrer la section)'),
+(36, 'Matin', '09 H 30', 'OBEISSANCE (test préalable pour intégrer la section)'),
+(37, 'Après Midi', '14 H 00', 'CHIOTS 1 ère année'),
+(38, 'Après Midi', '15 H 00', 'CHIOTS 2 ème année'),
+(39, 'Après Midi', '13 H 30 ET 15 H 00', 'CHIENS adultes (groupe à définir par les moniteurs selon niveau et attente)');
 
 -- --------------------------------------------------------
 
@@ -132,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `tarifs` (
   `tarif_par_chien` float DEFAULT NULL,
   `ordre_tarif` int NOT NULL,
   PRIMARY KEY (`id_tarif`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `tarifs`

@@ -5,7 +5,7 @@ ob_start();
 <div class="form">
     <a class="return" href="/admin/actualites/"><i class="fa-solid fa-arrow-left"></i></a>
     <div class="content">
-        <h2>Creation d'une nouvelle actualité</h2>
+        <h2>Création d'une nouvelle actualité</h2>
         <form action="/newActualite/" method="post" enctype="multipart/form-data">
             <input type="text" name="nom_actualite" id="nom_actualite" placeholder="Nom de l'actualité"
                 autocomplete="off" value="<?= old("nom_actualite") ?>">

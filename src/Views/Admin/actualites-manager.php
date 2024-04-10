@@ -43,8 +43,8 @@ ob_start();
     </div>
     <p class="count">
         <?= count($actualites) ?>
-        <?php if (count($actualites) === 1) { ?>
-            actualite
+        <?php if (count($actualites) <= 1) { ?>
+            actualité
         <?php } else { ?>
             actualites
         <?php } ?>

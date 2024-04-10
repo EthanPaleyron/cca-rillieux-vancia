@@ -163,6 +163,8 @@ class AdminController extends Controller
             die();
         }
         $horaireSelectionner = $this->horairesManager->getHoraire($id_horaire);
+        preg_match_all("/\d+/", $horaireSelectionner->getheure_horaire(), $matches); // on ajoute touts les chiffre dans un tableau
+        $heuresMinutes = $matches[0];
         $page = "Updated";
         require VIEWS . 'Admin/updated-horaire.php';
     }

@@ -13,12 +13,32 @@ ob_start();
             <label for="nom_horaire" class="error">
                 <?= error("nom_horaire") ?>
             </label>
-            <input type="time" name="heure_horaire" id="heure_horaire"
-                value="<?= escape($horaireSelectionner->getheure_horaire()) ?>">
-            <label for="heure_horaire" class="error">
-                <?= error("heure_horaire") ?>
+            <div>
+                <input type="number" name="heures1" id="heures1" placeholder="heures"
+                    value="<?= escape($heuresMinutes[0]) ?>">
+                <p> H </p>
+                <input type="number" name="minutes1" id="minutes1" placeholder="minutes"
+                    value="<?= escape($heuresMinutes[1]) ?>">
+                <p> ET </p>
+                <?php if (isset($heuresMinutes[2])) { ?>
+                    <input type="number" name="heures2" id="heures2" placeholder="heures"
+                        value="<?= escape($heuresMinutes[2]) ?>">
+                <?php } else { ?>
+                    <input type="number" name="heures2" id="heures2" placeholder="heures">
+                <?php } ?>
+                <p> H </p>
+                <?php if (isset($heuresMinutes[3])) { ?>
+                    <input type="number" name="minutes2" id="minutes2" placeholder="minutes"
+                        value="<?= escape($heuresMinutes[3]) ?>">
+                <?php } else { ?>
+                    <input type="number" name="minutes2" id="minutes2" placeholder="minutes">
+                <?php } ?>
+            </div>
+            <label for="heures1" class="error">
+                <?= error("message") ?>
             </label>
-            <button>Créer</button>
+            <p>Une 2 ème heure n'est pas obligatoire!</p>
+            <button>Modifier l'horaire</button>
         </form>
     </div>
 </div>
