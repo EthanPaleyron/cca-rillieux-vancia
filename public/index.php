@@ -2,9 +2,14 @@
 
 session_start();
 
+use Project\DatabaseCreator;
+
 require '../src/config/config.php';
 require '../vendor/autoload.php';
 require SRC . 'helper.php';
+
+$DatabaseCreator = new DatabaseCreator();
+$DatabaseCreator->checkDatabase();
 
 $router = new Project\Router($_SERVER["REQUEST_URI"]);
 
