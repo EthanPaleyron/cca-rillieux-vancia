@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 10 avr. 2024 à 23:05
+-- Généré le : jeu. 11 avr. 2024 à 17:51
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -56,14 +56,15 @@ CREATE TABLE IF NOT EXISTS `admins` (
   `nom_admin` varchar(255) DEFAULT NULL,
   `mdp_admin` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_admin`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `admins`
 --
 
 INSERT INTO `admins` (`id_admin`, `nom_admin`, `mdp_admin`) VALUES
-(1, 'Ethan', '$2y$10$CkniP1vKbzYOiJqXdb0hJukVY7ypvbGOZKa69/GZ303KgVWzcREOi');
+(1, 'Ethan', '$2y$10$CkniP1vKbzYOiJqXdb0hJukVY7ypvbGOZKa69/GZ303KgVWzcREOi'),
+(2, 'Noelle', '$2y$10$.AmwFcdVBDUPPvqNDH073.GR0xz5M95W.qldKDLRJySJ2D1.r2FUm');
 
 -- --------------------------------------------------------
 
