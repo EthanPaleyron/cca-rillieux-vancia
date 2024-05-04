@@ -43,7 +43,7 @@ class AdminManager extends Manager
         $stmt->execute(
             array(
                 $_POST["nom_admin"],
-                $_POST["mdp_admin"],
+                password_hash($_POST["mdp_admin"], PASSWORD_BCRYPT),
                 $role
             )
         );
@@ -63,7 +63,7 @@ class AdminManager extends Manager
         $stmt->execute(
             array(
                 $_POST["nom_admin"],
-                $_POST["mdp_admin"],
+                password_hash($_POST["mdp_admin"], PASSWORD_BCRYPT),
                 $role,
                 $_POST["id_admin"],
             )

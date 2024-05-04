@@ -13,8 +13,7 @@ ob_start();
             <label for="nom_admin" class="error">
                 <?= error("nom_admin") ?>
             </label>
-            <input name="mdp_admin" id="mdp_admin" placeholder="mdp de l'admin"
-                value="<?= escape($adminSelectionner->getmdp_admin()) ?>">
+            <input name="mdp_admin" id="mdp_admin" placeholder="Réinitialiser le mot de passe">
             <label for="mdp_admin" class="error">
                 <?= error("mdp_admin") ?>
             </label>

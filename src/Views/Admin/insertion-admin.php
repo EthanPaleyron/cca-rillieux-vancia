@@ -12,7 +12,7 @@ ob_start();
             <label for="nom_admin" class="error">
                 <?= error("nom_admin") ?>
             </label>
-            <input type="text" name="mdp_admin" id="mdp_admin" placeholder="Mots de passe de l'admin" autocomplete="off"
+            <input type="text" name="mdp_admin" id="mdp_admin" placeholder="Mot de passe" autocomplete="off"
                 value="<?= old("mdp_admin") ?>">
             <label for="mdp_admin" class="error">
                 <?= error("mdp_admin") ?>

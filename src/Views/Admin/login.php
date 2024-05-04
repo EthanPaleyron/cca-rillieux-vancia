@@ -10,7 +10,7 @@ ob_start();
             <?= error("nom") ?>
         </label>
         <div>
-            <input type="password" name="mdp" id="mdp" placeholder="Mots de passe" value="<?= old("mdp") ?>">
+            <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" value="<?= old("mdp") ?>">
             <button type="button" id="lookThePassword"><i class="fa-solid fa-eye-slash"></i></button>
         </div>
         <label for="mdp" class="error">
