@@ -54,6 +54,11 @@ class ActualitesController extends Controller
             header("Location: /login/");
             die();
         }
+        // Si c'est pas un super admin on le redirige sur le tableau de bord
+        if ($_SESSION["admin"]["role"] == 2) {
+            header("Location: /admin/login/");
+            die();
+        }
         $actualite = $this->actualitesManager->getActualite($id_actualite);
         $filePath = "../public/assets/images/actualites/" . $actualite->getimage_actualite();
         if (file_exists($filePath)) { // Si l'image existe on la supprime

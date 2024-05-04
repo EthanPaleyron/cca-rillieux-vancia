@@ -90,7 +90,7 @@
         <?php echo $content; ?>
     </main>
 
-    <?php if ($page === "Accueil" || $page === "Tarifs & Horaires" || $page === "Histoire du club" || $page === "L'equipe") { ?>
+    <?php if ($page === "Accueil" || $page === "Tarifs & Horaires" || $page === "Histoire du club" || $page === "L'équipe") { ?>
         <footer>
             <img class="logo logo_white" src="/assets/logo.svg" alt="Logo">
             <div>

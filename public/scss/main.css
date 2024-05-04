@@ -1087,6 +1087,23 @@ header div p {
   align-items: center;
   gap: 0.3rem;
 }
+.form .content form label {
+  cursor: pointer;
+}
+.form .content form .content_checkbox {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+.form .content form .content_checkbox input {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.form .content form p {
+  text-align: start;
+  width: 100%;
+}
 .form .content form input,
 .form .content form textarea {
   width: 100%;

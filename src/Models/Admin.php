@@ -6,6 +6,7 @@ class Admin extends Manager
     private int $id_admin;
     private string $nom_admin;
     private string $mdp_admin;
+    private int $role_admin;
     public function setid_admin($id_admin): void
     {
         $this->id_admin = $id_admin;
@@ -29,5 +30,13 @@ class Admin extends Manager
     public function getmdp_admin(): string
     {
         return $this->mdp_admin;
+    }
+    public function setrole_admin($role_admin): void
+    {
+        $this->role_admin = $role_admin;
+    }
+    public function getrole_admin(): int
+    {
+        return $this->role_admin;
     }
 }

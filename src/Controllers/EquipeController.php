@@ -50,6 +50,11 @@ class EquipeController extends Controller
             header("Location: /login/");
             die();
         }
+        // Si c'est pas un super admin on le redirige sur le tableau de bord
+        if ($_SESSION["admin"]["role"] == 2) {
+            header("Location: /admin/login/");
+            die();
+        }
         $result = $this->equipeManager->getEquipe();
         if (!empty($result)) { // Si il existe des equipier
             $orderMax = $this->equipeManager->orderMax(); // Je reccupere l'ordre le plus grand

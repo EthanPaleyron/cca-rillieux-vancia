@@ -9,6 +9,7 @@ ob_start();
         <li><a href="/admin/tarifs/">Gestion des tarifs</a></li>
         <li><a href="/admin/horaires/">Gestion des horaires</a></li>
         <li><a href="/admin/equipe/">Gestion de l'équipe</a></li>
+        <li><a href="/admin/admins/">Gestion des admins</a></li>
     </ul>
     <a class="logout" href="/admin/logout/">Déconnexion</a>
 </div>

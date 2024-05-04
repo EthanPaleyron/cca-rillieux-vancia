@@ -27,6 +27,7 @@ class AdminController extends Controller
                 $_SESSION["admin"] = [
                     "id" => $result->getid_admin(),
                     "nom" => $result->getnom_admin(),
+                    "role" => $result->getrole_admin(),
                 ];
                 header("Location: /admin/dashboard/");
             } else { // Sinon on affiche un message d'erreur
@@ -205,5 +206,116 @@ class AdminController extends Controller
         $equipe = $this->equipeManager->getEquipe();
         $page = "Updated";
         require VIEWS . 'Admin/updated-equipier.php';
+    }
+    public function showAdminsManager(): void
+    {
+        // Si l'admin est connecter on le redirige sur le tableau de bord
+        if (!isset($_SESSION["admin"]["nom"])) {
+            header("Location: /admin/login/");
+            die();
+        }
+        // Si c'est pas un super admin on le redirige sur le tableau de bord
+        if ($_SESSION["admin"]["role"] == 2) {
+            header("Location: /admin/login/");
+            die();
+        }
+        $admins = $this->adminManager->getAdmins();
+        $page = "Manager";
+        require VIEWS . 'Admin/admins-manager.php';
+    }
+    public function showInsertionAdmin(): void
+    {
+        // Si l'admin est connecter on le redirige sur le tableau de bord
+        if (!isset($_SESSION["admin"]["nom"])) {
+            header("Location: /admin/login/");
+            die();
+        }
+        // Si c'est pas un super admin on le redirige sur le tableau de bord
+        if ($_SESSION["admin"]["role"] == 2) {
+            header("Location: /admin/login/");
+            die();
+        }
+        $admin = $this->adminManager->getAdmins();
+        $page = "Insertion";
+        require VIEWS . 'Admin/insertion-admin.php';
+    }
+    public function showUpdatedAdmin(int $id_admin): void
+    {
+        // Si l'admin n'est pas connecter on le redirige sur la page de connexion
+        if (!isset($_SESSION["admin"]["id"])) {
+            header("Location: /login/");
+            die();
+        }
+        // Si c'est pas un super admin on le redirige sur le tableau de bord
+        if ($_SESSION["admin"]["role"] == 2) {
+            header("Location: /admin/login/");
+            die();
+        }
+        $adminSelectionner = $this->adminManager->getAdmin($id_admin);
+        $admin = $this->adminManager->getAdmins();
+        $page = "Updated";
+        require VIEWS . 'Admin/updated-admin.php';
+    }
+    public function insertAdmin()
+    {
+        // Si c'est pas un super admin on le redirige sur le tableau de bord
+        if ($_SESSION["admin"]["role"] == 2) {
+            header("Location: /admin/login/");
+            die();
+        }
+        $this->validator->validate([
+            "nom_admin" => ["required", "min:1"],
+            "mdp_admin" => ["required", "min:8"],
+        ]);
+        $_SESSION['old'] = $_POST;
+        if (!$this->validator->errors()) {
+            $role = 2;
+            if (isset($_POST["role_admin"])) {
+                $role = 1;
+            }
+            // créer un nouvelle admin
+            $this->adminManager->insertNewAdmin($role);
+            header("Location: /admin/admins/");
+        } else {
+            header("Location: /admin/admins/nouvelle_admin/");
+        }
+    }
+    public function deleteAdmin(int $id_admin)
+    {
+        if (!isset($_SESSION["admin"]["id"])) {
+            header("Location: /login/");
+            die();
+        }// Si c'est pas un super admin on le redirige sur le tableau de bord
+        if ($_SESSION["admin"]["role"] == 2) {
+            header("Location: /admin/login/");
+            die();
+        }
+        // supprime l'admin selectionner
+        $this->adminManager->deleteAdmin($id_admin);
+        header("Location: /admin/admins/");
+    }
+    public function updateAdmin()
+    {
+        // Si c'est pas un super admin on le redirige sur le tableau de bord
+        if ($_SESSION["admin"]["role"] == 2) {
+            header("Location: /admin/login/");
+            die();
+        }
+        $this->validator->validate([
+            "nom_admin" => ["required", "min:1"],
+            "mdp_admin" => ["required", "min:8"],
+        ]);
+        $_SESSION['old'] = $_POST;
+        if (!$this->validator->errors()) {
+            $role = 2;
+            if (isset($_POST["role_admin"])) {
+                $role = 1;
+            }
+            // modifier admin selectionner
+            $this->adminManager->updateAdmin($role);
+            header("Location: /admin/admins/");
+        } else {
+            header("Location: /admin/admins/update/" . $_POST["id_admin"] . "/");
+        }
     }
 }

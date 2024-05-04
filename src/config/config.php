@@ -6,5 +6,5 @@ define("VIEWS", '../src/Views/');
 
 define('HOST', '127.0.0.1');
 define('DATABASE', 'cca-rillieux-vancia');
-define('USER', 'cca');
-define('PASSWORD', 'cca');
+define('USER', 'root');
+define('PASSWORD', '');

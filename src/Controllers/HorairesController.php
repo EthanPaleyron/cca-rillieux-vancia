@@ -44,6 +44,16 @@ class HorairesController extends Controller
     }
     public function deleteHoraire(int $id_horaire)
     {
+        // Si l'admin n'est pas connecter on le redirige sur la page de connexion
+        if (!isset($_SESSION["admin"]["id"])) {
+            header("Location: /login/");
+            die();
+        }
+        // Si c'est pas un super admin on le redirige sur le tableau de bord
+        if ($_SESSION["admin"]["role"] == 2) {
+            header("Location: /admin/login/");
+            die();
+        }
         $this->horairesManager->deleteHoraire($id_horaire);
         header("Location: /admin/horaires/");
     }

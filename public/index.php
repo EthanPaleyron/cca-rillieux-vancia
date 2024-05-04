@@ -2,14 +2,12 @@
 
 session_start();
 
-use Project\DatabaseCreator;
-
 require '../src/config/config.php';
 require '../vendor/autoload.php';
 require SRC . 'helper.php';
 
-$DatabaseCreator = new DatabaseCreator();
-$DatabaseCreator->checkDatabase();
+# $DatabaseCreator = new Project\Database\Creator();
+# $DatabaseCreator->checkDatabase();
 
 $router = new Project\Router($_SERVER["REQUEST_URI"]);
 
@@ -65,6 +63,14 @@ $router->post('/updateEquipier/', "EquipeController@updateEquipier");
 
 // HISTOIRE DU CLUB
 $router->get('/histoire_du_club/', "HistoireController@showHistoire");
+
+// ADMIN MANAGER
+$router->get('/admin/admins/', "AdminController@showAdminsManager");
+$router->get('/admin/admins/nouvelle_admin/', "AdminController@showInsertionAdmin");
+$router->get('/admin/admins/update/:id_admin/', "AdminController@showUpdatedAdmin");
+$router->post('/newAdmin/', "AdminController@insertAdmin");
+$router->get('/admin/admin/delete/:id_admin/', "AdminController@deleteAdmin");
+$router->post('/updateAdmin/', "AdminController@updateAdmin");
 
 
 $router->run();

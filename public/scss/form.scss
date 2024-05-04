@@ -23,6 +23,22 @@
         align-items: center;
         gap: 0.3rem;
       }
+      label {
+        cursor: pointer;
+      }
+      .content_checkbox {
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        input {
+          width: fit-content;
+        }
+      }
+      p {
+        text-align: start;
+        width: 100%;
+      }
       input,
       textarea {
         width: 100%;
