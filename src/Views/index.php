@@ -3,10 +3,10 @@ ob_start();
 ?>
 
 <aside class="asideAccueil">
-    <button id="openAside"><i class="fa-solid fa-circle-info"></i></button>
+    <button id="openAside" title="Info des moyens de contact"><i class="fa-solid fa-circle-info"></i></button>
     <div>
         <h2>Salut toi!</h2>
-        <button id="closeAside"><i class="fa-regular fa-circle-xmark"></i></button>
+        <button id="closeAside" title="Fermer l'info"><i class="fa-regular fa-circle-xmark"></i></button>
     </div>
     <p>Viens chercher tes renseignements plus rapidement en passant directement par ici 😁</p>
     <ul class="contact">
@@ -47,8 +47,10 @@ ob_start();
                 <div class="content_carrousel">
                     <img id="carrousel" src="../assets/images/activites/education.jpg" alt="Activiter">
                     <div class="arrows">
-                        <button id="arrowLeft"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button id="arrowRight"><i class="fa-solid fa-chevron-right"></i></button>
+                        <button id="arrowLeft" title="Passé à l'activité suivante"><i
+                                class="fa-solid fa-chevron-left"></i></button>
+                        <button id="arrowRight" title="Passé à la précédente activité suivante"><i
+                                class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
                 <div class="content_title_description">

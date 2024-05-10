@@ -74,32 +74,6 @@ ob_start();
                             <?= $horaire->getnom_horaire() ?></p>
                     </li>
                 <?php } ?>
-                <!-- <li>
-                    <p><i class="fa-solid fa-paw"></i><span class="heures">09H30</span> SAUVETAGE (test préalable pour
-                        intégrer la
-                        section)</p>
-                </li>
-                <li>
-                    <p><i class="fa-solid fa-paw"></i><span class="heures">09H30</span> OBEISSANCE (test préalable pour
-                        intégrer la
-                        section)</p>
-                </li>
-                <li>
-                    <p><i class="fa-solid fa-paw"></i><span class="heures">14H00</span> CHIOTS 1<span
-                            class="suffixes">er</span> année
-                    </p>
-                </li>
-                <li>
-                    <p><i class="fa-solid fa-paw"></i><span class="heures">15H00</span> CHIOTS 2<span
-                            class="suffixes">ème</span> année
-                    </p>
-                </li>
-                <li>
-                    <p><i class="fa-solid fa-paw"></i><span class="heures">13H30 et 15h00</span> CHIENS adultes (groupe
-                        à définir par
-                        les moniteurs selon niveau et
-                        attente)</p>
-                </li> -->
             </ul>
         </article>
     </div>
@@ -108,7 +82,8 @@ ob_start();
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2779.78012924726!2d4.896945999999999!3d45.835684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4bfcd131ca4c9%3A0xce32bfbd2714d803!2s1180%20Chem.%20de%20Sathonay%20Village%2C%2069140%20Rillieux-la-Pape!5e0!3m2!1sfr!2sfr!4v1704388453470!5m2!1sfr!2sfr"
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            referrerpolicy="no-referrer-when-downgrade" title="Chemin de Sathonay Village, Rillieux-la-Pape"
+            aria-label="Découvrez le charmant Chemin de Sathonay Village à Rillieux-la-Pape, un quartier pittoresque situé dans la région de Lyon, en France. Profitez de son atmosphère paisible et de ses rues bordées d'arbres tout en explorant ce quartier historique. Avec ses maisons traditionnelles et son ambiance conviviale, le Chemin de Sathonay Village est un lieu idéal pour une promenade relaxante ou pour découvrir l'histoire locale."></iframe>
         <div>
             <label>L'adresse du club :</label>
             <a href="https://maps.app.goo.gl/XK9MeULifXSRpfpeA" target="_blank"><i

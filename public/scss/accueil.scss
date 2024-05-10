@@ -3,6 +3,7 @@ header {
     color: $w;
     text-align: center;
     height: 55vw;
+    width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url("../assets/images/header.jpg") no-repeat;
     background-size: cover;
@@ -33,7 +34,7 @@ header {
         position: relative;
         img {
           width: 100%;
-          height: 55vw;
+          height: 50vw;
           border-radius: 0.2rem;
           border: solid 1px;
         }
@@ -86,7 +87,7 @@ header {
         position: relative;
         width: fit-content;
         img {
-          width: 100vh;
+          width: 90vh;
           height: 50vw;
           border: solid 1px;
           border-radius: 0.3rem;
@@ -162,9 +163,10 @@ header {
   .accueil {
     .actualite {
       article {
+        width: 60%;
         .content_article {
           img {
-            height: 50vw;
+            height: 40vw;
           }
           .title_time {
             font-size: 1rem;
@@ -192,7 +194,7 @@ header {
 
 @media screen and (min-width: 1040px) {
   header div {
-    height: 115vh;
+    height: 100vh;
     h1 {
       font-size: 3.5rem;
     }
@@ -202,10 +204,10 @@ header {
   }
   .accueil {
     .actualite {
-      width: 70rem;
+      width: 80rem;
       article .content_article {
         img {
-          height: 35rem;
+          height: 30rem;
         }
         .title_time {
           padding: 1.2rem;
@@ -221,7 +223,7 @@ header {
     }
     .activiter article .content_carrousel {
       img {
-        width: 35rem;
+        width: 32rem;
         height: 20rem;
       }
       .arrows button {

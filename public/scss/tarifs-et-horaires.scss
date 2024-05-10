@@ -168,7 +168,7 @@
         flex-direction: row;
       }
       iframe {
-        width: 70%;
+        width: 40rem;
         height: 37vw;
         border-radius: 0.5rem;
       }
@@ -200,8 +200,15 @@
         }
       }
     }
-    .map div {
-      margin-top: 2rem;
+    .map {
+      div {
+        margin-top: 2rem;
+      }
+      iframe {
+        width: 40rem;
+        height: 25rem;
+        border-radius: 0.5rem;
+      }
     }
   }
   .contactez_nous {

@@ -1,6 +1,5 @@
 @import "base";
 @import "design-tokens";
-@import "layout";
 @import "404";
 
 body {
@@ -327,7 +326,7 @@ footer {
       font-size: 1.1rem;
       gap: 2rem;
       .other_page {
-        width: 12rem;
+        width: 11rem;
         height: 5rem;
       }
     }

@@ -247,6 +247,7 @@ header div {
   color: #fff;
   text-align: center;
   height: 55vw;
+  width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/images/header.jpg") no-repeat;
   background-size: cover;
   background-clip: border-box;
@@ -283,7 +284,7 @@ header div p {
 }
 .accueil .actualite article .content_article img {
   width: 100%;
-  height: 55vw;
+  height: 50vw;
   border-radius: 0.2rem;
   border: solid 1px;
 }
@@ -342,7 +343,7 @@ header div p {
   width: fit-content;
 }
 .accueil .activiter article .content_carrousel img {
-  width: 100vh;
+  width: 90vh;
   height: 50vw;
   border: solid 1px;
   border-radius: 0.3rem;
@@ -414,8 +415,11 @@ header div p {
   .header p {
     font-size: 1.2rem;
   }
+  .accueil .actualite article {
+    width: 60%;
+  }
   .accueil .actualite article .content_article img {
-    height: 50vw;
+    height: 40vw;
   }
   .accueil .actualite article .content_article .title_time {
     font-size: 1rem;
@@ -436,7 +440,7 @@ header div p {
 }
 @media screen and (min-width: 1040px) {
   header div {
-    height: 115vh;
+    height: 100vh;
   }
   header div h1 {
     font-size: 3.5rem;
@@ -445,10 +449,10 @@ header div p {
     font-size: 1.5rem;
   }
   .accueil .actualite {
-    width: 70rem;
+    width: 80rem;
   }
   .accueil .actualite article .content_article img {
-    height: 35rem;
+    height: 30rem;
   }
   .accueil .actualite article .content_article .title_time {
     padding: 1.2rem;
@@ -461,7 +465,7 @@ header div p {
     font-size: 1.3rem;
   }
   .accueil .activiter article .content_carrousel img {
-    width: 35rem;
+    width: 32rem;
     height: 20rem;
   }
   .accueil .activiter article .content_carrousel .arrows button {
@@ -652,7 +656,7 @@ header div p {
     flex-direction: row;
   }
   .tarifs_horaires_map .map iframe {
-    width: 70%;
+    width: 40rem;
     height: 37vw;
     border-radius: 0.5rem;
   }
@@ -685,6 +689,11 @@ header div p {
   .tarifs_horaires_map .map div {
     margin-top: 2rem;
   }
+  .tarifs_horaires_map .map iframe {
+    width: 40rem;
+    height: 25rem;
+    border-radius: 0.5rem;
+  }
   .contactez_nous div {
     font-size: 1.5rem;
   }
@@ -700,20 +709,18 @@ header div p {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   gap: 1.5rem;
 }
 .nos_actualites section .actualites {
   width: 85%;
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
-  grid-template-areas: "a";
+  flex-wrap: wrap;
   gap: 2rem 1.5rem;
 }
 .nos_actualites section .actualites p {
   text-align: center;
-  font-weight: bold;
 }
 .nos_actualites section .actualites article {
   width: 22rem;
@@ -725,7 +732,7 @@ header div p {
 }
 .nos_actualites section .actualites article .content_article img {
   width: 100%;
-  height: 17rem;
+  height: 15rem;
   background-color: #d2b48c;
   border-radius: 0.2rem;
   border: solid 1px;
@@ -782,9 +789,6 @@ header div p {
 }
 
 @media screen and (min-width: 768px) {
-  .nos_actualites section .actualites {
-    grid-template-areas: "a a";
-  }
   .nos_actualites ul {
     gap: 1rem;
   }
@@ -794,10 +798,7 @@ header div p {
 }
 @media screen and (min-width: 1040px) {
   .nos_actualites {
-    margin: 5rem 0;
-  }
-  .nos_actualites section .actualites {
-    grid-template-areas: "a a a";
+    margin: 2rem 0;
   }
 }
 .histoire_du_club {
@@ -810,7 +811,7 @@ header div p {
 }
 .histoire_du_club div img {
   margin: 0 2rem 2rem 0;
-  width: 30rem;
+  width: 20rem;
   border-radius: 0.5rem;
 }
 .histoire_du_club div p {
@@ -855,7 +856,7 @@ header div p {
   gap: 1.5rem;
 }
 .equipe div article {
-  width: 22rem;
+  width: 17rem;
   padding: 1rem;
   background-color: #eae7dd;
   border-radius: 0.5rem;
@@ -865,8 +866,8 @@ header div p {
   align-items: center;
 }
 .equipe div article img {
-  width: 20rem;
-  height: 20rem;
+  width: 15rem;
+  height: 15rem;
   border-radius: 0.5rem;
 }
 .equipe div article h2 {
@@ -884,6 +885,15 @@ header div p {
   word-wrap: break-word;
 }
 
+@media screen and (min-width: 768px) {
+  .equipe div article {
+    width: 22rem;
+  }
+  .equipe div article img {
+    width: 20rem;
+    height: 20rem;
+  }
+}
 .login {
   margin-top: 6rem;
   display: flex;
@@ -1345,7 +1355,7 @@ footer div .networks ul li:last-child a:active {
     gap: 2rem;
   }
   nav .lists .other_page {
-    width: 12rem;
+    width: 11rem;
     height: 5rem;
   }
   aside {

@@ -34,9 +34,11 @@ ob_start();
     <?php $n_boucle = 0 ?>
     <ul>
         <?php if ($n_page !== 1) { ?>
-            <li><a href="/actualites/page/<?= $n_page - 1 ?>/"><i class="fa-solid fa-chevron-left"></i></i></a></li>
+            <li><a href="/actualites/page/<?= $n_page - 1 ?>/" title="Page d'actualités précédente"><i
+                        class="fa-solid fa-chevron-left"></i></i></a></li>
         <?php } else { ?>
-            <li><a href="/actualites/page/<?= $n_pages ?>/"><i class="fa-solid fa-chevron-left"></i></a></li>
+            <li><a href="/actualites/page/<?= $n_pages ?>/" title="Page d'actualités précédente"><i
+                        class="fa-solid fa-chevron-left"></i></a></li>
         <?php } ?>
         <?php $maxPagination = 3;
         if ($n_page >= $maxPagination && $n_page == $n_pages) {
@@ -77,9 +79,11 @@ ob_start();
             <?php } ?>
         <?php } ?>
         <?php if ($n_page != $n_pages) { ?>
-            <li><a href="/actualites/page/<?= $n_page + 1 ?>/"><i class="fa-solid fa-chevron-right"></i></a></li>
+            <li><a href="/actualites/page/<?= $n_page + 1 ?>/" title="Page d'actualités suivante"><i
+                        class="fa-solid fa-chevron-right"></i></a></li>
         <?php } else { ?>
-            <li><a href="/actualites/page/<?= 1 ?>/"><i class="fa-solid fa-chevron-right"></i></a></li>
+            <li><a href="/actualites/page/<?= 1 ?>/" title="Page d'actualités suivante"><i
+                        class="fa-solid fa-chevron-right"></i></a></li>
         <?php } ?>
     </ul>
 </div>

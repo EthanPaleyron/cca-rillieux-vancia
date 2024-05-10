@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     gap: 1.5rem;
     article {
-      width: 22rem;
+      width: 17rem;
       padding: 1rem;
       background-color: $primary;
       border-radius: 0.5rem;
@@ -15,8 +15,8 @@
       justify-content: space-between;
       align-items: center;
       img {
-        width: 20rem;
-        height: 20rem;
+        width: 15rem;
+        height: 15rem;
         border-radius: 0.5rem;
       }
       h2 {
@@ -32,6 +32,20 @@
         white-space: pre-line;
         overflow: auto;
         word-wrap: break-word;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .equipe {
+    div {
+      article {
+        width: 22rem;
+        img {
+          width: 20rem;
+          height: 20rem;
+        }
       }
     }
   }

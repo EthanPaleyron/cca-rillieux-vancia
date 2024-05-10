@@ -11,7 +11,8 @@ ob_start();
         </label>
         <div>
             <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" value="<?= old("mdp") ?>">
-            <button type="button" id="lookThePassword"><i class="fa-solid fa-eye-slash"></i></button>
+            <button type="button" id="lookThePassword" title="Voir le mot de passe"><i
+                    class="fa-solid fa-eye-slash"></i></button>
         </div>
         <label for="mdp" class="error">
             <?= error("mdp") ?>
