@@ -448,9 +448,6 @@ header div p {
   header div p {
     font-size: 1.5rem;
   }
-  .accueil .actualite {
-    width: 80rem;
-  }
   .accueil .actualite article .content_article img {
     height: 30rem;
   }
@@ -709,6 +706,7 @@ header div p {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 1.5rem;
 }
 .nos_actualites section .actualites {

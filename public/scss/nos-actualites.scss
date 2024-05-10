@@ -3,6 +3,7 @@
   section {
     margin: 0 auto;
     @include flex(center, center);
+    flex-direction: column;
     gap: 1.5rem;
     .actualites {
       p {
